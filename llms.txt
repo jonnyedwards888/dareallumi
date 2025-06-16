@@ -1,0 +1,21 @@
+# Rules for Large Language Model (LLM) crawlers
+
+# Allow specific LLM bots to crawl the entire site
+User-agent: GPTBot
+Allow: /
+
+User-agent: CommonCrawl
+Allow: /
+
+User-agent: AnthropicBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Disallow any other LLM bots from non-public folders (adjust as needed)
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /temp/ 

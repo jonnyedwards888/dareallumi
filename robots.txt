@@ -1,0 +1,34 @@
+# https://www.robotstxt.org/robotstxt.html
+<<<<<<< HEAD
+
+# For all major search engine bots
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: DuckDuckBot
+User-agent: Slurp
+User-agent: Yandex
+Allow: /
+
+# For specific AI bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Disallow access to common non-public folders (adjust as needed for your project)
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /temp/
+
+# Point to your sitemap
+Sitemap: https://www.lumi.io/sitemap.xml
+=======
+User-agent: *
+Disallow:
+>>>>>>> 460033c0c5681338ca832280abd4b5636b07a476
