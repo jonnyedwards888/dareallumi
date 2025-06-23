@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useParams, u
 import "./index.css";
 import './App.css';
 import './LotsGoingOn.css';
-import './IphoneScreen.css';
+
+import './Responsive.css';
+import TiltedCard from "./TiltedCard";
 
 function Navbar() {
   const location = useLocation();
@@ -29,7 +31,7 @@ function Navbar() {
   }, []);
 
   return (
-    <div className="hero-topbar" style={{ width: '100vw', display: 'flex', alignItems: 'center', position: 'absolute', top: 0, left: 0, zIndex: 20, padding: '1.5rem 2.5rem 0.5rem 2.5rem' }}>
+    <div className="hero-topbar">
       <div id="google_translate_element" className="lumi-translate-dropdown"></div>
       <div style={{ flex: 1, display: 'flex', alignItems: 'center' }}>
         {!isHome && (
@@ -129,7 +131,6 @@ function PhasesSection() {
     <section className="phases-section">
       <h2 className="phases-title">PHASES</h2>
       <div className="phases-grid">
-        {/* Phase 1 */}
         <div className="phases-card">
           <div className="phases-heading">PHASE 1 2024/5</div>
           <div className="phases-content">
@@ -142,7 +143,6 @@ function PhasesSection() {
             </ul>
           </div>
         </div>
-        {/* Phase 2 */}
         <div className="phases-card">
           <div className="phases-heading">PHASE 2 2025</div>
           <div className="phases-content">
@@ -155,7 +155,6 @@ function PhasesSection() {
             </ul>
           </div>
         </div>
-        {/* Phase 3 */}
         <div className="phases-card">
           <div className="phases-heading">PHASE 3 2025/6</div>
           <div className="phases-content">
@@ -168,7 +167,6 @@ function PhasesSection() {
             </ul>
           </div>
         </div>
-        {/* Phase 4 */}
         <div className="phases-card">
           <div className="phases-heading">PHASE 4 2025/6</div>
           <div className="phases-content">
@@ -529,28 +527,20 @@ function SolutionsPage() {
 
 const newsData = [
   {
-    id: 'kings-college',
-    img: 'news-images/kings-college.jpg',
-    title: 'Kings College grant application in process',
-    detail: 'Details about the Kings College grant application in process.'
+    id: 'convex-remegrid',
+    title: 'Community Update – The Convex ReMeGrid',
+    detail: `ReMeLife is excited to announce our integration with Convex, a next-generation blockchain platform. This collaboration marks a significant step forward in our mission to revolutionize the care sector through blockchain technology.`
   },
   {
-    id: 'pingit',
-    img: 'news-images/pingit.jpg',
-    title: 'Pigit Partnership established',
-    detail: 'Details about the Pigit Partnership.'
+    id: 'project-update-1',
+    title: 'Project Update #1 Community Q&A',
+    detail: `Join us for our first community Q&A session where we discuss the latest developments and answer questions from our community members about the ReMeLife ecosystem.`
   },
   {
     id: 'human-error',
     img: 'news-images/human-error.png',
     title: 'ReMeLife joins the Human Error project',
     detail: `<b>The Human Error Project</b><br/><br/>We live in historical times, when every detail of our lives is a data point used by AI systems and algorithms to profile us, judge us and make decisions about us. This data that defines us is commercialised in a multiplicity of ways. Health and education practitioners 'track risk factors' or find 'personalized solutions'. Employers, banks and insurers judge clients or potential candidates. Governments, the police and immigration officials use this tech to decide issues about individual lives, from one's right to asylum to one's likelihood to commit a crime.<br/><br/>Courtesy of ReMeLife's focus on such data being used for positive social benefit and on establishing crypto based algorithms that share the value in digital care for the benefit of the community, we've been invited to collaborate in this important project.<br/><br/>More <a href='#'>here</a>.`
-  },
-  {
-    id: 'equideum',
-    img: 'news-images/equideum.jpg',
-    title: 'Equideum- Consensys Health working together',
-    detail: `ReMeLife is renewing and extending its partnership agreement with Equideum (formerly Consensys Health, a Joe Lubin and Mesh company), that will enable ReMeLife to ensure the optimal configuration and global reach of the ReMeLife token based incentivised health care ecosystem. The Equideum infrastructure of healthcare will provide a multiplicity of the vital computing requirements of the ReMeLife integrated ecosystem, from cybersecurity, compliance, privacy, bioethics and identity solutions and will transform the way ReMeLife and its apps collect, protect, manage, monetise and share the value of the platforms members person centred care data. The jobseekers one: As ReMeLife grows, we need to take on new blood. And our mission is as always; to aim to help those that need a helping hand. Whether past retirement but still wanting to contribute, those with cognitive conditions or starting out after leaving school, looking to discover a new direction.<br/><br/>For more information see <a href='#'>here</a>.`
   },
   {
     id: 'coin-bureau',
@@ -563,19 +553,7 @@ const newsData = [
     img: 'news-images/florida-blockchain-summit.jpg',
     title: 'ReMeLife at the Florida Blockchain Summit',
     detail: 'Details about the Florida Blockchain Summit.'
-  },
-  {
-    id: 'jobseekers',
-    img: 'news-images/jobseekers.jpg',
-    title: 'Opportunities For Young Job Seekers',
-    detail: `As ReMeLife grows, we need to take on new blood. And our mission is as always; to aim to help those that need a helping hand. Whether past retirement but still wanting to contribute, those with cognitive conditions or starting out after leaving school, looking to discover a new direction.<br/><br/>Our working closely with Ixion, a leading training provider of skills and part of the Shaw Trust, one of the largest charities in the UK, means that we'll be helping develop the careers of a broad range of young unemployed people, assisting develop their skills in social media and care. They gain from working in a dynamic and progressive work environment and we'll benefit from their participation in our growth in the coming years.<br/><br/>Our follow on project involved working with the Department of Education and with 15 school leavers with cognitive difficulties, to establish if ReMeLife can provide the stimulation that it aims to achieve through its rewards based tokenomics, to have them undertake tasks such as data entry, personal network monetisation and ecommerce profit sharing, whilst also learning how to create a personal network that can generate a passive income. A roaring success, this pilot validated the proposition that token based rewards can not only incentivise such as medication adherence, but also positively impact on social interactivity and an improved sense of self-worth and well-being.<br/><br/>More information is available upon request to: <a href='mailto:simon@remelife.com'>simon@remelife.com</a>.`
-  },
-  {
-    id: 'geneva',
-    img: 'news-images/blockchain-summut.jpg',
-    title: 'ReMeLife presents at the Geneva Blockchain Summit',
-    detail: 'Details about the Geneva Blockchain Summit.'
-  },
+  }
 ];
 
 function NewsCardsSection() {
@@ -584,7 +562,15 @@ function NewsCardsSection() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 w-full max-w-7xl px-4">
         {newsData.map((card, idx) => (
           <div key={card.id} className="rounded-xl overflow-hidden flex flex-col bg-[#a23bb9]" style={{ minHeight: '260px', boxShadow: '0 2px 16px #0003' }}>
-            <img src={process.env.PUBLIC_URL + '/' + card.img} alt={card.title} style={{ width: '100%', height: '110px', objectFit: 'cover' }} />
+            {card.id === 'convex-remegrid' || card.id === 'project-update-1' ? (
+              <img 
+                src={`https://img.youtube.com/vi/${card.id === 'convex-remegrid' ? 'O9P1Fr_v4JQ' : 'IB89b-N-TgA'}/hqdefault.jpg`}
+                alt={card.title} 
+                style={{ width: '100%', height: '110px', objectFit: 'cover' }} 
+              />
+            ) : (
+              <img src={process.env.PUBLIC_URL + '/' + card.img} alt={card.title} style={{ width: '100%', height: '110px', objectFit: 'cover' }} />
+            )}
             <div className="flex-1 flex flex-col justify-between p-4">
               <div className="text-white font-semibold mb-2" style={{ fontFamily: 'Space Grotesk, Orbitron, sans-serif', fontSize: '1.1rem' }}>{card.title}</div>
               <Link to={`/news/${card.id}`} className="text-sky-300 font-semibold text-sm hover:underline mt-auto">READ MORE »</Link>
@@ -600,12 +586,40 @@ function NewsDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const news = newsData.find(n => n.id === id);
+  
   if (!news) return <div className="text-white p-8">News not found.</div>;
+  
+  const getVideoId = (newsId) => {
+    switch(newsId) {
+      case 'convex-remegrid':
+        return 'O9P1Fr_v4JQ';
+      case 'project-update-1':
+        return 'IB89b-N-TgA';
+      default:
+        return null;
+    }
+  };
+
+  const videoId = getVideoId(news.id);
+  
   return (
     <div className="min-h-screen flex flex-col items-center justify-start bg-[#18153a] text-white py-16 px-4">
       <div className="w-full max-w-4xl mx-auto flex flex-col items-center">
         <button onClick={() => navigate(-1)} className="mb-6 px-6 py-2 bg-white text-black rounded shadow hover:bg-gray-200 transition self-end">Back</button>
-        <img src={process.env.PUBLIC_URL + '/' + news.img} alt={news.title} className="mb-8 rounded-lg shadow-lg mx-auto" style={{ maxWidth: '600px', width: '100%' }} />
+        {videoId ? (
+          <div className="video-container mb-8 w-full" style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', maxWidth: '100%' }}>
+            <iframe 
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+              src={`https://www.youtube.com/embed/${videoId}`}
+              title={news.title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        ) : (
+          <img src={process.env.PUBLIC_URL + '/' + news.img} alt={news.title} className="mb-8 rounded-lg shadow-lg mx-auto" style={{ maxWidth: '600px', width: '100%' }} />
+        )}
         <h1 className="text-3xl font-bold mb-2" style={{ fontFamily: 'Orbitron, Space Grotesk, sans-serif' }}>{news.title}</h1>
         <div className="w-full text-lg mb-8" style={{ fontFamily: 'Space Grotesk, Orbitron, sans-serif' }}>
           <div dangerouslySetInnerHTML={{ __html: news.detail }} />
@@ -618,14 +632,14 @@ function NewsDetailPage() {
 function AboutPage() {
   const [carouselIndex, setCarouselIndex] = React.useState(0);
   const partners = [
-    'singularities.png',
-    'ucl.png',
-    'athena.png',
-    'antier.png',
-    'equideum.png',
-    'limechain.png',
-    'mongoDB.png',
-    'worcester.png',
+    'about-page-images/singularities.png',
+    'about-page-images/ucl.png',
+    'about-page-images/athena.png',
+    'about-page-images/antier.png',
+    'about-page-images/equideum.png',
+    'about-page-images/limechain.png',
+    'about-page-images/mongoDB.png',
+    'about-page-images/worcester.png',
   ];
   // Show 4 at a time
   const visible = 4;
@@ -690,6 +704,17 @@ function AboutPage() {
           </div>
         </div>
         <NewsCardsSection />
+        <div className="w-full flex justify-center mt-8 mb-16">
+          <a 
+            href="https://remelife.io/news/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-sky-400 hover:text-sky-300 text-lg"
+            style={{ fontFamily: 'Space Grotesk, Orbitron, sans-serif' }}
+          >
+            See more news here
+          </a>
+        </div>
       </div>
     </>
   );
@@ -1011,6 +1036,20 @@ Crypto currencies may be unregulated in your jurisdiction. The value of cryptocu
         </div>
       </div>
       <FooterSection />
+    </div>
+  );
+}
+
+function MerchPage() {
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-start bg-[#18153a] text-white py-16 px-4">
+      <Navbar />
+      <h2 className="text-4xl font-bold mb-8 text-center" style={{ fontFamily: 'Orbitron, Space Grotesk, sans-serif', fontSize: '2.5rem', letterSpacing: '0.04em' }}>LUMI MERCH</h2>
+      <div className="flex flex-row gap-12 justify-center items-center w-full max-w-4xl">
+        <div style={{ width: 220, height: 220, background: '#23234a', borderRadius: '1.5rem', border: '2px solid #b16fc9', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#b16fc9', fontSize: '1.2rem' }}>Image 1</div>
+        <div style={{ width: 220, height: 220, background: '#23234a', borderRadius: '1.5rem', border: '2px solid #b16fc9', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#b16fc9', fontSize: '1.2rem' }}>Image 2</div>
+        <div style={{ width: 220, height: 220, background: '#23234a', borderRadius: '1.5rem', border: '2px solid #b16fc9', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#b16fc9', fontSize: '1.2rem' }}>Image 3</div>
+      </div>
     </div>
   );
 }
