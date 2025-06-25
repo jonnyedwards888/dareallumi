@@ -690,6 +690,7 @@ html {
   }
   .hero-section {
     padding: 0.5rem 0 !important;
+    background-attachment: scroll !important;
   }
   .hero-content {
     flex-direction: column !important;
