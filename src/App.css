@@ -50,7 +50,7 @@ html {
 
 .lumi-fullbody-img {
   width: 320px;
-  max-width: 40vw;
+  
   height: auto;
   display: block;
 }
@@ -698,13 +698,7 @@ html {
     gap: 0.7rem !important;
     padding: 1rem 0.5rem !important;
   }
-  .lumi-fullbody-img {
-    width: 150px !important;
-    max-width: 60vw !important;
-    margin: 0 auto 0.5rem auto !important;
-    display: block !important;
-    align-self: center !important;
-  }
+
   .lumi-hero-text {
     align-items: center !important;
     gap: 1rem !important;

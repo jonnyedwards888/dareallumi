@@ -46,8 +46,9 @@
     flex-direction: column !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    gap: 1rem !important;
-    padding: 1rem 0.5rem 0 0.5rem !important;
+    width: 100% !important;
+    
+    
   }
   .hero-content {
     margin-top: 0 !important;
@@ -67,21 +68,24 @@
     flex-direction: column !important;
     align-items: center !important;
     gap: 0.7rem !important;
-    width: 100%;
+    width: 100% !important;
     text-align: center !important;
     flex-wrap: nowrap;
     justify-content: center;
   }
   .lumi-fullbody-img {
     display: block !important;
-    margin: 0 auto !important;
+    margin: 0 auto 0 !important;
     width: 150px !important;
     height: auto !important;
     max-width: 90vw !important;
     min-width: 60px !important;
     object-fit: contain !important;
-    position: static !important;
+    margin-left: 9vw !important;    position: static !important;
+   
   }
+
+
   .lumi-heading, .lumi-subtitle {
     word-break: break-word;
     white-space: normal;

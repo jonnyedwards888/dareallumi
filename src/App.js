@@ -67,11 +67,13 @@ function HeroSection() {
     >
       <Navbar />
       <div className="hero-content">
-        <img
-          src={process.env.PUBLIC_URL + "/Lumi-main image.png"}
-          alt="Lumi Full Body"
-          className="lumi-fullbody-img"
-        />
+        <div className="lumi-avatar-wrapper">
+          <img
+            src={process.env.PUBLIC_URL + "/Lumi-main image.png"}
+            alt="Lumi Full Body"
+            className="lumi-fullbody-img"
+          />
+        </div>
         <div className="lumi-hero-text">
           <h1 className="lumi-heading">LUMI  </h1>
           <div className="lumi-subtitle">
