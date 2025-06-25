@@ -75,7 +75,7 @@
   .lumi-fullbody-img {
     display: block !important;
     margin: 0 auto !important;
-    width: 90px !important;
+    width: 150px !important;
     height: auto !important;
     max-width: 90vw !important;
     min-width: 60px !important;
@@ -87,7 +87,7 @@
     white-space: normal;
   }
   .lumi-heading {
-    font-size: 2rem !important;
+    font-size: 5rem !important;
     margin-bottom: 0.2rem !important;
   }
   .lumi-subtitle {

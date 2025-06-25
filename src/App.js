@@ -73,7 +73,7 @@ function HeroSection() {
           className="lumi-fullbody-img"
         />
         <div className="lumi-hero-text">
-          <h1 className="lumi-heading">LUMI AI </h1>
+          <h1 className="lumi-heading">LUMI  </h1>
           <div className="lumi-subtitle">
             the first AI person-centred care agent on chain.
           </div>

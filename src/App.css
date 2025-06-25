@@ -698,8 +698,8 @@ html {
     padding: 1rem 0.5rem !important;
   }
   .lumi-fullbody-img {
-    width: 90px !important;
-    max-width: 40vw !important;
+    width: 150px !important;
+    max-width: 60vw !important;
     margin: 0 auto 0.5rem auto !important;
     display: block !important;
     align-self: center !important;
