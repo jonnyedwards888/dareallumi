@@ -20,6 +20,26 @@
     height: 48px;
   }
 
+  .lumi-hero-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.3rem !important; /* adjust as needed */
+    width: 100% !important;
+  }
+
+  .lumi-hero-btn {
+    min-width: 0 !important;
+    max-width: 100px !important; /* or whatever fits */
+    font-size: 0.9rem !important;
+    padding: 0.3rem 0.5rem !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+  }
+
   
 
  
