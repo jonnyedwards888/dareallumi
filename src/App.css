@@ -20,7 +20,7 @@ html {
   align-items: center;
   justify-content: space-between;
   width: 100vw;
-  padding: 1rem 2rem;
+  padding: 1rem 0.7rem;
   background: rgba(18, 15, 44, 0.95);
   box-sizing: border-box;
   position: fixed;
@@ -36,18 +36,31 @@ html {
   flex: 0 0 auto;
 }
 
-.lumi-header-logo {
-  height: 64px;
-  width: auto;
-  display: block;
+.hero-topbar-lumi {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-family: 'Sora', 'Orbitron', 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  transition: color 0.2s;
+}
+.hero-topbar-lumi:hover {
+  color: #b16fc9;
+  text-decoration: underline;
 }
 
 .hero-topbar-nav {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.5rem;
-  flex: 1 1 auto;
 }
 
 #root {
@@ -714,11 +727,11 @@ html {
     justify-content: center !important;
     display: flex !important;
     flex-wrap: wrap;
-    margin-bottom: 0.3rem;
+    
   }
   .hero-topbar-btn {
     font-size: 0.9rem !important;
-    padding: 0.35rem 0.7rem !important;
+    
     margin: 0.2rem !important;
     min-width: 80px;
     flex: 1 1 auto;
@@ -732,7 +745,7 @@ html {
     flex-direction: column !important;
     align-items: center !important;
     gap: 0.7rem !important;
-    padding: 1rem 0.5rem !important;
+     
   }
 
   .lumi-hero-text {
@@ -758,7 +771,7 @@ html {
   .lumi-hero-btn {
     width: 100%;
     font-size: 0.95rem !important;
-    padding: 0.5rem 0 !important;
+    
     margin: 0 !important;
   }
   .solutions-section {
@@ -766,18 +779,6 @@ html {
   }
 }
 
-.hero-topbar {
-  width: 100vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2.5rem 0.5rem 2.5rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 20;
-  background: #120f2c;
-}
 .hero-topbar-btn {
   background: none;
   color: #fff;
@@ -797,9 +798,6 @@ html {
   color: #18153a;
   border-color: #fff;
 }
-
-
-
 
 @media (max-width: 700px) {
   .hero-topbar {
@@ -884,4 +882,12 @@ html {
   .phases-section {
     padding-top: 68px !important;
   }
+}
+
+.lumi-navbar-icon {
+  height: 28px;
+  width: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
 }

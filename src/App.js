@@ -34,7 +34,8 @@ function Navbar() {
     <div className="hero-topbar">
       <div className="hero-topbar-lumi-wrapper">
         <Link to="/" className="hero-topbar-lumi">
-          <img className="lumi-header-logo" src={process.env.PUBLIC_URL + "/Lumi-AI-logo.png"} alt="LUMI Logo" />
+          <img src={process.env.PUBLIC_URL + "/Lumi-main-logo.png"} alt="LUMI Icon" className="lumi-navbar-icon" />
+          LUMI
         </Link>
       </div>
       <div className="hero-topbar-nav">
@@ -43,7 +44,7 @@ function Navbar() {
         <Link to="/about" className="hero-topbar-btn">About</Link>
         <a
           href="https://x.com/mylumi_ai"
-          className="hero-topbar-btn hero-topbar-close-btn"
+          className="hero-topbar-btn"
           target="_blank"
           rel="noopener noreferrer"
         >
