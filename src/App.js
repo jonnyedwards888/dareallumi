@@ -32,14 +32,10 @@ function Navbar() {
 
   return (
     <div className="hero-topbar">
-      <div id="google_translate_element" className="lumi-translate-dropdown"></div>
-      <div style={{ flex: 1, display: 'flex', alignItems: 'center' }}>
-        {!isHome && (
-          <Link to="/" className="hero-topbar-btn" style={{ marginRight: '1.5rem', padding: 0, background: 'none', border: 'none', boxShadow: 'none', display: 'flex', alignItems: 'center' }}>
-            <img src={process.env.PUBLIC_URL + '/back-icon.png'} alt="Back" style={{ width: '38px', height: '38px', display: 'block', filter: 'invert(32%) sepia(98%) saturate(7492%) hue-rotate(265deg) brightness(90%) contrast(110%)' }} />
-          </Link>
-        )}
+      <div className="hero-topbar-lumi-wrapper">
+        <Link to="/" className="hero-topbar-lumi">LUMI</Link>
       </div>
+      <div id="google_translate_element" className="lumi-translate-dropdown"></div>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '0' }}>
         <Link to="/solutions" className="hero-topbar-btn">Solutions</Link>
         <Link to="/faqs" className="hero-topbar-btn">FAQs</Link>
@@ -75,7 +71,7 @@ function HeroSection() {
           />
         </div>
         <div className="lumi-hero-text">
-          <h1 className="lumi-heading">LUMI AI </h1>
+          <h1 className="lumi-heading">LUMI  </h1>
           <div className="lumi-subtitle">
             the first AI person-centred care agent on chain.
           </div>
@@ -352,6 +348,7 @@ function SolutionsPage() {
         <h2 className="solutions-main-heading mb-12 text-[#b16fc9] text-center" style={{ fontFamily: 'Space Grotesk, Orbitron, sans-serif', fontWeight: 700, fontSize: '2rem' }}>
           Harnessing the value of digital care for those who need it most
         </h2>
+        {/* What's Remelife Section */}
         <div className="solutions-feature-row flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16">
           <div className="flex-1 solutions-feature-text">
             <h3 className="solutions-feature-title" style={{ fontFamily: 'Orbitron, Space Grotesk, sans-serif', fontWeight: 900, fontSize: '2rem', marginBottom: '1rem' }}>
@@ -409,7 +406,7 @@ function SolutionsPage() {
         {/* Gradient Boxes */}
         <div className="solutions-boxes-grid w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div className="solutions-box">
-            <div className="solutions-box-title">Passive Income<br /><span className="solutions-box-sub">CARE2EARN</span></div>
+            <div className="passive-income-title">Passive Income<br /><span className="solutions-box-sub">CARE2EARN</span></div>
             <div className="solutions-box-desc">Using RemindMecare, posting in the Forum, sharing news with your family care circle and viewing products in the Market, all earn reward tokens for your daily care actions.<br /><br />Within time you'll build up an income earned passively from your daily digital care actions.</div>
           </div>
           <div className="solutions-box">
@@ -446,7 +443,7 @@ function SolutionsPage() {
 
         
         {/* What's RemindMecare Section */}
-        <div className="solutions-feature-row flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16 mt-16">
+        <div className="solutions-feature-row ">
           <div className="flex-1 solutions-feature-text">
             <h3 className="solutions-feature-title" style={{ fontFamily: 'Orbitron, Space Grotesk, sans-serif', fontWeight: 900, fontSize: '2rem', marginBottom: '1rem' }}>
               WHAT'S REMINDMECARE?
@@ -474,7 +471,7 @@ function SolutionsPage() {
           Integrating AI for the benefit of the care sector
         </h2>
         {/* AI Implementation Section */}
-        <div className="solutions-feature-row flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16">
+        <div className="solutions-feature-row ai-implementation-section flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16">
           <div className="flex-1 solutions-feature-text">
             <h3 className="solutions-feature-title" style={{ fontFamily: 'Orbitron, Space Grotesk, sans-serif', fontWeight: 900, fontSize: '2rem', marginBottom: '1rem' }}>
               AI IMPLEMENTATION
@@ -490,13 +487,13 @@ function SolutionsPage() {
             <img
               src={process.env.PUBLIC_URL + "/data-images/ai-architecture.png"}
               alt="AI Architecture"
-              className="solutions-feature-img rounded-lg shadow-lg"
+              className="solutions-feature-img"
               style={{ maxWidth: '100%', width: '420px', background: '#222' }}
             />
           </div>
         </div>
         {/* AI Enhancements Section */}
-        <div className="solutions-feature-row flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16">
+        <div className="solutions-feature-row ai-enhancements-section flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16">
           <div className="flex-1 solutions-feature-text">
             <div className="mb-4" style={{ fontWeight: 500 }}>
               The AI enhancements currently being developed are as follows.
@@ -517,7 +514,7 @@ function SolutionsPage() {
             <img
               src={process.env.PUBLIC_URL + "/data-images/enhanced-care.png"}
               alt="Enhanced Care"
-              className="solutions-feature-img rounded-lg shadow-lg"
+              className="solutions-feature-img"
               style={{ maxWidth: '100%', width: '420px', background: '#222' }}
             />
           </div>
@@ -740,7 +737,7 @@ function FaqsPage() {
   const [openIndex, setOpenIndex] = React.useState(null);
   React.useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
-    <div className="min-h-screen flex flex-col bg-[#18153a] text-white">
+    <div className="faqs-page-bg min-h-screen flex flex-col text-white">
       <Navbar />
       <div className="flex-1 flex flex-col items-center justify-start py-16 px-4">
         <h2 className="text-white text-center mb-2" style={{ fontFamily: 'Orbitron, Space Grotesk, sans-serif', fontWeight: 900, fontSize: '2.5rem', letterSpacing: '0.04em' }}>FAQ's</h2>

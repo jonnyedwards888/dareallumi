@@ -725,30 +725,34 @@ html {
     padding: 0.5rem 0 !important;
     margin: 0 !important;
   }
+  .solutions-section {
+    background: #120f2c !important;
+  }
 }
 
 .hero-topbar {
   width: 100vw;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2.5rem 0.5rem 2.5rem;
+  padding: 1rem 2.5rem 0.5rem 2.5rem;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 20;
+  background: #120f2c;
 }
 .hero-topbar-btn {
-  background: rgba(0,0,0,0.7);
+  background: none;
   color: #fff;
-  border: 2px solid #00eaff;
+ 
   border-radius: 999px;
   padding: 0.5rem 1.5rem;
   font-size: 1.1rem;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 600;
   transition: background 0.2s, color 0.2s, border 0.2s;
-  box-shadow: 0 0 8px #00eaff44;
+  
   margin-left: 1rem;
   text-decoration: none;
 }
@@ -756,4 +760,110 @@ html {
   background: #00eaff;
   color: #18153a;
   border-color: #fff;
+}
+
+.hero-topbar-lumi-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+  margin-left: 0;
+}
+.hero-topbar-lumi {
+  font-family: 'Sora', 'Orbitron', 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  transition: color 0.2s;
+}
+.hero-topbar-lumi:hover {
+  color: #b16fc9;
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .hero-topbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+  }
+  .hero-topbar-lumi-wrapper {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.about-section {
+  background: #120f2c !important;
+}
+
+@media (max-width: 700px) {
+  .about-section {
+    background: #120f2c !important;
+  }
+}
+
+.faqs-page-bg, .faqs-page-bg * {
+  background: #120f2c !important;
+}
+
+@media (max-width: 700px) {
+  .faqs-page-bg, .faqs-page-bg * {
+    background: #120f2c !important;
+  }
+}
+
+/* Partners scroller arrow buttons - mobile visibility */
+@media (max-width: 700px) {
+  .about-section button {
+    font-size: 1.7rem !important;
+    background: #23234a !important;
+    color: #e0e0e0 !important;
+    border: 1.5px solid #444 !important;
+    border-radius: 50% !important;
+    width: 38px !important;
+    height: 38px !important;
+    box-shadow: 0 2px 8px #0004;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1 !important;
+    margin: 0 0.3rem !important;
+    transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+  }
+  .about-section button:disabled {
+    opacity: 0.3 !important;
+    background: #18153a !important;
+    color: #888 !important;
+    border-color: #222 !important;
+    box-shadow: none;
+  }
+}
+
+/* Ensure main content is not hidden behind the navbar/header */
+.about-section,
+.solutions-section,
+.faqs-page-bg,
+.lumi-token-section,
+.data-section,
+.coming-soon-section,
+.phases-section {
+  padding-top: 80px !important;
+}
+
+@media (max-width: 700px) {
+  .about-section,
+  .solutions-section,
+  .faqs-page-bg,
+  .lumi-token-section,
+  .data-section,
+  .coming-soon-section,
+  .phases-section {
+    padding-top: 68px !important;
+  }
 }
