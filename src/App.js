@@ -33,10 +33,11 @@ function Navbar() {
   return (
     <div className="hero-topbar">
       <div className="hero-topbar-lumi-wrapper">
-        <Link to="/" className="hero-topbar-lumi">LUMI</Link>
+        <Link to="/" className="hero-topbar-lumi">
+          <img className="lumi-header-logo" src={process.env.PUBLIC_URL + "/Lumi-AI-logo.png"} alt="LUMI Logo" />
+        </Link>
       </div>
-      <div id="google_translate_element" className="lumi-translate-dropdown"></div>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '0' }}>
+      <div className="hero-topbar-nav">
         <Link to="/solutions" className="hero-topbar-btn">Solutions</Link>
         <Link to="/faqs" className="hero-topbar-btn">FAQs</Link>
         <Link to="/about" className="hero-topbar-btn">About</Link>
