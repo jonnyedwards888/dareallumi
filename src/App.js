@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useParams, u
 import "./index.css";
 import './App.css';
 import './LotsGoingOn.css';
+import './NavbarMobile.css';
 
 import './Responsive.css';
 
@@ -31,25 +32,18 @@ function Navbar() {
   }, []);
 
   return (
-    <div className="hero-topbar">
-      <div className="hero-topbar-lumi-wrapper">
-        <Link to="/" className="hero-topbar-lumi">
+    <div>
+      <div className="hero-topbar">
+        <Link to="/" className="hero-button">
           <img src={process.env.PUBLIC_URL + "/Lumi-main-logo.png"} alt="LUMI Icon" className="lumi-navbar-icon" />
           LUMI
         </Link>
-      </div>
-      <div className="hero-topbar-nav">
-        <Link to="/solutions" className="hero-topbar-btn">Solutions</Link>
-        <Link to="/faqs" className="hero-topbar-btn">FAQs</Link>
-        <Link to="/about" className="hero-topbar-btn">About</Link>
-        <a
-          href="https://x.com/mylumi_ai"
-          className="hero-topbar-btn"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          X
-        </a>
+        <div className="hero-nav-right">
+          <Link to="/solutions" className="hero-button">Solutions</Link>
+          <Link to="/faqs" className="hero-button">FAQs</Link>
+          <Link to="/about" className="hero-button">About</Link>
+          <a href="https://x.com/mylumi_ai" target="_blank" rel="noopener noreferrer" className="hero-button">X</a>
+        </div>
       </div>
     </div>
   );

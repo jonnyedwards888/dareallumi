@@ -1,0 +1,26 @@
+/* NavbarMobile.css - Mobile-specific styles for the top navbar */
+
+@media (max-width: 600px) {
+  /* Add mobile-specific navbar styles here */
+  .hero-button {
+    font-size: 0.8rem;
+  }
+
+  .hero-button:first-child {
+    margin-left: 0 !important;
+  }
+
+  .lumi-navbar-icon {
+    height: 22px;
+    margin-right: 0.3rem;
+  }
+
+  .hero-topbar {
+    padding: 0 0.5rem;
+    height: 48px;
+  }
+
+  
+
+ 
+}

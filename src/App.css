@@ -14,55 +14,6 @@ html {
   overflow-x: hidden;
 }
 
-.hero-topbar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100vw;
-  padding: 1rem 0.7rem;
-  background: rgba(18, 15, 44, 0.95);
-  box-sizing: border-box;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
-
-.hero-topbar-lumi-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex: 0 0 auto;
-}
-
-.hero-topbar-lumi {
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
-  font-family: 'Sora', 'Orbitron', 'Space Grotesk', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 0.08em;
-  text-decoration: none;
-  padding: 0;
-  margin: 0;
-  background: none;
-  border: none;
-  transition: color 0.2s;
-}
-.hero-topbar-lumi:hover {
-  color: #b16fc9;
-  text-decoration: underline;
-}
-
-.hero-topbar-nav {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
 #root {
   max-width: 100vw;
   overflow-x: hidden;
@@ -84,6 +35,45 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+.hero-button {
+  color: #fff;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 999px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+.hero-button:first-child {
+  margin-left: 0;
+}
+.hero-button:hover {
+  background: #2a2560;
+  color: #b16fc9;
+}
+
+.hero-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 56px;
+  background: #18153a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  padding: 0 2rem;
+  box-sizing: border-box;
 }
 
 .hero-content {
@@ -716,27 +706,6 @@ html {
 }
 
 @media (max-width: 430px) {
-  /* .hero-topbar {
-    flex-direction: column;
-    align-items: center !important;
-    padding: 0.7rem 0.5rem 0.5rem 0.5rem !important;
-    position: static !important;
-  } */
-  .hero-topbar > div {
-    width: 100%;
-    justify-content: center !important;
-    display: flex !important;
-    flex-wrap: wrap;
-    
-  }
-  .hero-topbar-btn {
-    font-size: 0.9rem !important;
-    
-    margin: 0.2rem !important;
-    min-width: 80px;
-    flex: 1 1 auto;
-    text-align: center;
-  }
   .hero-section {
     padding: 0.5rem 0 !important;
     background-attachment: scroll !important;
@@ -779,35 +748,9 @@ html {
   }
 }
 
-.hero-topbar-btn {
-  background: none;
-  color: #fff;
- 
-  border-radius: 999px;
-  padding: 0.5rem 1.5rem;
-  font-size: 1.1rem;
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 600;
-  transition: background 0.2s, color 0.2s, border 0.2s;
-  
-  margin-left: 1rem;
-  text-decoration: none;
-}
-.hero-topbar-btn:hover {
-  background: #00eaff;
-  color: #18153a;
-  border-color: #fff;
-}
-
 @media (max-width: 700px) {
-  .hero-topbar {
-    flex-direction: column;
-    align-items: stretch;
+  .hero-section {
     padding: 0.5rem 1rem 0.5rem 1rem;
-  }
-  .hero-topbar-lumi-wrapper {
-    margin-right: 0;
-    margin-bottom: 0.5rem;
   }
 }
 
@@ -861,33 +804,26 @@ html {
   }
 }
 
-/* Ensure main content is not hidden behind the navbar/header */
-.about-section,
-.solutions-section,
-.faqs-page-bg,
-.lumi-token-section,
-.data-section,
-.coming-soon-section,
-.phases-section {
-  padding-top: 80px !important;
+/* Ensure main content is not hidden behind the navbar */
+.hero-section, .solutions-section, .about-section, .faqs-page-bg, .lumi-token-section, .data-section, .coming-soon-section, .phases-section {
+  padding-top: 64px !important;
 }
 
 @media (max-width: 700px) {
-  .about-section,
-  .solutions-section,
-  .faqs-page-bg,
-  .lumi-token-section,
-  .data-section,
-  .coming-soon-section,
-  .phases-section {
+  .hero-section, .solutions-section, .about-section, .faqs-page-bg, .lumi-token-section, .data-section, .coming-soon-section, .phases-section {
     padding-top: 68px !important;
   }
+}
+
+.hero-nav-right {
+  display: flex;
+  align-items: center;
 }
 
 .lumi-navbar-icon {
   height: 28px;
   width: auto;
-  display: block;
-  margin: 0;
-  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
 }

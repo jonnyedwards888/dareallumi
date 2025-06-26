@@ -8,12 +8,7 @@
       gap: 0.7rem !important;
     }
 
-    .hero-topbar-btn {
-        font-size: 0.85rem !important;
-        padding: 0.35rem 1.6rem !important;
-        border-width: 1.5px !important;
-        display: flex;
-    }
+   
 
     .footer-section {
       padding: 1.2rem 0 1rem 0 !important;
