@@ -122,6 +122,12 @@
     box-sizing: border-box !important;
     overflow-x: hidden !important;
   }
+
+  .passive-income-title {
+    text-align: center !important;
+    width: 100% !important;
+    display: block !important;
+  }
   .phases-grid {
     display: grid !important;
     grid-template-columns: 1fr !important;
@@ -136,6 +142,8 @@
     box-sizing: border-box !important;
     margin: 0 auto !important;
   }
+
+  
   .coming-soon-section {
     width: 100vw !important;
     padding: 1.2rem 0.2rem !important;
@@ -252,6 +260,12 @@
   .phases-section {
     padding-top: 120px !important;
   }
+
+  
+  .solutions-main-heading {
+    font-size: 1.5rem !important;
+    margin-top: 1rem !important;
+  }
   
   .remindmecare-mobile {
     width: 100vw !important;
@@ -304,6 +318,17 @@
   }
   .solutions-boxes-grid + .solutions-boxes-grid {
     margin-top: 1.2rem !important;
+  }
+  .solutions-box .solutions-box-title {
+    text-align: center !important;
+    width: 100% !important;
+    display: block !important;
+  }
+
+  .about-section {
+    padding-left: 1.7rem !important;
+    padding-right: 1.2rem !important;
+    box-sizing: border-box !important;
   }
 }
 

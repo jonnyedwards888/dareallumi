@@ -406,7 +406,7 @@ function SolutionsPage() {
         {/* Gradient Boxes */}
         <div className="solutions-boxes-grid w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div className="solutions-box">
-            <div className="passive-income-title">Passive Income<br /><span className="solutions-box-sub">CARE2EARN</span></div>
+            <div className="solutions-box-title">Passive Income<br /><span className="solutions-box-sub">CARE2EARN</span></div>
             <div className="solutions-box-desc">Using RemindMecare, posting in the Forum, sharing news with your family care circle and viewing products in the Market, all earn reward tokens for your daily care actions.<br /><br />Within time you'll build up an income earned passively from your daily digital care actions.</div>
           </div>
           <div className="solutions-box">
@@ -467,7 +467,7 @@ function SolutionsPage() {
           </div>
         </div>
         {/* AI Section Heading */}
-        <h2 className="solutions-main-heading mb-12 text-[#b16fc9] text-center" style={{ fontFamily: 'Space Grotesk, Orbitron, sans-serif', fontWeight: 700, fontSize: '2rem' }}>
+        <h2 className="solutions-main-heading" style={{ fontFamily: 'Space Grotesk, Orbitron, sans-serif', fontWeight: 700, fontSize: '2rem' }}>
           Integrating AI for the benefit of the care sector
         </h2>
         {/* AI Implementation Section */}

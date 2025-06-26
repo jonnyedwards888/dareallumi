@@ -843,6 +843,9 @@ html {
     border-color: #222 !important;
     box-shadow: none;
   }
+  .solutions-main-heading {
+    font-size: 1.5rem !important;
+  }
 }
 
 /* Ensure main content is not hidden behind the navbar/header */
