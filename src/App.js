@@ -605,6 +605,7 @@ function SolutionsPage() {
           </div>
         </div>
       </div>
+      <FooterSection />
     </>
   );
 }
@@ -799,6 +800,7 @@ function AboutPage() {
           </a>
         </div>
       </div>
+      <FooterSection />
     </>
   );
 }
