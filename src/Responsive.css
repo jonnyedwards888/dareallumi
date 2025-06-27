@@ -72,7 +72,7 @@
     box-sizing: border-box;
   }
   .phases-section {
-    width: 100% !important;
+    width: 100vw !important;
     padding: 1.2rem 0.2rem !important;
     box-sizing: border-box !important;
     overflow-x: hidden !important;
@@ -87,7 +87,7 @@
     display: grid !important;
     grid-template-columns: 1fr !important;
     gap: 1.2rem !important;
-    max-width: 100% !important;
+    max-width: 98vw !important;
     width: 100% !important;
     margin: 0 auto !important;
   }
@@ -100,7 +100,7 @@
 
   
   .coming-soon-section {
-    width: 100% !important;
+    width: 100vw !important;
     padding: 1.2rem 0.2rem !important;
     box-sizing: border-box !important;
     overflow-x: hidden !important;
@@ -109,7 +109,7 @@
     display: grid !important;
     grid-template-columns: 1fr !important;
     gap: 1.2rem !important;
-    max-width: 100% !important;
+    max-width: 98vw !important;
     width: 100% !important;
     margin: 0 auto !important;
   }
@@ -127,7 +127,7 @@
   .coming-soon-text {
     text-align: center !important;
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: 98vw !important;
     margin: 0 auto !important;
     box-sizing: border-box !important;
   }
@@ -144,7 +144,7 @@
     justify-content: center !important;
     gap: 1.2rem !important;
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: 100vw !important;
     padding: 0 0.5rem !important;
     box-sizing: border-box !important;
   }
@@ -203,7 +203,7 @@
   }
   
   .remindmecare-mobile {
-    width: 100% !important;
+    width: 100vw !important;
     padding: 1.2rem 0.5rem !important;
     box-sizing: border-box !important;
     overflow-x: hidden !important;
@@ -224,17 +224,16 @@
   .remindmecare-mobile .solutions-feature-text {
     text-align: center !important;
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: 95vw !important;
     margin: 0 auto !important;
     padding: 0 0.5rem !important;
     box-sizing: border-box !important;
-    word-break: break-word !important;
-    white-space: normal !important;
+    order: 1 !important;
   }
   .remindmecare-mobile .solutions-phone-video {
     display: block !important;
     margin: 1.5rem auto 0 auto !important;
-    width: 100% !important;
+    width: 95vw !important;
     max-width: 400px !important;
     min-width: 220px !important;
     height: auto !important;
@@ -374,10 +373,3 @@
   
 }
 
-/* =============================
-   Founder Section Styles (Mobile)
-   ============================= */
-/* Add future .founder-section, .founder-content, .founder-text, etc. styles here */
-/* =============================
-   End Founder Section Styles
-   ============================= */
