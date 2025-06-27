@@ -1002,7 +1002,7 @@ html {
     text-align: center !important;
     align-items: center !important;
   }
-  .footer-section {
+  .footer-section, .about-section .footer-section {
     background: #120f2c !important;
     padding: 0 !important;
     margin: 0 !important;
@@ -1055,9 +1055,6 @@ html {
     color: #888 !important;
     border-color: #222 !important;
     box-shadow: none;
-  }
-  .solutions-main-heading {
-    font-size: 1.5rem !important;
   }
 }
 
@@ -1163,10 +1160,6 @@ html {
   }
   .faqs-page-bg > div > div {
     background: none !important;
-  }
-  .footer-section {
-    background: #3a2fa4 !important;
-    border: none !important;
   }
   .hero-content {
     background: none !important;
