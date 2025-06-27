@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 body {
-  font-family: 'Sora', sans-serif;
   margin: 0;
   background: #120f2c;
   
@@ -19,22 +18,39 @@ html {
   overflow-x: hidden;
 }
 
+.practice-text {
+  font-size: 1.5rem;
+  color: #fff;
+  
+  margin-bottom: 2rem;
+}
+
 .lumi-subtitle {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  margin-top: 2.2rem;
 }
 
 .hero-section {
-  min-height: 100dvh !important;
+  min-height: 100vh !important;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 0;
+  padding: 0rem 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  
+  /* DELETE or COMMENT OUT this line: */
+  /* background-attachment: fixed; */
+}
+
+.hero-button, .lumi-hero-btn, .hero-topbar .hero-nav-right, .hero-topbar .lumi-navbar-icon, .hero-topbar .hero-button {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
 }
 
 .hero-button {
@@ -42,7 +58,7 @@ html {
   background: none;
   border: none;
   font-size: 1.1rem;
-  font-family: 'Space Grotesk', sans-serif;
+  
   font-weight: 600;
   margin-left: 1.5rem;
   text-decoration: none;
@@ -61,13 +77,20 @@ html {
   color: #b16fc9;
 }
 
+@media (min-width: 900px) {
+  .hero-button {
+    font-size: 1.3rem;
+    padding: 0.7rem 1.7rem;
+  }
+}
+
 .hero-topbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 56px;
-  background: #18153a;
+  background: #111112;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -81,15 +104,24 @@ html {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
   width: 100%;
-  max-width: 1400px;
-  padding: 2rem;
+  
+  
+}
+
+/* Center avatar image on desktop */
+.lumi-avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .lumi-fullbody-img {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: -2rem;
   width: 320px;
-  
   height: auto;
   display: block;
 }
@@ -97,36 +129,86 @@ html {
 .lumi-hero-text {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  gap: 2rem;
-  flex: 1;
+ 
+  width: 100%;
+}
+
+.lexend-heading {
+  font-family: 'Lexend', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.montserrat-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.exo-2-heading {
+  font-family: 'Exo 2', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.bungee-regular {
+  font-family: 'Bungee', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.anton-regular {
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.michroma-regular {
+  font-family: 'Michroma', sans-serif;
+  font-weight: 00;
+  font-style: normal;
 }
 
 .lumi-heading {
-  font-family: 'Sora', sans-serif; /* Main header font - do not override */
-  font-weight: 300;
-  
-  font-size: 9rem;
+  font-family: 'Michroma', sans-serif;
+  font-size: 10rem;
   color: white;
-  text-shadow: 0 0 8px rgba(0,0,0,0.7), 0 0 6px #fff, 0 0 12px #fff6, 0 0 1px #fff;
+  text-shadow: 0 0 8px #fff, 0 0 32px #fff, 0 0 16px #fff, 0 0 2px #fff;
   margin-bottom: 1rem;
   letter-spacing: 0.04em;
+  font-weight: 400;
 }
 
-.lumi-subtitle {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #fff;
-  text-shadow: 0 0 8px #fff, 0 0 2px #fff;
-  margin-bottom: 2rem;
+@font-face {
+  font-family: 'RF Dewi'; 
+  
+  /* CORRECTED FILENAME HERE */
+  src: url('./assets/fonts/rf-dewi/RFDewiExpanded-Regular.ttf') format('truetype');
+
+  font-weight: 400; 
+  font-style: normal;
+}
+
+/* Defines the Bold weight */
+@font-face {
+  font-family: 'RF Dewi';
+  
+  /* CORRECTED FILENAME HERE (assuming your file is named Bol.ttf) */
+  src: url('./assets/fonts/rf-dewi/RFDewi-Ultrabold.ttf') format('truetype'); 
+  
+  font-weight: 700; 
+  font-style: normal;
 }
 
 .lumi-hero-buttons {
   display: flex;
   gap: 1.5rem;
-  margin-top: 1rem;
+  margin-top: 2.5rem;
 }
 
 .lumi-hero-btn {
@@ -136,10 +218,10 @@ html {
   border-radius: 999px;
   padding: 0.5rem 1.5rem;
   font-size: 1.1rem;
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 600;
   transition: background 0.2s, color 0.2s, border 0.2s;
   box-shadow: 0 0 8px #00eaff44;
+  min-width: 160px;
+  text-align: center;
 }
 .lumi-hero-btn:hover {
   background: #00eaff;
@@ -174,24 +256,21 @@ html {
 }
 
 .founder-heading {
-  font-family: 'Orbitron', 'Space Grotesk', sans-serif;
   font-size: 2.5rem;
-  font-weight: 700;
+  
   color: #fff;
   margin-bottom: 1rem;
 }
 
 .founder-heading-main {
-  font-family: 'Orbitron', 'Space Grotesk', sans-serif;
   font-size: 3.5rem;
-  font-weight: 900;
+  
   color: #fff;
   margin-bottom: 3rem;
   letter-spacing: 0.02em;
 }
 
 .solutions-section, .solutions-section p, .solutions-section li {
-  font-family: 'Space Grotesk', 'Orbitron', sans-serif;
   font-size: 1.08rem;
 }
 
@@ -205,10 +284,7 @@ html {
   padding: 4rem 0 2rem 0;
 }
 .solutions-heading {
-  font-family: 'Orbitron', 'Space Grotesk', sans-serif;
   font-size: 3rem;
-  font-weight: 900;
-  color: #fff;
   margin-bottom: 2.5rem;
   letter-spacing: 0.02em;
 }
@@ -235,10 +311,7 @@ html {
   background: #222;
 }
 .solutions-subheading {
-  font-family: 'Orbitron', 'Space Grotesk', sans-serif;
   font-size: 2rem;
-  font-weight: 700;
-  color: #fff;
   margin-bottom: 0.7rem;
 }
 .solutions-back-btn {
@@ -248,8 +321,6 @@ html {
   border-radius: 999px;
   padding: 0.5rem 1.5rem;
   font-size: 1.1rem;
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 600;
   transition: background 0.2s, color 0.2s, border 0.2s;
   box-shadow: 0 0 8px #00eaff44;
   margin-top: 2rem;
@@ -262,9 +333,7 @@ html {
 }
 
 .solutions-main-heading {
-  font-family: 'Space Grotesk', 'Orbitron', sans-serif;
   font-size: 2rem;
-  font-weight: 700;
   color: #b16fc9;
   margin-bottom: 2.5rem;
   letter-spacing: 0.01em;
@@ -280,17 +349,13 @@ html {
   max-width: 1100px;
 }
 .solutions-feature-title {
-  font-family: 'Orbitron', 'Space Grotesk', sans-serif;
   font-size: 2rem;
-  font-weight: 900;
-  color: #fff;
   margin-bottom: 1rem;
   letter-spacing: 0.01em;
 }
 .solutions-feature-label {
-  font-family: 'Space Grotesk', 'Orbitron', sans-serif;
   font-size: 1rem;
-  font-weight: 600;
+  
   color: #fff;
   letter-spacing: 0.05em;
   margin-bottom: 0.5rem;
@@ -318,14 +383,12 @@ html {
   text-align: center;
 }
 .solutions-stat-label {
-  font-family: 'Space Grotesk', 'Orbitron', sans-serif;
   font-size: 1.25rem;
   font-weight: 400;
   color: #fff;
   margin-bottom: 0.5rem;
 }
 .solutions-stat-value {
-  font-family: 'Space Grotesk', 'Orbitron', sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
   color: #b16fc9;
@@ -352,19 +415,24 @@ html {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  font-family: 'Space Grotesk', 'Orbitron', sans-serif;
 }
 .solutions-box-title {
   font-weight: 700;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   color: #fff;
+  text-align: center;
+  width: 100%;
+  display: block;
 }
 .solutions-box-sub {
   font-weight: 700;
   font-size: 1.2rem;
   color: #b16fc9;
   letter-spacing: 0.01em;
+  text-align: center;
+  width: 100%;
+  display: block;
 }
 .solutions-box-desc {
   font-size: 1rem;
@@ -440,7 +508,6 @@ html {
   margin-bottom: 1.2rem;
   color: #fff;
   font-size: 1rem;
-  font-family: 'Space Grotesk', 'Orbitron', sans-serif;
   list-style-type: disc;
   padding-left: 1.2rem;
 }
@@ -454,7 +521,6 @@ html {
   padding: 2rem 0 1.5rem 0;
   border-top: 2px solid #23234a;
   margin-top: 0;
-  font-family: 'Inter', sans-serif;
 }
 
 .footer-content {
@@ -553,7 +619,6 @@ html {
 }
 .phases-title {
   color: #fff;
-  font-family: 'Orbitron', 'Space Grotesk', sans-serif;
   font-weight: 900;
   font-size: 2.5rem;
   letter-spacing: 0.04em;
@@ -591,12 +656,9 @@ html {
   font-weight: 700;
   font-size: 1.4rem;
   margin-bottom: 0.85rem;
-  font-family: 'Orbitron', 'Space Grotesk', sans-serif;
-  
 }
 .phases-content {
   font-size: 1.2rem;
-  font-family: 'Space Grotesk', 'Orbitron', sans-serif;
   line-height: 1.35;
 }
 .phases-content ul {
@@ -619,7 +681,7 @@ html {
 }
 
 .data-section {
-  font-family: 'Inter', sans-serif;
+  
 }
 
 .coming-soon-section {
@@ -634,7 +696,6 @@ html {
 }
 .coming-soon-title {
   color: #fff;
-  font-family: 'Orbitron', 'Space Grotesk', sans-serif;
   font-weight: 900;
   font-size: 2.2rem;
   letter-spacing: 0.04em;
@@ -688,7 +749,6 @@ html {
   text-align: center;
 }
 .coming-soon-item-title {
-  font-family: 'Orbitron', 'Space Grotesk', sans-serif;
   font-weight: 700;
   font-size: 1.55rem;
   margin-bottom: 0.7rem;
@@ -697,7 +757,6 @@ html {
   width: 100%;
 }
 .coming-soon-item-desc {
-  font-family: 'Inter', 'Space Grotesk', sans-serif;
   font-size: 1.13rem;
   color: #eaeaea;
   line-height: 1.5;
@@ -722,10 +781,13 @@ html {
     gap: 1rem !important;
     width: 100%;
     text-align: center !important;
+    
   }
   .lumi-heading {
     font-size: 2.1rem !important;
     margin-bottom: 0.5rem !important;
+    font-family: 'RF Dewi-Ultrabold' !important;
+    font-weight: 900 !important;
   }
   .lumi-subtitle {
     font-size: 1rem !important;
@@ -749,8 +811,130 @@ html {
 }
 
 @media (max-width: 700px) {
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw !important;
+    overflow-x: hidden !important;
+  }
   .hero-section {
-    padding: 0.5rem 1rem 0.5rem 1rem;
+    position: relative;
+    min-height: 100vh;
+  }
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 70vh;
+    position: relative;
+  }
+  .lumi-avatar-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+  }
+  .lumi-fullbody-img {
+    width: 320px;
+    max-width: 98vw !important;
+    min-width: 100px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    display: block;
+    float: none;
+    height: auto !important;
+    object-fit: contain !important;
+    position: static !important;
+  }
+  .lumi-hero-text {
+    align-items: center;
+    width: 100%;
+    gap: 0.5rem;
+    min-width: 0;
+    position: static;
+    text-align: center;
+  }
+  .lumi-heading {
+    font-size: 3.2rem !important;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-family: 'Michroma', sans-serif !important;
+    font-weight: 500 !important;
+  }
+  .lumi-hero-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    align-items: center;
+  }
+  .lumi-subtitle {
+    position: absolute;
+    left: 0;
+    bottom: 2.5rem;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 0;
+    z-index: 2;
+  }
+  .data-section {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+  .data-content {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    border: none !important;
+    overflow-x: hidden !important;
+    padding-left: 1.2rem !important;
+    padding-right: 1.2rem !important;
+    background: linear-gradient(135deg, #23234a 60%, #3a5e7d 120%) !important;
+    box-sizing: border-box !important;
+    margin-top: 3rem !important;
+  }
+  .data-content > * {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .mobile-data-content {
+    gap: 0 !important;
+    padding-left: 1.2rem !important;
+    padding-right: 1.2rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .mobile-data-child {
+    min-width: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    align-items: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .lumi-token-section p,
+  .lumi-token-section span,
+  .solutions-section p,
+  .solutions-section span {
+    word-break: break-word !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    hyphens: auto !important;
   }
 }
 
@@ -826,4 +1010,26 @@ html {
   display: inline-block;
   vertical-align: middle;
   margin-right: 0.5rem;
+}
+
+/* Utility class for Inter subtext */
+.inter-subtext {
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Apply Inter to subtext in solutions and token sections */
+.solutions-section,
+.solutions-section p,
+.solutions-section li,
+.solutions-feature-text,
+.solutions-box-desc,
+.lumi-token-section,
+.lumi-token-section p,
+.lumi-token-section li,
+.lumi-token-section span {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
 }

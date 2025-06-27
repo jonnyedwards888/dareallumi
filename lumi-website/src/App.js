@@ -4,7 +4,7 @@ import './LotsGoingOn.css';
 function LotsGoingOnSection() {
   return (
     <section className="lots-going-on-section w-full flex flex-col items-center justify-center py-16" style={{ background: 'none' }}>
-      <h2 className="text-white text-center mb-10" style={{ fontFamily: 'Orbitron, Space Grotesk, sans-serif', fontWeight: 900, fontSize: '2.5rem', letterSpacing: '0.04em' }}>THER'S LOTS GOING ON</h2>
+      <h2 className="text-white text-center mb-10" >THERE'S LOTS GOING ON</h2>
       <div className="lots-going-on-content rounded-[48px] border border-[#b16fc9] p-10 md:p-16">
         {/* Top Left: LUMI REWARDS - Responsive structure */}
         <div className="lumi-rewards-item">
@@ -21,7 +21,7 @@ function LotsGoingOnSection() {
         <div className="flex flex-row items-center gap-8">
           <img src={process.env.PUBLIC_URL + '/Lumi-nft-collection.png'} alt="Lumi NFT Collection" className="w-40 h-28 rounded shadow-xl" />
           <div>
-            <h3 className="text-white mb-2" style={{ fontFamily: 'Space Grotesk, Orbitron, sans-serif', fontWeight: 700, fontSize: '2rem', letterSpacing: '0.01em', textAlign: 'left' }}>LUMI'S NFT COLLECTION</h3>
+            <h3 className="text-white mb-2" style={{  fontWeight: 700, fontSize: '2rem', letterSpacing: '0.01em', textAlign: 'left' }}>LUMI'S NFT COLLECTION</h3>
             <p className="text-white" style={{ fontSize: '1.1rem', maxWidth: '420px', textAlign: 'left' }}>Lumi's friends from Babazadeh, will bring multiple utility, be tradeable, provide identity verification and establish online trust. The first collection will be minted free for LUMI hodlers.</p>
           </div>
         </div>
@@ -29,7 +29,7 @@ function LotsGoingOnSection() {
         <div className="flex flex-row items-center gap-8">
           <img src={process.env.PUBLIC_URL + '/remelife-icon.png'} alt="ReMeLife" className="w-40 h-40 rounded-full shadow-xl" />
           <div>
-            <h3 className="text-white mb-2" style={{ fontFamily: 'Space Grotesk, Orbitron, sans-serif', fontWeight: 700, fontSize: '2rem', letterSpacing: '0.01em', textAlign: 'left' }}>REMELIFE</h3>
+            <h3 className="text-white mb-2" style={{  fontWeight: 700, fontSize: '2rem', letterSpacing: '0.01em', textAlign: 'left' }}>REMELIFE</h3>
             <p className="text-white" style={{ fontSize: '1.1rem', maxWidth: '370px', textAlign: 'left' }}>Sign up, get your wallet and start collecting REME tokens. Build your community, earn referral REMEs and support those engaged in care by bringing crypto to those that need it most.</p>
           </div>
         </div>
@@ -37,7 +37,7 @@ function LotsGoingOnSection() {
         <div className="flex flex-row items-center gap-8">
           <img src={process.env.PUBLIC_URL + '/lumi-vip-club.png'} alt="Lumi VIP Club" className="w-40 h-40 rounded-full shadow-xl" />
           <div>
-            <h3 className="text-white mb-2" style={{ fontFamily: 'Space Grotesk, Orbitron, sans-serif', fontWeight: 700, fontSize: '2rem', letterSpacing: '0.01em', textAlign: 'left' }}>LUMI VIP CLUB</h3>
+            <h3 className="text-white mb-2" style={{  fontWeight: 700, fontSize: '2rem', letterSpacing: '0.01em', textAlign: 'left' }}>LUMI VIP CLUB</h3>
             <p className="text-white" style={{ fontSize: '1.1rem', maxWidth: '420px', textAlign: 'left' }}>LUMI token holders get VIP Club Membership and privileged access to many benefits, from airdrops to pre-launch discounts, merch to special events.</p>
           </div>
         </div>
