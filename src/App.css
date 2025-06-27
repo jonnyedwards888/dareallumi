@@ -998,6 +998,10 @@ html {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+  .data-content > div:nth-child(2) {
+    text-align: center !important;
+    align-items: center !important;
+  }
 }
 
 .about-section {
