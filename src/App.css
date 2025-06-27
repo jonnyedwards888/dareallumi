@@ -180,7 +180,7 @@ html {
 }
 
 .lumi-heading {
-  font-family: 'Michroma', sans-serif;
+  font-family: 'Michroma', sans-serif !important;
   font-size: 10rem;
   color: white;
   text-shadow: 0 0 8px #fff, 0 0 32px #fff, 0 0 16px #fff, 0 0 2px #fff;
@@ -781,7 +781,7 @@ html {
   .lumi-heading {
     font-size: 2.1rem !important;
     margin-bottom: 0.5rem !important;
-    
+    font-family: 'Michroma', sans-serif !important;
     font-weight: 900 !important;
   }
   .lumi-subtitle {
@@ -842,7 +842,7 @@ html {
   .lumi-heading {
     font-size: 2.1rem !important;
     margin-bottom: 0.5rem !important;
-    font-family: 'RF Dewi-Ultrabold', sans-serif !important;
+    font-family: 'Michroma', sans-serif !important;
     font-weight: 900 !important;
     text-align: center !important;
   }
