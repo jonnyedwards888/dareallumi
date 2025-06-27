@@ -32,7 +32,7 @@ function Navbar() {
   }, []);
 
   return (
-    <div>
+    <div style={{ fontFamily: 'Michroma, sans-serif' }}>
       <div className="hero-topbar">
         <Link to="/" className="hero-button">
           <img src={process.env.PUBLIC_URL + "/Lumi-main-logo.png"} alt="LUMI Icon" className="lumi-navbar-icon" />
