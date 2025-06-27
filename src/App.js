@@ -235,7 +235,7 @@ function ComingSoonSection() {
 
 function FounderSection() {
   return (
-    <div className="founder-section w-full flex flex-col items-center justify-center bg-[#18153a] py-16 px-4">
+    <div className="founder-section w-full flex flex-col items-center justify-center bg-[#18153a] py-16">
       <h2 className="founder-heading" style={{ fontFamily: 'Orbitron, sans-serif', fontWeight: 900, fontSize: '2.5rem', letterSpacing: '0.01em', textAlign: 'center', color: '#fff', marginBottom: '2.5rem' }}>
         A few words from the Founder...
       </h2>
@@ -274,10 +274,11 @@ function DataSection() {
           fontFamily: 'Inter, sans-serif',
           ...(isMobile ? {
             background: 'red',
-            paddingLeft: '1.2rem',
-            paddingRight: '1.2rem',
             border: 'none',
-            borderRadius: 0
+            borderRadius: 0,
+            width: '100%',
+            boxSizing: 'border-box',
+            margin: 0
           } : {}),
           ...(!isMobile ? {
             maxWidth: '1200px',
@@ -289,19 +290,19 @@ function DataSection() {
         }}
       >
         {/* Left Side */}
-        <div className="flex flex-col items-center md:items-start gap-6 mobile-data-child" style={{ flex: 1, marginLeft: '40px' }}>
+        <div className="flex flex-col items-center md:items-start gap-6 mobile-data-child" style={isMobile ? { flex: 1, width: '100%', boxSizing: 'border-box', margin: 0 } : { flex: 1, marginLeft: '40px' }}>
           <img src={process.env.PUBLIC_URL + "/lumiai-project-analysis.jpg"} alt="LUMI AI Project Analysis" className="w-48 h-48 object-cover rounded-lg mb-2" />
           <a href="#" className="bg-white text-black flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-lg shadow hover:bg-gray-200 transition"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" className="w-6 h-6" /> GitHub</a>
         </div>
         {/* Middle Links */}
-        <div className="flex-1 flex flex-col gap-4 text-white text-lg mobile-data-child" style={{ flex: 1, marginLeft: '-30px' }}>
+        <div className="flex-1 flex flex-col gap-4 text-white text-lg mobile-data-child" style={isMobile ? { flex: 1, width: '100%', boxSizing: 'border-box', margin: 0 } : { flex: 1, marginLeft: '-30px' }}>
           <div><span className="text-[#b16fc9] font-bold">LUMI's</span> <a href={process.env.PUBLIC_URL + "/Lumi-Lite-Paper.pdf"} className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">LITE PAPER</a></div>
           <div><span className="text-[#b16fc9] font-bold">LUMI's</span> <a href={process.env.PUBLIC_URL + "/Lumi-Ai-Report.pdf"} className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">AI REPORT</a></div>
           <div><span className="text-[#b16fc9] font-bold">ReMeLife</span> <a href={process.env.PUBLIC_URL + "/RemeLife-White-Paper.pdf"} className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">WHITE PAPER</a></div>
           <div className="mt-6"><span className="text-white">Visit</span> <a href="https://github.com/ReMe-life" className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">GITHUB</a></div>
         </div>
         {/* Right Side */}
-        <div className="flex flex-col gap-8 mobile-data-child justify-center items-center md:items-center" style={{ flex: 1, alignItems: 'center', justifyContent: 'center', marginLeft: '-60px', height: '100%', justifyItems: 'center' }}>
+        <div className="flex flex-col gap-8 mobile-data-child justify-center items-center md:items-center" style={isMobile ? { flex: 1, width: '100%', boxSizing: 'border-box', margin: 0, alignItems: 'center', justifyContent: 'center', height: '100%' } : { flex: 1, alignItems: 'center', justifyContent: 'center', marginLeft: '-60px', height: '100%', justifyItems: 'center' }}>
           <div className="flex flex-col gap-8 justify-center items-center" style={{ height: '100%', justifyContent: 'center' }}>
             <div className="flex flex-row items-center gap-4 justify-center" style={{ height: '100%', justifyContent: 'center' }}>
               <img src={process.env.PUBLIC_URL + "/remelife-icon.png"} alt="ReMeLife" className="w-20 h-20 rounded-full" />
@@ -1081,7 +1082,7 @@ function App() {
             <>
               <HeroSection />
               <LumiTokenSection />
-              <div style={{ background: '#120f2c', width: '100vw' }}>
+              <div className="main-bg-100vw" style={{ background: '#120f2c' }}>
                 <FounderSection />
                 <DataSection />
                 <PhasesSection />
