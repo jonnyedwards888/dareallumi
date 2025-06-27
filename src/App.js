@@ -86,7 +86,7 @@ function HeroSection() {
 function LumiTokenSection() {
   return (
     <section className="lumi-token-section" style={{ background: '#18153a', width: '100vw', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '4rem 0 2rem 0' }}>
-      <h2 className="lumi-token-heading" style={{ fontFamily: 'Orbitron, sans-serif', fontWeight: 900, fontSize: '2.5rem', color: '#fff', marginBottom: '2.5rem', letterSpacing: '0.01em', textAlign: 'center' }}>What is the $LUMI token?</h2>
+      <h2 className="lumi-token-heading" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.5rem', color: '#fff', marginBottom: '2.5rem', letterSpacing: '0.01em', textAlign: 'center' }}>What is the $LUMI token?</h2>
       <div className="max-w-3xl w-full px-4" style={{ color: '#fff', fontSize: '1.2rem' }}>
         <div style={{ marginBottom: '1.2rem' }}>
           <img src={process.env.PUBLIC_URL + '/ReMeLife-top-icon.png'} alt="ReMeLife" style={{ display: 'inline', width: '5.2em', height: 'auto', verticalAlign: 'middle', marginRight: '0.4em' }} />
@@ -118,20 +118,42 @@ function LumiTokenSection() {
         />
       </div>
 
-      <div>
-        <p className="practice-text">practice text</p>
-      </div>
+      
     </section>
   );
 }
 
+
+
 function PhasesSection() {
   return (
     <section className="phases-section">
-      <h2 className="phases-title">PHASES</h2>
+      <h2 className="phases-title" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.5rem', letterSpacing: '0.04em', color: '#fff', textAlign: 'center' }}>PHASES</h2>
       <div className="phases-grid">
-        <div className="phases-card">
-          <div className="phases-heading" style={{ textAlign: 'center' }}>PHASE 1 2024/5</div>
+        {/* PHASE 1 */}
+        <div className="phases-card" style={{
+          background: 'linear-gradient(180deg, #3a2352 0%, #23234a 100%)',
+          borderRadius: '1.5rem',
+          border: '2px solid rgba(177, 111, 201, 0.15)', // subtle purple
+          boxShadow: '0 0 20px 4px rgba(177, 111, 201, 0.13), 0 4px 16px #0008 inset',
+          padding: '2rem 1.5rem',
+          margin: '0.5rem',
+          minHeight: '320px',
+          display: 'flex', flexDirection: 'column',
+          justifyContent: 'flex-start',
+          alignItems: 'stretch',
+          position: 'relative',
+          overflow: 'hidden',
+        }}>
+          <div className="phases-heading" style={{
+            textAlign: 'center',
+            fontFamily: 'Michroma, sans-serif',
+            fontWeight: 500,
+            fontSize: '1.05rem',
+            color: '#c7b3e6',
+            marginBottom: '1rem',
+            letterSpacing: '0.03em',
+          }}>PHASE 1 2024/5</div>
           <div className="phases-content">
             <ul>
               <li>Complete RemindMecare</li>
@@ -142,8 +164,30 @@ function PhasesSection() {
             </ul>
           </div>
         </div>
-        <div className="phases-card">
-          <div className="phases-heading" style={{ textAlign: 'center' }}>PHASE 2 2025</div>
+        {/* PHASE 2 */}
+        <div className="phases-card" style={{
+          background: 'linear-gradient(180deg, #2d355c 0%, #23234a 100%)',
+          borderRadius: '1.5rem',
+          border: '2px solid rgba(63, 142, 252, 0.13)', // subtle blue
+          boxShadow: '0 0 20px 4px rgba(63, 142, 252, 0.11), 0 4px 16px #0008 inset',
+          padding: '2rem 1.5rem',
+          margin: '0.5rem',
+          minHeight: '320px',
+          display: 'flex', flexDirection: 'column',
+          justifyContent: 'flex-start',
+          alignItems: 'stretch',
+          position: 'relative',
+          overflow: 'hidden',
+        }}>
+          <div className="phases-heading" style={{
+            textAlign: 'center',
+            fontFamily: 'Michroma, sans-serif',
+            fontWeight: 500,
+            fontSize: '1.05rem',
+            color: '#b3d1fa',
+            marginBottom: '1rem',
+            letterSpacing: '0.03em',
+          }}>PHASE 2 2025</div>
           <div className="phases-content">
             <ul>
               <li>Complete project audits</li>
@@ -154,8 +198,30 @@ function PhasesSection() {
             </ul>
           </div>
         </div>
-        <div className="phases-card">
-          <div className="phases-heading" style={{ textAlign: 'center' }}>PHASE 3 2025/6</div>
+        {/* PHASE 3 */}
+        <div className="phases-card" style={{
+          background: 'linear-gradient(180deg, #233a52 0%, #23234a 100%)',
+          borderRadius: '1.5rem',
+          border: '2px solid rgba(45, 212, 191, 0.12)', // subtle indigo/teal
+          boxShadow: '0 0 20px 4px rgba(45, 212, 191, 0.10), 0 4px 16px #0008 inset',
+          padding: '2rem 1.5rem',
+          margin: '0.5rem',
+          minHeight: '320px',
+          display: 'flex', flexDirection: 'column',
+          justifyContent: 'flex-start',
+          alignItems: 'stretch',
+          position: 'relative',
+          overflow: 'hidden',
+        }}>
+          <div className="phases-heading" style={{
+            textAlign: 'center',
+            fontFamily: 'Michroma, sans-serif',
+            fontWeight: 500,
+            fontSize: '1.05rem',
+            color: '#b3fff6',
+            marginBottom: '1rem',
+            letterSpacing: '0.03em',
+          }}>PHASE 3 2025/6</div>
           <div className="phases-content">
             <ul>
               <li>Build ReMeLife Foundation</li>
@@ -166,8 +232,30 @@ function PhasesSection() {
             </ul>
           </div>
         </div>
-        <div className="phases-card">
-          <div className="phases-heading" style={{ textAlign: 'center' }}>PHASE 4 2025/6</div>
+        {/* PHASE 4 */}
+        <div className="phases-card" style={{
+          background: 'linear-gradient(180deg, #232a4a 0%, #23234a 100%)',
+          borderRadius: '1.5rem',
+          border: '2px solid rgba(80, 90, 200, 0.13)', // subtle indigo
+          boxShadow: '0 0 20px 4px rgba(80, 90, 200, 0.13), 0 4px 16px #0008 inset',
+          padding: '2rem 1.5rem',
+          margin: '0.5rem',
+          minHeight: '320px',
+          display: 'flex', flexDirection: 'column',
+          justifyContent: 'flex-start',
+          alignItems: 'stretch',
+          position: 'relative',
+          overflow: 'hidden',
+        }}>
+          <div className="phases-heading" style={{
+            textAlign: 'center',
+            fontFamily: 'Michroma, sans-serif',
+            fontWeight: 500,
+            fontSize: '1.05rem',
+            color: '#7e8ee6',
+            marginBottom: '1rem',
+            letterSpacing: '0.03em',
+          }}>PHASE 4 2025/6</div>
           <div className="phases-content">
             <ul>
               <li>Complete AI integrations</li>
@@ -186,14 +274,14 @@ function PhasesSection() {
 function ComingSoonSection() {
   return (
     <section className="coming-soon-section">
-      <h2 className="coming-soon-title">COMING SOON ...</h2>
+      <h2 className="coming-soon-title" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.2rem', letterSpacing: '0.04em', color: '#fff', textAlign: 'center' }}>COMING SOON ...</h2>
       <div className="coming-soon-grid">
         {/* Top Left: LUMI REWARDS */}
         <div className="coming-soon-item coming-soon-row">
           <img src={process.env.PUBLIC_URL + '/Lumi-rewards.png'} alt="LUMI REWARDS" className="coming-soon-img" />
           <div className="coming-soon-text">
-            <div className="coming-soon-item-title">LUMI REWARDS</div>
-            <div className="coming-soon-item-desc">
+            <div className="coming-soon-item-title" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 700, fontSize: '1.55rem', color: '#fff', textAlign: 'center', width: '100%' }}>LUMI REWARDS</div>
+            <div className="coming-soon-item-desc" style={{ fontFamily: 'Inter, sans-serif' }}>
               We'll be launching meme games, rewards for hodling, lots of content and ways for those who want to get involved to become part of the community, on a rewarded basis
             </div>
           </div>
@@ -202,8 +290,8 @@ function ComingSoonSection() {
         <div className="coming-soon-item coming-soon-row">
           <img src={process.env.PUBLIC_URL + '/lumi-vip-club.png'} alt="LUMI VIP CLUB" className="coming-soon-img" />
           <div className="coming-soon-text">
-            <div className="coming-soon-item-title">LUMI VIP CLUB</div>
-            <div className="coming-soon-item-desc">
+            <div className="coming-soon-item-title" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 700, fontSize: '1.55rem', color: '#fff', textAlign: 'center', width: '100%' }}>LUMI VIP CLUB</div>
+            <div className="coming-soon-item-desc" style={{ fontFamily: 'Inter, sans-serif' }}>
               LUMI token holders get VIP Club Membership and privileged access to many benefits, from airdrops to pre-launch discounts, merch to special events.
             </div>
           </div>
@@ -212,8 +300,8 @@ function ComingSoonSection() {
         <div className="coming-soon-item coming-soon-row">
           <img src={process.env.PUBLIC_URL + '/Lumi-nft-collection.png'} alt="LUMI'S NFT COLLECTION" className="coming-soon-img" />
           <div className="coming-soon-text">
-            <div className="coming-soon-item-title">LUMI'S NFT COLLECTION</div>
-            <div className="coming-soon-item-desc">
+            <div className="coming-soon-item-title" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 700, fontSize: '1.55rem', color: '#fff', textAlign: 'center', width: '100%' }}>LUMI'S NFT COLLECTION</div>
+            <div className="coming-soon-item-desc" style={{ fontFamily: 'Inter, sans-serif' }}>
               Yes we love NFT's. Lumi's friends will bring multiple utility, be tradeable, provide identity verification and establish online trust. The first collection will be minted free for LUMI hodlers.
             </div>
           </div>
@@ -222,38 +310,14 @@ function ComingSoonSection() {
         <div className="coming-soon-item coming-soon-row">
           <img src={process.env.PUBLIC_URL + '/remelife-icon.png'} alt="REMELIFE" className="coming-soon-img" />
           <div className="coming-soon-text">
-            <div className="coming-soon-item-title">REMELIFE</div>
-            <div className="coming-soon-item-desc">
+            <div className="coming-soon-item-title" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 700, fontSize: '1.55rem', color: '#fff', textAlign: 'center', width: '100%' }}>REMELIFE</div>
+            <div className="coming-soon-item-desc" style={{ fontFamily: 'Inter, sans-serif' }}>
               Sign up, get your wallet and start collecting REME tokens. Build your community, earn referral REMEs and support those engaged in care by bringing crypto to those that need it most.
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function FounderSection() {
-  return (
-    <div className="founder-section w-full flex flex-col items-center justify-center bg-[#18153a] py-16">
-      <h2 className="founder-heading" style={{ fontFamily: 'Orbitron, sans-serif', fontWeight: 900, fontSize: '2.5rem', letterSpacing: '0.01em', textAlign: 'center', color: '#fff', marginBottom: '2.5rem' }}>
-        A few words from the Founder...
-      </h2>
-      <div className="founder-content flex flex-col md:flex-row items-center max-w-4xl w-full gap-8">
-        <video
-          className="founder-video w-full max-w-md rounded-lg shadow-lg"
-          controls
-        >
-          <source src={process.env.PUBLIC_URL + "/Lumi-founder-video.mp4"} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div className="founder-text flex-1 text-white" style={{ fontSize: '1.2rem' }}>
-          <p className="mt-4" style={{ fontFamily: 'Inter, sans-serif' }}>
-            Do you have a family member with dementia, living alone, with autism or learning difficulties? 62% of the world does, so you probably do. I did. And that's how I came from the music business into the world of care. It's been a long journey, from building my first app 11 years ago, to crypto, memes and to now, the launch of Lumi.
-          </p>
-        </div>
-      </div>
-    </div>
   );
 }
 
@@ -267,9 +331,9 @@ function DataSection() {
   }, []);
   return (
     <div className="data-section w-full flex flex-col justify-center items-center py-16">
-      <h2 className="data-heading mb-8 text-white text-center" style={{ fontWeight: 900, fontSize: '2.5rem', letterSpacing: '0.04em' }}>DATA</h2>
+      <h2 className="data-heading mb-8 text-white text-center" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.5rem', letterSpacing: '0.04em' }}>DATA</h2>
       <div
-        className="data-content flex flex-col md:flex-row items-center rounded-[48px] border border-[#b16fc9] gap-6 md:gap-10 mobile-data-content"
+        className={isMobile ? "data-content flex flex-col items-center rounded-[48px] border border-[#b16fc9] gap-6 mobile-data-content" : "data-content flex flex-col md:flex-row items-center rounded-[48px] border border-[#b16fc9] gap-6 md:gap-10 mobile-data-content"}
         style={{
           fontFamily: 'Inter, sans-serif',
           ...(isMobile ? {
@@ -325,7 +389,7 @@ function DataSection() {
 
 function FooterSection() {
   return (
-    <footer className="footer-section w-full">
+    <footer className="footer-section w-full" style={{ fontFamily: 'Inter, sans-serif' }}>
       <div className="footer-content">
         {/* Left: Logo, Copyright, Disclaimer */}
         <div className="footer-left">
@@ -372,7 +436,7 @@ function SolutionsPage() {
         {/* What's Remelife Section */}
         <div className="solutions-feature-row flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16">
           <div className="flex-1 solutions-feature-text">
-            <h3 className="solutions-feature-title" style={{ fontWeight: 900, fontSize: '2rem', marginBottom: '1rem' }}>
+            <h3 className="solutions-feature-title" style={{ fontFamily: 'Michroma, sans-serif' }}>
               WHAT'S REMELIFE?
             </h3>
             <p className="mb-4">
@@ -466,7 +530,7 @@ function SolutionsPage() {
         {/* What's RemindMecare Section */}
         <div className="solutions-feature-row ">
           <div className="flex-1 solutions-feature-text">
-            <h3 className="solutions-feature-title" style={{ fontWeight: 900, fontSize: '2rem', marginBottom: '1rem' }}>
+            <h3 className="solutions-feature-title" style={{ fontFamily: 'Michroma, sans-serif' }}>
               WHAT'S REMINDMECARE?
             </h3>
             <p className="mb-4">
@@ -494,7 +558,7 @@ function SolutionsPage() {
         {/* AI Implementation Section */}
         <div className="solutions-feature-row ai-implementation-section flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16">
           <div className="flex-1 solutions-feature-text">
-            <h3 className="solutions-feature-title" style={{ fontWeight: 900, fontSize: '2rem', marginBottom: '1rem' }}>
+            <h3 className="solutions-feature-title" style={{ fontFamily: 'Michroma, sans-serif' }}>
               AI IMPLEMENTATION
             </h3>
             <p className="mb-4">
@@ -591,7 +655,7 @@ function NewsCardsSection() {
             ) : (
               <img src={process.env.PUBLIC_URL + '/' + card.img} alt={card.title} style={{ width: '100%', height: '110px', objectFit: 'cover' }} />
             )}
-            <div className="flex-1 flex flex-col justify-between p-4">
+            <div className="flex-1 flex flex-col justify-between p-4" style={{ fontFamily: 'Inter, sans-serif' }}>
               <div className="text-white font-semibold mb-2">{card.title}</div>
               <Link to={`/news/${card.id}`} className="text-sky-300 font-semibold text-sm hover:underline mt-auto">READ MORE »</Link>
             </div>
@@ -671,32 +735,32 @@ function AboutPage() {
     <>
       <Navbar />
       <div className="about-section min-h-screen flex flex-col items-center justify-start bg-[#18153a] text-white py-16 px-4">
-        <h2 className="text-4xl font-bold mb-8 text-center" style={{ fontSize: '2.5rem', letterSpacing: '0.04em' }}>THE TEAM & COMMUNITY</h2>
+        <h2 className="text-4xl font-bold mb-8 text-center" style={{ fontFamily: 'Michroma, sans-serif', fontSize: '2.5rem', letterSpacing: '0.04em' }}>THE TEAM & COMMUNITY</h2>
         <div className="max-w-2xl w-full mx-auto flex flex-col items-center">
-          <p className="mb-4 text-lg text-center">
+          <p className="mb-4 text-lg text-center" style={{ fontFamily: 'Inter, sans-serif' }}>
             As the founder of ReMeLife, I'm privileged and fortunate to work with a core team of creative long-term diehards, a community of talented individuals that have been focused on bringing Lumi and ReMeLife to its launchpad.
           </p>
-          <p className="mb-6 text-lg text-center">
+          <p className="mb-6 text-lg text-center" style={{ fontFamily: 'Inter, sans-serif' }}>
             Working from locations globally, predominantly rewarded in vested tokens, and with a social impact soul, the team and an associated Advisory Board, are committed to complete the build of this self-supporting AI and rewards-based community.<br /><br />
             Unfunded by traditional formal investment and ultimately being DAO managed, Lumi and ReMeLife are being built 'for the people, by the people'. And, after many years, Lumi is now on the launchpad and ReMeLife is close behind".
           </p>
           <img src={process.env.PUBLIC_URL + '/about-page-images/simon-hooper-about-page.jpg'} alt="Simon Hooper About" className="my-8 rounded-lg shadow-lg mx-auto" style={{ maxWidth: '600px', width: '100%' }} />
-          <p className="mt-2 text-lg text-center">
+          <p className="mt-2 text-lg text-center" style={{ fontFamily: 'Inter, sans-serif' }}>
             "I conceived ReMeLife as a response to my own family experiences, of my time spent developing apps in the care sector, and of the obvious potential of AI, blockchain and crypto to be able to support the financial needs of those that are simply not benefitting from the fiat value inherent in their own digital daily care. Lumi is the all critical element that is integrating the power of AI into the ecosystem, and that will manage scale and data, and drive consumer engagement through his meme character.
           </p>
-          <p className="mt-8 text-lg text-center">
+          <p className="mt-8 text-lg text-center" style={{ fontFamily: 'Inter, sans-serif' }}>
             As a decentralised, tech-based community ecosystem, Lumi assists combat today's unfair harvesting of our daily care actions. As the rich get richer and the rest of us lose our rights and opportunities, Lumi is very much needed, as we enter a new era. We hope you will join us in this mission".
           </p>
           <img src={process.env.PUBLIC_URL + '/about-page-images/pepe-banner.jpg'} alt="Pepe Banner" className="my-10 rounded-lg shadow-lg mx-auto" style={{ maxWidth: '800px', width: '100%' }} />
-          <p className="mt-2 text-lg text-center">
+          <p className="mt-2 text-lg text-center" style={{ fontFamily: 'Inter, sans-serif' }}>
             We love design, creativity, social interactivity, and bringing financial opportunity to our community. So naturally, we've been in crypto for years. And of course we <span style={{ fontStyle: 'italic' }}>LOVE</span> memes. That's why Lumi chose us, he says, as his platform to change the world!
           </p>
         </div>
 
         {/* PARTNERS & ASSOCIATES SECTION */}
         <div className="w-full flex flex-col items-center mt-24">
-          <h2 className="text-white text-center mb-6" style={{ fontWeight: 900, fontSize: '2.2rem', letterSpacing: '0.04em' }}>PARTNERS & ASSOCIATES</h2>
-          <p className="text-lg text-center mb-10 max-w-3xl">
+          <h2 className="text-white text-center mb-6" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.2rem', letterSpacing: '0.04em' }}>PARTNERS & ASSOCIATES</h2>
+          <p className="text-lg text-center mb-10 max-w-3xl" style={{ fontFamily: 'Inter, sans-serif' }}>
             Over the years of the development of ReMeLife and more recently with Lumi, we have worked with many illustrious partners, advisory board members and consultants. Here's a few of them.
           </p>
           <div className="flex flex-row items-center justify-center w-full mb-16" style={{ maxWidth: '1100px' }}>
@@ -717,8 +781,8 @@ function AboutPage() {
 
         {/* NEWS & UPDATES SECTION */}
         <div className="w-full flex flex-col items-center mt-12">
-          <h2 className="text-white text-center mb-6" style={{ fontWeight: 900, fontSize: '2.2rem', letterSpacing: '0.04em' }}>NEWS & UPDATES</h2>
-          <div className="max-w-2xl text-lg text-center">
+          <h2 className="text-white text-center mb-6" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.2rem', letterSpacing: '0.04em' }}>NEWS & UPDATES</h2>
+          <div className="max-w-2xl text-lg text-center" style={{ fontFamily: 'Inter, sans-serif' }}>
             <p className="mb-4">Lumi, ReMeLife and RemindMecare have been a long time in the making. Here are some highlights  and those we've worked with in previous years.</p>
             <p>We will keep you updated here with our progress and on key industry developments.</p>
           </div>
@@ -1082,13 +1146,10 @@ function App() {
             <>
               <HeroSection />
               <LumiTokenSection />
-              <div className="main-bg-100vw" style={{ background: '#120f2c' }}>
-                <FounderSection />
-                <DataSection />
-                <PhasesSection />
-                <ComingSoonSection />
-                <FooterSection />
-              </div>
+              <DataSection />
+              <PhasesSection />
+              <ComingSoonSection />
+              <FooterSection />
             </>
           } />
           <Route path="/solutions" element={<SolutionsPage />} />

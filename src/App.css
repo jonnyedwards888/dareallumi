@@ -742,7 +742,7 @@ html {
   .lumi-heading {
     font-size: 2.1rem !important;
     margin-bottom: 0.5rem !important;
-    font-family: 'RF Dewi-Ultrabold' !important;
+    
     font-weight: 900 !important;
   }
   .lumi-subtitle {
@@ -767,25 +767,15 @@ html {
 }
 
 @media (max-width: 700px) {
-  html, body, #root, .main-bg-100vw, .founder-section, .data-section, .phases-section, .coming-soon-section, .footer-section {
+  html, body, #root, .main-bg-100vw, .data-section, .phases-section, .coming-soon-section, .footer-section {
     overflow-x: hidden !important;
   }
-  .main-bg-100vw {
-    border: none !important;
-    box-shadow: none !important;
-    background: #18153a !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  .founder-section, .founder-content, .data-section, .data-content {
+ 
+  .data-section, .data-content {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
-    border-radius: 0 !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding: 0 0.5rem !important;
     box-sizing: border-box !important;
   }
   .hero-section, .hero-topbar, .hero-content, .lumi-hero-text, .lumi-heading, .lumi-hero-buttons, .lumi-hero-btn, .lumi-subtitle, .practice-text {
@@ -800,6 +790,7 @@ html {
     overflow-wrap: break-word !important;
     white-space: normal !important;
     hyphens: auto !important;
+    max-width: 100% !important;
   }
   .hero-topbar {
     left: 0 !important;
@@ -934,7 +925,7 @@ html {
   }
   .data-content {
     width: 100% !important;
-    max-width: 100vw !important;
+    max-width: 100% !important;
     margin: 0 !important;
     padding: 0 0.5rem !important;
     box-sizing: border-box !important;
@@ -943,20 +934,28 @@ html {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
-  .founder-section {
-    display: block !important;
-    margin: 0 !important;
+ 
+  .data-section {
     width: 100% !important;
-    background: red !important;
+    
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
-  .founder-content {
+  .data-content {
     width: 100% !important;
-    max-width: none !important;
-    flex: none !important;
-    display: block !important;
+    max-width: 100% !important;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 0 0.5rem !important;
     box-sizing: border-box !important;
+  }
+  .data-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 
@@ -1065,20 +1064,18 @@ html {
 }
 
 @media (max-width: 700px) {
-  html, body, #root, .main-bg-100vw, .founder-section, .data-section, .phases-section, .coming-soon-section, .footer-section {
+  html, body, #root, .main-bg-100vw, .data-section, .phases-section, .coming-soon-section, .footer-section {
     overflow-x: hidden !important;
   }
   .main-bg-100vw {
     border: none !important;
     box-shadow: none !important;
-    background: #18153a !important;
+    background: green !important;
     margin: 0 !important;
     padding: 0 !important;
   }
-  .founder-section {
-    display: block !important;
-  }
-  .founder-content {
+ 
+  .data-content {
     width: 100% !important;
     max-width: none !important;
     flex: none !important;
