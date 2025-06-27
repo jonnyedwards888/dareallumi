@@ -31,14 +31,13 @@
   }
   .lumi-fullbody-img {
     display: block !important;
-    margin: 0 auto 0 !important;
+    margin: 0 auto !important;
     width: 150px !important;
     height: auto !important;
     max-width: 90vw !important;
     min-width: 60px !important;
     object-fit: contain !important;
-    margin-left: 9vw !important;    position: static !important;
-   
+    position: static !important;
   }
 
 
