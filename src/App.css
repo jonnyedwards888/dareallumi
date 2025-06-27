@@ -1124,3 +1124,50 @@ html {
     box-sizing: border-box !important;
   }
 }
+
+@media (max-width: 600px) {
+  /* Remove diagnostic outlines and backgrounds for FAQ's page */
+  html {
+    background: #120f2c !important;
+    outline: none !important;
+  }
+  body {
+    background: #120f2c !important;
+    outline: none !important;
+  }
+  #root {
+    background: none !important;
+    outline: none !important;
+  }
+  .faqs-page-bg {
+    background: #120f2c !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .faqs-page-bg > div {
+    background: none !important;
+    border: none !important;
+  }
+  .faqs-page-bg > div > div {
+    background: none !important;
+  }
+  .footer-section {
+    background: #3a2fa4 !important;
+    border: none !important;
+  }
+  .hero-content {
+    background: none !important;
+  }
+  .lumi-hero-text {
+    background: none !important;
+  }
+  .lumi-avatar-wrapper {
+    background: none !important;
+  }
+  .lumi-fullbody-img {
+    border: none !important;
+    background: none !important;
+  }
+}
+
+

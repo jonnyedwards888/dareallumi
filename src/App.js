@@ -61,7 +61,7 @@ function HeroSection() {
       <Navbar />
       <div className="hero-content">
         <div className="lumi-hero-text">
-          <h1 className="lumi-heading">LUMI</h1>
+          <h1 className="lumi-heading" style={{ fontFamily: 'Michroma, sans-serif' }}>LUMI</h1>
           <div className="lumi-avatar-wrapper">
             <img
               src={process.env.PUBLIC_URL + "/Lumi-head-nobg.png"}
@@ -824,23 +824,23 @@ function FaqsPage() {
     <div className="faqs-page-bg min-h-screen flex flex-col text-white">
       <Navbar />
       <div className="flex-1 flex flex-col items-center justify-start py-16 px-4">
-        <h2 className="text-white text-center mb-2" style={{ fontWeight: 900, fontSize: '2.5rem', letterSpacing: '0.04em' }}>FAQ's</h2>
-        <div className="text-center mb-10 text-gray-200" style={{ fontSize: '1rem' }}>
+        <h2 className="text-white text-center mb-2" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.5rem', letterSpacing: '0.04em' }}>FAQ's</h2>
+        <div className="text-center mb-10 text-gray-200" style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem' }}>
           Frequently asked questions. We will add to these as we get asked for answers on new questions.
         </div>
-        <div className="w-full max-w-2xl mx-auto flex flex-col gap-2">
+        <div className="w-full max-w-2xl mx-auto flex flex-col gap-2" style={{ fontFamily: 'Inter, sans-serif' }}>
           {faqs.map((faq, idx) => (
             <div key={idx} className="bg-transparent border-b border-gray-600">
               <button
                 className="w-full text-left flex justify-between items-center py-6 px-4 focus:outline-none"
-                style={{ color: '#b16fc9', fontWeight: 700, fontSize: '1.1rem' }}
+                style={{ color: '#b16fc9', fontWeight: 700, fontSize: '1.1rem', fontFamily: 'Inter, sans-serif' }}
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
               >
                 <span>{faq.question}</span>
                 <span style={{ color: '#ffe44d', fontWeight: 700, fontSize: '1.5rem', marginLeft: '1rem' }}>{openIndex === idx ? '-' : '+'}</span>
               </button>
               {openIndex === idx && (
-                <div className="px-8 pb-8 text-white text-left" style={{ fontSize: '1.08rem', lineHeight: 1.7 }}>
+                <div className="px-8 pb-8 text-white text-left" style={{ fontFamily: 'Inter, sans-serif', fontSize: '1.08rem', lineHeight: 1.7 }}>
                   <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
                 </div>
               )}
