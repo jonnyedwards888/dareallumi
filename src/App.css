@@ -847,9 +847,11 @@ html {
     text-align: center !important;
   }
   .lumi-subtitle {
-    font-size: 1rem !important;
-    margin-bottom: 1rem !important;
-    text-align: center !important;
+    color: #fff !important;
+    position: static !important;
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+    bottom: auto !important;
   }
   .lumi-hero-buttons {
     flex-direction: column !important;
@@ -1167,6 +1169,12 @@ html {
   .lumi-fullbody-img {
     border: none !important;
     background: none !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .lumi-heading {
+    text-shadow: 0 0 12px #fff, 0 0 24px #b16fc9, 0 0 2px #fff;
   }
 }
 
