@@ -975,29 +975,6 @@ html {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
- 
-  .data-section {
-    width: 100% !important;
-    
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-  .data-content {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 0.5rem !important;
-    box-sizing: border-box !important;
-  }
-  .data-section {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
   .data-content > div:nth-child(2) {
     text-align: center !important;
     align-items: center !important;
@@ -1186,6 +1163,10 @@ html {
   .lumi-subtitle {
     margin-top: 1.5rem !important;
   }
+}
+
+.phases-card, .phases-card ul, .phases-card li, .phases-content {
+  font-family: 'Inter', sans-serif !important;
 }
 
 
