@@ -463,15 +463,15 @@ function SolutionsPage() {
               WHAT'S REMELIFE?
             </h3>
             <p className="mb-4">
-              ReMeLife is the world's first web3 healthcare platform, that rewards its care givers for their daily Care Actions, and that democratises data ownership.
+              ReMeLife is the world's first Care2Earn web3 health and social care platform, that monetises digital care work by rewarding care givers for their daily Care Actions, and that democratises data ownership.
             </p>
             <p className="mb-4">
-              Community-funded, ReMeLife is a social impact, decentralised health and care platform, that's been created 'by the people, for the people'.
+              ReMeLife is a social impact, decentralised  Member governed community Foundation (DAO), that's being built unfunded; created 'by the people, for the people'.
             </p>
             <p className="mb-4">
-              In these difficult and uncertain times, ReMeLife's bringing the digital value in care back to its community.
+              In these difficult and inequitable times, ReMeLife captures the value in digital care and brings it back to its community and to those that need it most.
             </p>
-            <a href="#" className="text-sky-400 hover:underline">Visit ReMeLife</a>
+            <a href="https://remelife.com/" className="text-sky-400 hover:underline mt-4 block" target="_blank" rel="noopener noreferrer">Visit ReMeLife</a>
           </div>
           <div className="flex-1 flex flex-col items-center">
             <span className="solutions-feature-label mb-2 text-center" style={{ fontWeight: 600, fontSize: '1rem', letterSpacing: '0.05em' }}>APP ECOSYSTEM</span>
@@ -482,6 +482,9 @@ function SolutionsPage() {
               style={{ maxWidth: '100%', width: '420px', background: '#222', cursor: 'pointer' }}
               onClick={() => handleOpenModal(process.env.PUBLIC_URL + "/data-images/app-ecosystem-img.png")}
             />
+            <div style={{ color: '#b16fc9', fontWeight: 700, fontSize: '2rem', marginTop: '1.1rem', textAlign: 'center', letterSpacing: '0.01em', fontFamily: 'Michroma, sans-serif' }}>
+              Care 2 Earn
+            </div>
           </div>
         </div>
         {/* Modal for all images */}
@@ -515,30 +518,49 @@ function SolutionsPage() {
         {/* Gradient Boxes */}
         <div className="solutions-boxes-grid w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div className="solutions-box">
-            <div className="solutions-box-title">Passive Income<br /><span className="solutions-box-sub">CARE2EARN</span></div>
-            <div className="solutions-box-desc">Using RemindMecare, posting in the Forum, sharing news with your family care circle and viewing products in the Market, all earn reward tokens for your daily care actions.<br /><br />Within time you'll build up an income earned passively from your daily digital care actions.</div>
+            <div className="solutions-box-title"><span className="solutions-box-sub">CARE2EARN</span></div>
+            <div className="solutions-box-desc">
+              Using RemindMecare and partner apps, posting in the Forum, sharing news with family and viewing products in ReMe Market, all earn REME reward tokens for your daily care actions.<br /><br />
+              Members build up a passive income from daily digital care actions, that's managed in the ReMe Wallet.
+            </div>
           </div>
           <div className="solutions-box">
-            <div className="solutions-box-title">Passive Income<br /><span className="solutions-box-sub">DATA2EARN</span></div>
-            <div className="solutions-box-desc">Personal data is captured through use of ReMeLife apps and other services, and is used to define the profile of the person cared for, their family and their networks.<br /><br />This data can be monetised by the Member, whether for their own benefit or to donate to family, friends or charities.</div>
+            <div className="solutions-box-title"><span className="solutions-box-sub">DATA2EARN</span></div>
+            <div className="solutions-box-desc">
+              Our data is harvested. In return, we're programmed with what to watch, believe and buy.<br /><br />
+              ReMeLife captures personal data during, and for use in, the care process. This data can be monetised by the Member, whether for their own benefit or to donate to family, friends or charities.
+            </div>
           </div>
           <div className="solutions-box">
-            <div className="solutions-box-title">Passive Income<br /><span className="solutions-box-sub">REFERRAL PLAN</span></div>
-            <div className="solutions-box-desc">We all build personal social networks, but most earn little from them. Our data is harvested and in return, we get 'free' software, told what to buy, read and watch. And increasingly, what to believe.<br /><br />ReMeLife enables you to monetise your personal network.</div>
+            <div className="solutions-box-title"><span className="solutions-box-sub">REFERRAL PLAN</span></div>
+            <div className="solutions-box-desc">
+              We all build personal social networks. But most earn little from them, other than social connectivity.<br /><br />
+              ReMeLife Community Builder enables you to monetise your personal networks. A three level deep referral system generates passive rewards earned through the network effect and viral growth.
+            </div>
           </div>
         </div>
         <div className="solutions-boxes-grid w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="solutions-box">
-            <div className="solutions-box-title">Savings & Income<br /><span className="solutions-box-sub">ONLINE RETAIL</span></div>
-            <div className="solutions-box-desc">REMEs and LUMIs are used to gain discounts on products purchased in ReMe Market.<br /><br />Members can introduce vendors to ReMe Market and earn commissions on sales made by the vendor.</div>
+            <div className="solutions-box-title"><span className="solutions-box-sub">ONLINE RETAIL</span></div>
+            <div className="solutions-box-desc">
+              Passively earned REMEs and LUMIs are used to redeem discounts available with products purchased in ReMe Market.<br /><br />
+              Members can introduce vendors to ReMe Market and earn monthly passive commissions on sales made by the vendor.<br />
+              Members can launch their own stores and promote products as influencers.
+            </div>
           </div>
           <div className="solutions-box">
-            <div className="solutions-box-title">Passive Income<br /><span className="solutions-box-sub">TOKENOMICS</span></div>
-            <div className="solutions-box-desc">ReMeLife is a three token ecosystem. Care actions using ReMeLife's apps earn Care Action Points (CAPs). These are converted to REMEs which can be used to make purchases in the ecosystem or traded as ERC20 tokens. LUMI, the AI token, is convertible to REMEs.</div>
+            <div className="solutions-box-title"><span className="solutions-box-sub">TOKENOMICS, DAO DEFI</span></div>
+            <div className="solutions-box-desc">
+              LUMI and REME are minted in ReMeGrid (built on Convex), via the Foundation (DAO) treasury. Passively earned for Care Actions, they are used either in the <a href="https://remelife.com/rememarket/" target="_blank" rel="noopener noreferrer" style={{ color: '#b16fc9', textDecoration: 'underline' }}>ReMe Market</a> or swapped for fiat or other tokens.<br /><br />
+              Members can hodle LUMI and stake to earn high yields in the RAgency DeFi module..
+            </div>
           </div>
           <div className="solutions-box">
-            <div className="solutions-box-title">Revenue Distribution<br /><span className="solutions-box-sub">NFTS, CHARITY & DAO</span></div>
-            <div className="solutions-box-desc">ReMeLife enables everyone to gain from crypto's potential.<br /><br />Charities can monetise memberships, apps can reward for their usage.<br /><br />The ReMeLife DAO treasury will share its revenues with the community.</div>
+            <div className="solutions-box-title"><span className="solutions-box-sub">NFTS & CHARITY</span></div>
+            <div className="solutions-box-desc">
+              ReMeLife is for everyone. Charities can monetise their communities and gain yields from node management and apps can gain enhanced adoption and retention through usage rewards. Care providers can reward staff.<br /><br />
+              Lumi's NFT collection stimulates and rewards creativity within the community and provides a means to promote talent, whether young or old.
+            </div>
           </div>
         </div>
         
