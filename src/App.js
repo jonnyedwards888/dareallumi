@@ -366,6 +366,15 @@ function FooterSection() {
 
 function SolutionsPage() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [modalImg, setModalImg] = useState(null);
+  const handleOpenModal = (imgSrc) => {
+    setModalImg(imgSrc);
+    setModalOpen(true);
+  };
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setModalImg(null);
+  };
   return (
     <>
       <Navbar />
@@ -397,17 +406,18 @@ function SolutionsPage() {
               alt="App Ecosystem"
               className="solutions-feature-img rounded-lg shadow-lg app-ecosystem-img-hover"
               style={{ maxWidth: '100%', width: '420px', background: '#222', cursor: 'pointer' }}
-              onClick={() => setModalOpen(true)}
+              onClick={() => handleOpenModal(process.env.PUBLIC_URL + "/data-images/app-ecosystem-img.png")}
             />
           </div>
         </div>
+        {/* Modal for all images */}
         {modalOpen && (
-          <div className="modal-overlay" onClick={() => setModalOpen(false)}>
+          <div className="modal-overlay" onClick={handleCloseModal}>
             <div className="modal-content" onClick={e => e.stopPropagation()}>
-              <button className="modal-close-btn" onClick={() => setModalOpen(false)}>&times;</button>
+              <button className="modal-close-btn" onClick={handleCloseModal}>&times;</button>
               <img
-                src={process.env.PUBLIC_URL + "/data-images/app-ecosystem-img.png"}
-                alt="App Ecosystem Full"
+                src={modalImg}
+                alt="Full View"
                 className="modal-img"
               />
             </div>
@@ -483,8 +493,7 @@ function SolutionsPage() {
             <video
               className="solutions-phone-video"
               controls
-              poster={process.env.PUBLIC_URL + "/data-images/app-ecosystem-img.png"}
-              style={{ width: '350px', borderRadius: '2rem', boxShadow: '0 4px 32px #0008', background: '#222' }}
+              style={{ width: '350px' }}
             >
               <source src={process.env.PUBLIC_URL + "/data-images/remecare-video.mp4"} type="video/mp4" />
               Your browser does not support the video tag.
@@ -512,8 +521,9 @@ function SolutionsPage() {
             <img
               src={process.env.PUBLIC_URL + "/data-images/ai-architecture.png"}
               alt="AI Architecture"
-              className="solutions-feature-img"
-              style={{ maxWidth: '100%', width: '420px', background: '#222' }}
+              className="solutions-feature-img app-ecosystem-img-hover"
+              style={{ maxWidth: '100%', width: '420px', background: '#222', cursor: 'pointer' }}
+              onClick={() => handleOpenModal(process.env.PUBLIC_URL + "/data-images/ai-architecture.png")}
             />
           </div>
         </div>
@@ -539,8 +549,9 @@ function SolutionsPage() {
             <img
               src={process.env.PUBLIC_URL + "/data-images/enhanced-care.png"}
               alt="Enhanced Care"
-              className="solutions-feature-img"
-              style={{ maxWidth: '100%', width: '420px', background: '#222' }}
+              className="solutions-feature-img app-ecosystem-img-hover"
+              style={{ maxWidth: '100%', width: '420px', background: '#222', cursor: 'pointer' }}
+              onClick={() => handleOpenModal(process.env.PUBLIC_URL + "/data-images/enhanced-care.png")}
             />
           </div>
         </div>
@@ -565,19 +576,13 @@ const newsData = [
     id: 'human-error',
     img: 'news-images/human-error.png',
     title: 'ReMeLife joins the Human Error project',
-    detail: `<b>The Human Error Project</b><br/><br/>We live in historical times, when every detail of our lives is a data point used by AI systems and algorithms to profile us, judge us and make decisions about us. This data that defines us is commercialised in a multiplicity of ways. Health and education practitioners 'track risk factors' or find 'personalized solutions'. Employers, banks and insurers judge clients or potential candidates. Governments, the police and immigration officials use this tech to decide issues about individual lives, from one's right to asylum to one's likelihood to commit a crime.<br/><br/>Courtesy of ReMeLife's focus on such data being used for positive social benefit and on establishing crypto based algorithms that share the value in digital care for the benefit of the community, we've been invited to collaborate in this important project.<br/><br/>More <a href='#'>here</a>.`
+    detail: `We live in historical times, when every detail of our lives is a data point used by AI systems and algorithms to profile us, judge us and make decisions about us. This data that defines us is commercialised in a multiplicity of ways. Health and education practitioners 'track risk factors' or find 'personalized solutions'. Employers, banks and insurers judge clients or potential candidates. Governments, the police and immigration officials use this tech to decide issues about individual lives, from one's right to asylum to one's likelihood to commit a crime.<br/><br/>Courtesy of ReMeLife's focus on such data being used for positive social benefit and on establishing crypto based algorithms that share the value in digital care for the benefit of the community, we've been invited to collaborate in this important project.<br/><br/>More <a href='#'>here</a>.`
   },
   {
     id: 'coin-bureau',
     img: 'news-images/coin-bureau.jpg',
     title: 'ReMeLife  at the Coin Bureau Crypto Conference, London',
     detail: `Although it was their first ever crypto conference, it felt like they'd been doing it for years. An excellent event (<a href='#'>here</a>).<br/><br/>ReMeLife was invited backstage to share in their post event shenanigans. Who says the crypto sector is depressed?<br/><br/>PS. If you don't know Coin Bureau then you don't know crypto. Find them <a href='#'>here</a>.`
-  },
-  {
-    id: 'florida-blockchain',
-    img: 'news-images/florida-blockchain-summit.jpg',
-    title: 'ReMeLife at the Florida Blockchain Summit',
-    detail: 'Details about the Florida Blockchain Summit.'
   }
 ];
 
@@ -586,19 +591,19 @@ function NewsCardsSection() {
     <div className="w-full flex flex-col items-center mt-12 mb-16">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 w-full max-w-7xl px-4">
         {newsData.map((card, idx) => (
-          <div key={card.id} className="rounded-xl overflow-hidden flex flex-col bg-[#a23bb9]" style={{ minHeight: '260px', boxShadow: '0 2px 16px #0003' }}>
-            {card.id === 'convex-remegrid' || card.id === 'project-update-1' ? (
+          <div key={card.id} className="news-card rounded-xl overflow-hidden flex flex-col" style={{ minHeight: '320px' }}>
+            {(card.id === 'convex-remegrid' || card.id === 'project-update-1') ? (
               <img 
                 src={`https://img.youtube.com/vi/${card.id === 'convex-remegrid' ? 'O9P1Fr_v4JQ' : 'IB89b-N-TgA'}/hqdefault.jpg`}
                 alt={card.title} 
-                style={{ width: '100%', height: '110px', objectFit: 'cover' }} 
+                style={{ width: '100%', height: '180px', objectFit: 'cover' }} 
               />
             ) : (
-              <img src={process.env.PUBLIC_URL + '/' + card.img} alt={card.title} style={{ width: '100%', height: '110px', objectFit: 'cover' }} />
+              <img src={process.env.PUBLIC_URL + '/' + card.img} alt={card.title} style={{ width: '100%', height: '180px', objectFit: 'cover' }} />
             )}
-            <div className="flex-1 flex flex-col justify-between p-4" style={{ fontFamily: 'Inter, sans-serif' }}>
-              <div className="text-white font-semibold mb-2">{card.title}</div>
-              <Link to={`/news/${card.id}`} className="text-sky-300 font-semibold text-sm hover:underline mt-auto">READ MORE »</Link>
+            <div className="flex-1 flex flex-col justify-between p-3" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <div className="text-white font-semibold mb-1" style={{ fontSize: '1.18rem', fontWeight: 600 }}>{card.title}</div>
+              <Link to={`/news/${card.id}`} className="text-sky-300 font-semibold text-sm hover:underline mt-auto" style={{ alignSelf: 'flex-start' }}>READ MORE »</Link>
             </div>
           </div>
         ))}
@@ -628,9 +633,15 @@ function NewsDetailPage() {
   const videoId = getVideoId(news.id);
   
   return (
-    <div className="min-h-screen flex flex-col items-center justify-start bg-[#18153a] text-white py-16 px-4">
+    <div className="min-h-screen flex flex-col items-center justify-start" style={{ background: '#120f2c', color: '#fff' }}>
+      <Navbar />
       <div className="w-full max-w-4xl mx-auto flex flex-col items-center">
-        <button onClick={() => navigate(-1)} className="mb-6 px-6 py-2 bg-white text-black rounded shadow hover:bg-gray-200 transition self-end">Back</button>
+        <button
+          onClick={() => navigate(-1)}
+          className="mb-8 px-6 py-2 rounded-lg bg-gradient-to-r from-[#00838f] to-[#006064] text-white font-semibold shadow-lg hover:from-[#26c6da] hover:to-[#00838f] hover:text-[#18153a] transition-all duration-200 border-none outline-none self-end"
+        >
+          Back
+        </button>
         {videoId ? (
           <div className="video-container mb-8 w-full" style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', maxWidth: '100%' }}>
             <iframe 
@@ -645,9 +656,13 @@ function NewsDetailPage() {
         ) : (
           <img src={process.env.PUBLIC_URL + '/' + news.img} alt={news.title} className="mb-8 rounded-lg shadow-lg mx-auto" style={{ maxWidth: '600px', width: '100%' }} />
         )}
-        <h1 className="text-3xl font-bold mb-2">{news.title}</h1>
-        <div className="w-full text-lg mb-8">
-          <div dangerouslySetInnerHTML={{ __html: news.detail }} />
+        <h1 style={{ fontFamily: 'Michroma, sans-serif', fontSize: '2.1rem', fontWeight: 600, marginBottom: '2.2rem', color: '#fff' }}>{news.title}</h1>
+        <div className="w-full text-lg mb-8" style={{ fontFamily: 'Inter, sans-serif', color: '#fff' }}>
+          {news.id === 'coin-bureau' ? (
+            <p>{news.detail.replace(/<br\/?><br\/?/g, ' ').replace(/<[^>]+>/g, '')}</p>
+          ) : (
+            <div dangerouslySetInnerHTML={{ __html: news.detail }} />
+          )}
         </div>
       </div>
     </div>
@@ -661,7 +676,6 @@ function AboutPage() {
     'about-page-images/ucl.png',
     'about-page-images/athena.png',
     'about-page-images/antier.png',
-    'about-page-images/equideum.png',
     'about-page-images/limechain.png',
     'about-page-images/mongoDB.png',
     'about-page-images/worcester.png',
