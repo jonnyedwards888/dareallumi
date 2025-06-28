@@ -51,7 +51,9 @@ function Navbar() {
           <Link to="/solutions" className="hero-button">Solutions</Link>
           <Link to="/faqs" className="hero-button">FAQs</Link>
           <Link to="/about" className="hero-button">About</Link>
-          <a href="https://x.com/mylumi_ai" className="hero-button" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://x.com/mylumi_ai" className="hero-button" target="_blank" rel="noopener noreferrer">
+            <img src={process.env.PUBLIC_URL + "/X-logo-navbar.jpg"} alt="X (Twitter)" style={{ height: '1.6em', width: 'auto', verticalAlign: 'middle', marginRight: '0.2em', display: 'inline-block' }} />
+          </a>
         </div>
       </div>
     </div>
@@ -146,8 +148,8 @@ function DataSection() {
           <img
             src={process.env.PUBLIC_URL + '/lumiai-project-analysis.jpg'}
             alt="Lumi AI Project Analysis"
-            className="data-section-img"
-            style={{ width: '260px', height: '260px', cursor: 'pointer' }}
+            className="data-section-img" style={{ width: '360px', height: '360px', cursor:
+            'pointer' }}
             onClick={() => window.open(process.env.PUBLIC_URL + '/AI-Viability-Analysis.pdf', '_blank', 'noopener,noreferrer')}
             onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') window.open(process.env.PUBLIC_URL + '/AI-Viability-Analysis.pdf', '_blank', 'noopener,noreferrer'); }}
             tabIndex={0}

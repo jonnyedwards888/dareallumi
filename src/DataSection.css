@@ -34,7 +34,7 @@
   align-items: flex-start;
   justify-content: center;
   gap: 2.2rem;
-  margin-left: -13.5rem;
+  margin-left: -5rem;
 }
 .data-section-col.right {
   display: flex;
@@ -46,12 +46,11 @@
 }
 
 .data-section-img {
-  width: 190px;
-  height: 190px;
+  width: 420px;
+  height: 420px;
   object-fit: cover;
-  border-radius: 0.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 2px 16px #0008;
+  border-radius: 2.2rem;
+  box-shadow: 0 4px 32px #0006;
 }
 
 .data-section-github {
@@ -165,7 +164,6 @@
     align-items: center;
     gap: 1.5rem;
     margin-left: 0;
-    min-width: 0;
   }
   .data-section-row {
     min-height: 0;
