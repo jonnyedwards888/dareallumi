@@ -30,7 +30,7 @@
     justify-content: center;
   }
   .lumi-fullbody-img {
-    width: 270px !important;
+    width: 300px !important;
     max-width: 95vw !important;
     min-width: 100px !important;
     height: auto !important;
@@ -46,7 +46,7 @@
     white-space: normal;
   }
   .lumi-heading {
-    font-size: 5rem !important;
+    font-size: 5.2rem !important;
     margin-bottom: 0.2rem !important;
   }
   .lumi-subtitle {
