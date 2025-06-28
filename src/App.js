@@ -51,7 +51,7 @@ function Navbar() {
           <Link to="/solutions" className="hero-button">Solutions</Link>
           <Link to="/faqs" className="hero-button">FAQs</Link>
           <Link to="/about" className="hero-button">About</Link>
-          <a href="https://x.com/mylumi_ai" target="_blank" rel="noopener noreferrer" className="hero-button">X</a>
+          <a href="https://x.com/mylumi_ai" className="hero-button" target="_blank" rel="noopener noreferrer">X</a>
         </div>
       </div>
     </div>
@@ -176,6 +176,10 @@ function DataSection() {
             <a href="https://play.google.com/store/apps/developer?id=ReMeLife" className="data-section-link" target="_blank" rel="noopener noreferrer">APPS</a>
           </div>
         </div>
+      </div>
+      {/* Animated Lumi Spaceship */}
+      <div className="lumi-spaceship-fly-wrapper">
+        <img src={process.env.PUBLIC_URL + '/Lumi-spaceship.png'} alt="Lumi Spaceship" className="lumi-spaceship-fly" />
       </div>
     </section>
   );
