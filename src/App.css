@@ -336,6 +336,7 @@ html {
   color: #b16fc9;
   margin-bottom: 2.5rem;
   letter-spacing: 0.01em;
+  margin-top: 2.5rem;
 }
 
 .solutions-feature-row {
@@ -1220,5 +1221,26 @@ html {
   width: 100%;
   line-height: 1.7;
   background: none !important;
+}
+
+.about-section h2 {
+  margin-top: 3.5rem;
+}
+
+.news-card {
+  background: linear-gradient(180deg, #00838f 0%, #006064 100%);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.13), 0 1.5px 8px 0 rgba(0,0,0,0.10);
+}
+.news-card * {
+  font-family: 'Inter', sans-serif !important;
+}
+.news-card:hover {
+  background: linear-gradient(180deg, #26c6da 0%, #00838f 100%);
+  transform: scale(1.045) translateY(-6px);
+  box-shadow: 0 12px 36px 0 rgba(0,0,0,0.18), 0 2px 12px 0 rgba(0,0,0,0.13);
+  cursor: pointer;
 }
 
