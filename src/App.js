@@ -159,14 +159,10 @@ function DataSection() {
             <a href="#" className="data-section-link">REMINDMECARE</a>
           </div>
           <div className="data-section-row">
-            <img src={process.env.PUBLIC_URL + '/google-play.png'} alt="Google Play" className="data-section-icon" />
+            <img src={process.env.PUBLIC_URL + '/better-google-icon.png'} alt="Google Play" className="data-section-icon" />
             <a href="#" className="data-section-link">APPS</a>
           </div>
         </div>
-      </div>
-      {/* Flaticon attribution */}
-      <div style={{ textAlign: 'right', fontSize: '0.85rem', color: '#9CA3AF', marginTop: '0.5rem' }}>
-        <a href="https://www.flaticon.com/free-icons/brands-and-logotypes" title="brands and logotypes icons" style={{ color: '#9CA3AF', textDecoration: 'underline' }}>Brands and logotypes icons created by Freepik - Flaticon</a>
       </div>
     </section>
   );
