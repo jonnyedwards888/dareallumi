@@ -73,7 +73,7 @@ function HeroSection() {
           <h1 className="lumi-heading" style={{ fontFamily: 'Michroma, sans-serif' }}>LUMI</h1>
           <div className="lumi-avatar-wrapper">
             <img
-              src={process.env.PUBLIC_URL + "/Lumi-head-nobg.png"}
+              src={process.env.PUBLIC_URL + "/Lumi-Line-Main.png"}
               alt="Lumi Full Body"
               className="lumi-fullbody-img"
             />
