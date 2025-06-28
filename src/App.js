@@ -143,28 +143,37 @@ function DataSection() {
       <div className="data-section-card">
         {/* Left column: larger image only */}
         <div className="data-section-col left">
-          <img src={process.env.PUBLIC_URL + '/lumiai-project-analysis.jpg'} alt="Lumi AI Project Analysis" className="data-section-img" style={{ width: '260px', height: '260px' }} />
+          <img
+            src={process.env.PUBLIC_URL + '/lumiai-project-analysis.jpg'}
+            alt="Lumi AI Project Analysis"
+            className="data-section-img"
+            style={{ width: '260px', height: '260px', cursor: 'pointer' }}
+            onClick={() => window.open(process.env.PUBLIC_URL + '/AI-Viability-Analysis.pdf', '_blank', 'noopener,noreferrer')}
+            onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') window.open(process.env.PUBLIC_URL + '/AI-Viability-Analysis.pdf', '_blank', 'noopener,noreferrer'); }}
+            tabIndex={0}
+            role="button"
+          />
         </div>
         {/* Center column: links */}
         <div className="data-section-col center">
           <div className="data-section-row"><a href={process.env.PUBLIC_URL + '/RemeLife-Lite-Paper.pdf'} className="data-section-link" target="_blank" rel="noopener noreferrer">Lite Paper</a></div>
           <div className="data-section-row"><a href="#" className="data-section-link">AI Report</a></div>
-          <div className="data-section-row"><a href="#" className="data-section-link">ReMeLife Data</a></div>
-          <div className="data-section-row"><a href="#" className="data-section-link">GitHub</a></div>
+          <div className="data-section-row"><a href={process.env.PUBLIC_URL + '/RemeLife-Data.pdf'} className="data-section-link" target="_blank" rel="noopener noreferrer">ReMeLife Data</a></div>
+          <div className="data-section-row"><a href="https://github.com/ReMe-life" className="data-section-link" target="_blank" rel="noopener noreferrer">GitHub</a></div>
         </div>
         {/* Right column: icons and app links, all vertically aligned */}
         <div className="data-section-col right">
           <div className="data-section-row">
             <img src={process.env.PUBLIC_URL + '/remelife-icon.png'} alt="ReMeLife" className="data-section-icon" />
-            <a href="#" className="data-section-link">REMELIFE</a>
+            <a href="https://remelife.com/" className="data-section-link" target="_blank" rel="noopener noreferrer">REMELIFE</a>
           </div>
           <div className="data-section-row">
             <img src={process.env.PUBLIC_URL + '/remindmecare-icon.png'} alt="RemindMeCare" className="data-section-icon" />
-            <a href="#" className="data-section-link">REMINDMECARE</a>
+            <a href="https://remindmecare.com/" className="data-section-link" target="_blank" rel="noopener noreferrer">REMINDMECARE</a>
           </div>
           <div className="data-section-row">
             <img src={process.env.PUBLIC_URL + '/better-google-icon.png'} alt="Google Play" className="data-section-icon" />
-            <a href="#" className="data-section-link">APPS</a>
+            <a href="https://play.google.com/store/apps/developer?id=ReMeLife" className="data-section-link" target="_blank" rel="noopener noreferrer">APPS</a>
           </div>
         </div>
       </div>
@@ -387,9 +396,9 @@ function FooterSection() {
           <div className="footer-resources">
             <span className="footer-resources-title">RESOURCES</span>
             <a href="#" style={{ color: '#fff', fontSize: '1rem', textDecoration: 'none' }}>Contact Us</a>
+            <a href="https://x.com/mylumi_ai" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', fontSize: '1rem', textDecoration: 'none', display: 'block', marginTop: '0.3rem' }}>Twitter</a>
           </div>
           <div className="footer-socials">
-            <a href="https://x.com/mylumi_ai" target="_blank" rel="noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" alt="Twitter" style={{ width: '32px', height: '32px', background: '#1da1f2', borderRadius: '50%', padding: '4px' }} /></a>
             <a href="#top" style={{ display: 'flex', alignItems: 'center' }}>
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20 30V10M20 10L10 20M20 10L30 20" stroke="#b16fc9" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" filter="drop-shadow(0 0 8px #b16fc9)" />
