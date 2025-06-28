@@ -55,11 +55,10 @@ html {
 }
 
 .hero-button {
-  color: #fff;
+  color: #fff !important;
   background: none;
   border: none;
   font-size: 1.1rem;
-  
   font-weight: 600;
   margin-left: 1.5rem;
   text-decoration: none;
@@ -73,9 +72,13 @@ html {
 .hero-button:first-child {
   margin-left: 0;
 }
-.hero-button:hover {
-  background: #2a2560;
-  color: #b16fc9;
+.hero-button:hover,
+.hero-button:focus {
+  background: none !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  outline: none !important;
+  cursor: pointer;
 }
 
 @media (min-width: 900px) {
@@ -243,87 +246,33 @@ html {
 .lumi-hero-btn::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  pointer-events: none;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, rgba(64,224,208,0.13) 0%, rgba(177,111,201,0.13) 50%, rgba(64,224,208,0.13) 100%);
+  transition: left 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
   z-index: 2;
-  opacity: 0;
-  transition: opacity 0.3s cubic-bezier(0.4,0,0.2,1);
-  background: url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" xmlns="http://www.w3.org/2000/svg"><circle cx="20%25" cy="30%25" r="1.2" fill="white" opacity="0.7"/><circle cx="60%25" cy="60%25" r="1.5" fill="white" opacity="0.5"/><circle cx="80%25" cy="20%25" r="0.8" fill="white" opacity="0.8"/><circle cx="40%25" cy="80%25" r="1.1" fill="white" opacity="0.6"/></svg>');
-  background-size: cover;
-  animation: starfield-move 2.5s linear infinite;
-}
-
-@keyframes starfield-move {
-  0% { background-position: 0 0; }
-  100% { background-position: 20px 40px; }
-}
-
-.lumi-hero-btn::after {
-  content: '';
-  position: absolute;
-  top: -3px; left: -3px; right: -3px; bottom: -3px;
-  border-radius: 2.2rem;
-  z-index: 3;
   pointer-events: none;
-  background: linear-gradient(270deg, #40e0d0, #b16fc9, #40e0d0, #fff 80%);
-  background-size: 400% 400%;
-  opacity: 0;
-  transition: opacity 0.3s cubic-bezier(0.4,0,0.2,1);
-  filter: blur(2.5px);
-  animation: border-gradient-move 2.2s linear infinite;
-}
-
-@keyframes border-gradient-move {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
 }
 
 .lumi-hero-btn:hover::before,
 .lumi-hero-btn:focus::before {
-  opacity: 0.25;
-}
-.lumi-hero-btn:hover::after,
-.lumi-hero-btn:focus::after {
-  opacity: 1;
+  left: 100%;
 }
 
 .lumi-hero-btn:hover,
 .lumi-hero-btn:focus {
-  transform: scale(1.07) translateY(-3px);
-  box-shadow:
-    0 0 0 3px #40e0d0,
-    0 8px 32px 0 rgba(64, 224, 208, 0.45),
-    0 0 32px 8px #b16fc9cc,
-    0 2px 8px 0 rgba(0,0,0,0.18),
-    0 0 40px 10px #40e0d0aa,
-    inset 0 1px 0 rgba(255,255,255,0.18);
-  background: linear-gradient(45deg, rgba(64, 224, 208, 0.18), rgba(138, 43, 226, 0.15), rgba(20, 20, 40, 0.7));
-  border-color: #40e0d0;
-  border-image: linear-gradient(90deg, #40e0d0, #b16fc9, #40e0d0) 1;
-  text-shadow: 0 0 12px #40e0d0, 0 0 24px #b16fc9, 0 0 2px #fff;
-  backdrop-filter: blur(18px) brightness(1.12);
+  background: linear-gradient(135deg, rgba(0, 234, 255, 0.15), rgba(177, 111, 201, 0.15));
+  box-shadow: 
+    0 0 0 2px #b16fc9,
+    0 8px 32px 0 rgba(0, 234, 255, 0.18),
+    0 4px 16px 0 rgba(177, 111, 201, 0.12),
+    inset 0 1px 0 rgba(255,255,255,0.12);
+  transform: scale(1.02) translateY(-1px);
+  border-color: #b16fc9;
+  text-shadow: none;
   outline: none;
-  animation: btn-glow-pulse 1.2s infinite alternate cubic-bezier(0.4,0,0.2,1);
-}
-
-@keyframes btn-glow-pulse {
-  0% { box-shadow: 0 0 0 3px #40e0d0, 0 8px 32px 0 rgba(64, 224, 208, 0.45), 0 0 32px 8px #b16fc9cc, 0 2px 8px 0 rgba(0,0,0,0.18), 0 0 40px 10px #40e0d0aa, inset 0 1px 0 rgba(255,255,255,0.18); }
-  100% { box-shadow: 0 0 0 6px #40e0d0, 0 12px 40px 0 rgba(64, 224, 208, 0.55), 0 0 48px 16px #b16fc9cc, 0 4px 16px 0 rgba(0,0,0,0.22), 0 0 60px 18px #40e0d0cc, inset 0 2px 0 rgba(255,255,255,0.22); }
-}
-
-.lumi-hero-btn .btn-text {
-  display: inline-block;
-  transition: text-shadow 0.3s cubic-bezier(0.4,0,0.2,1), color 0.3s cubic-bezier(0.4,0,0.2,1);
-}
-.lumi-hero-btn:hover .btn-text,
-.lumi-hero-btn:focus .btn-text {
-  text-shadow: 0 0 16px #40e0d0, 0 0 32px #b16fc9, 0 0 4px #fff;
-  color: #fff;
-  animation: text-glow-pulse 1.2s infinite alternate cubic-bezier(0.4,0,0.2,1);
-}
-@keyframes text-glow-pulse {
-  0% { text-shadow: 0 0 12px #40e0d0, 0 0 24px #b16fc9, 0 0 2px #fff; }
-  100% { text-shadow: 0 0 24px #40e0d0, 0 0 48px #b16fc9, 0 0 8px #fff; }
+  backdrop-filter: blur(12px);
+  animation: none;
 }
 
 .lumi-hero-btn:active {
