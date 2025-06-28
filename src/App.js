@@ -138,6 +138,27 @@ function LumiTokenSection() {
   );
 }
 
+function FounderWordsSection() {
+  return (
+    <section className="founder-words-section" style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'center', gap: '3.5rem', background: 'none', padding: '3.5rem 0 1.5rem 0', maxWidth: '1500px', margin: '0 auto' }}>
+      <div style={{ flex: '0 0 420px', maxWidth: '420px', minWidth: '260px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <video
+          src={process.env.PUBLIC_URL + '/Lumi-founder-video.mp4'}
+          controls
+          style={{ width: '100%', borderRadius: '1.5rem', boxShadow: '0 4px 32px #0008', background: '#222' }}
+        />
+      </div>
+      <div style={{ flex: '1 1 0', color: '#fff', fontFamily: 'Inter, sans-serif', maxWidth: '800px', minWidth: '260px' }}>
+        <h2 style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.4rem', letterSpacing: '0.04em', marginBottom: '1.2rem', color: '#fff', textShadow: '2px 2px 0 #23234a' }}>A few words from the Founder</h2>
+        <div style={{ fontSize: '1.35rem', lineHeight: 1.5, marginBottom: '1.2rem', color: '#fff' }}>
+          Do you have a family member with dementia, living alone, with autism or learning difficulties? 62% of the world does, so you probably do. I did. And that's how I came from the music business into the world of care. It's been a long journey, from building my first app 11 years ago, to crypto, memes and to now, the launch of Lumi.<br /><br />
+          The ReMeLife community platform and apps have launched (in beta) and our blockchain (Convex Lattice) and AI builds are underway. Lumi has landed!
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function DataSection() {
   return (
     <section className="data-section" id="data-section">
@@ -960,6 +981,7 @@ function App() {
             <>
               <HeroSection />
               <LumiTokenSection />
+              <FounderWordsSection />
               <DataSection />
               <PhasesSection />
               <ComingSoonSection />
