@@ -1351,3 +1351,63 @@ html {
   }
 }
 
+/* Responsive: Founder Words Section */
+@media (max-width: 700px) {
+  .founder-words-section {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+    padding: 0.7rem 0.2rem 0.2rem 0.2rem !important;
+    max-width: 100vw !important;
+  }
+  .founder-words-heading-mobile {
+    margin-bottom: 0.3rem !important;
+    margin-top: 0 !important;
+    font-size: 1.2rem !important;
+  }
+  .founder-words-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+    width: 100% !important;
+    font-size: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  .founder-words-left {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    flex: 0 0 auto !important;
+    overflow: visible !important;
+  }
+  .founder-words-video-mobile {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    display: block !important;
+    vertical-align: top !important;
+    height: auto !important;
+    min-height: 0 !important;
+    box-shadow: none !important;
+    background: none !important;
+    object-fit: cover !important;
+    overflow: visible !important;
+  }
+  .founder-words-text-mobile {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 1.01rem !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+    line-height: 1.1 !important;
+  }
+}
+
