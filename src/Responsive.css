@@ -30,12 +30,12 @@
     justify-content: center;
   }
   .lumi-fullbody-img {
-    display: block !important;
-    margin: 0 auto !important;
-    width: 150px !important;
+    width: 270px !important;
+    max-width: 95vw !important;
+    min-width: 100px !important;
     height: auto !important;
-    max-width: 90vw !important;
-    min-width: 60px !important;
+    display: block !important;
+    margin: 0 auto 0.5rem auto !important;
     object-fit: contain !important;
     position: static !important;
   }
