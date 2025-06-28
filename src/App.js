@@ -160,7 +160,7 @@ function DataSection() {
         <div className="data-section-col center">
           <div className="data-section-row"><a href={process.env.PUBLIC_URL + '/RemeLife-Lite-Paper.pdf'} className="data-section-link" target="_blank" rel="noopener noreferrer">Lite Paper</a></div>
           <div className="data-section-row"><a href="#" className="data-section-link">AI Report</a></div>
-          <div className="data-section-row"><a href={process.env.PUBLIC_URL + '/RemeLife-Data.pdf'} className="data-section-link" target="_blank" rel="noopener noreferrer">ReMeLife Data</a></div>
+          <div className="data-section-row"><a href="https://remelife.io/project_data/" className="data-section-link" target="_blank" rel="noopener noreferrer">ReMeLife Data</a></div>
           <div className="data-section-row"><a href="https://github.com/ReMe-life" className="data-section-link" target="_blank" rel="noopener noreferrer">GitHub</a></div>
         </div>
         {/* Right column: icons and app links, all vertically aligned */}
