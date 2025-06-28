@@ -359,27 +359,25 @@ function DataSection() {
           <a href="#" className="bg-white text-black flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-lg shadow hover:bg-gray-200 transition"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" className="w-6 h-6" /> GitHub</a>
         </div>
         {/* Middle Links */}
-        <div className="flex-1 flex flex-col gap-4 text-white text-lg mobile-data-child" style={isMobile ? { flex: 1, width: '100%', boxSizing: 'border-box', margin: 0 } : { flex: 1, marginLeft: '-30px' }}>
-          <div><span className="text-[#b16fc9] font-bold">LUMI's</span> <a href={process.env.PUBLIC_URL + "/Lumi-Lite-Paper.pdf"} className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">LITE PAPER</a></div>
-          <div><span className="text-[#b16fc9] font-bold">LUMI's</span> <a href={process.env.PUBLIC_URL + "/Lumi-Ai-Report.pdf"} className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">AI REPORT</a></div>
-          <div><span className="text-[#b16fc9] font-bold">ReMeLife</span> <a href={process.env.PUBLIC_URL + "/RemeLife-White-Paper.pdf"} className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">WHITE PAPER</a></div>
-          <div className="mt-6"><span className="text-white">Visit</span> <a href="https://github.com/ReMe-life" className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">GITHUB</a></div>
+        <div className="flex-1 flex flex-col gap-4 text-white text-lg mobile-data-child" style={isMobile ? { flex: 1, width: '100%', boxSizing: 'border-box', margin: 0 } : { flex: 1, marginLeft: '0px' }}>
+          <div><span className="text-[#b16fc9] font-bold">Lumi's</span> <a href={process.env.PUBLIC_URL + "/Lumi-Lite-Paper.pdf"} className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">Lite Paper</a></div>
+          <div><span className="text-[#b16fc9] font-bold">Lumi's</span> <a href={process.env.PUBLIC_URL + "/Lumi-Ai-Report.pdf"} className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">Ai Report</a></div>
+          <div><span className="text-[#b16fc9] font-bold">Remelife</span> <a href={process.env.PUBLIC_URL + "/RemeLife-White-Paper.pdf"} className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">White Paper</a></div>
+          <div>Visit <a href="#" className="text-sky-400 hover:underline">Github</a></div>
         </div>
         {/* Right Side */}
-        <div className="flex flex-col gap-8 mobile-data-child justify-center items-center md:items-center" style={isMobile ? { flex: 1, width: '100%', boxSizing: 'border-box', margin: 0, alignItems: 'center', justifyContent: 'center', height: '100%' } : { flex: 1, alignItems: 'center', justifyContent: 'center', marginLeft: '-60px', height: '100%', justifyItems: 'center' }}>
-          <div className="flex flex-col gap-8 justify-center items-center" style={{ height: '100%', justifyContent: 'center' }}>
-            <div className="flex flex-row items-center gap-4 justify-center" style={{ height: '100%', justifyContent: 'center' }}>
-              <img src={process.env.PUBLIC_URL + "/remelife-icon.png"} alt="ReMeLife" className="w-20 h-20 rounded-full" />
-              <span className="text-white">Visit <a href="https://remelife.com/" className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">REMELIFE</a></span>
-            </div>
-            <div className="flex flex-row items-center gap-4 justify-center" style={{ height: '100%', justifyContent: 'center' }}>
-              <img src={process.env.PUBLIC_URL + "/remindmecare-icon.png"} alt="RemindMeCare" className="w-20 h-20 rounded-full" />
-              <span className="text-white">Visit <a href="https://remindmecare.com/" className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">REMINDMECARE</a></span>
-            </div>
-            <div className="flex flex-row items-center gap-4 mt-2 justify-center" style={{ height: '100%', justifyContent: 'center' }}>
-              <img src={process.env.PUBLIC_URL + "/googleplay-icon.png"} alt="Google Play" className="w-32 h-12 object-contain" />
-              <span className="text-white">View <a href="https://play.google.com/store/apps/developer?id=ReMeLife" className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">APPS</a></span>
-            </div>
+        <div className="flex flex-col gap-8 items-center md:items-end">
+          <div className="flex items-center gap-4">
+            <img src={process.env.PUBLIC_URL + "/remelife-icon.png"} alt="ReMeLife" className="w-16 h-16" />
+            <span className="text-white text-lg">Visit <a href="https://remelife.com" className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">Remelife</a></span>
+          </div>
+          <div className="flex items-center gap-4">
+            <img src={process.env.PUBLIC_URL + "/remindmecare-icon.png"} alt="RemindMecare" className="w-16 h-16" />
+            <span className="text-white text-lg">Visit <a href="https://remindmecare.com" className="text-sky-400 hover:underline" target="_blank" rel="noopener noreferrer">Remindmecare</a></span>
+          </div>
+          <div className="flex items-center gap-4 mt-4">
+            <img src={process.env.PUBLIC_URL + "/googleplay-icon.png"} alt="Google Play" className="w-28 h-10" />
+            <span className="text-white text-lg">View <a href="#" className="text-sky-400 hover:underline">Apps</a></span>
           </div>
         </div>
       </div>
