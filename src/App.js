@@ -98,11 +98,15 @@ function LumiTokenSection() {
       <h2 className="lumi-token-heading" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.5rem', color: '#fff', marginBottom: '2.5rem', letterSpacing: '0.01em', textAlign: 'center' }}>What is the $LUMI token?</h2>
       <div className="max-w-3xl w-full px-4" style={{ color: '#fff', fontSize: '1.2rem' }}>
         <div style={{ marginBottom: '1.2rem' }}>
-          <img src={process.env.PUBLIC_URL + '/ReMeLife-top-icon.png'} alt="ReMeLife" style={{ display: 'inline', width: '5.2em', height: 'auto', verticalAlign: 'middle', marginRight: '0.4em' }} />
+          <a href="https://remelife.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block' }}>
+            <img src={process.env.PUBLIC_URL + '/ReMeLife-top-icon.png'} alt="ReMeLife" style={{ display: 'inline', width: '5.2em', height: 'auto', verticalAlign: 'middle', marginRight: '0.4em', cursor: 'pointer' }} />
+          </a>
           <span>is a tokenised Care2Earn care platform that rewards its users for their digital care actions using our proprietary apps.</span>
         </div>
         <div style={{ marginBottom: '1.2rem' }}>
-          <img src={process.env.PUBLIC_URL + '/RemineMecare-icon.png'} alt="RemindMeCare" style={{ display: 'inline', width: '10em', height: 'auto', verticalAlign: 'middle', marginRight: '0.4em' }} />
+          <a href="https://remindmecare.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block' }}>
+            <img src={process.env.PUBLIC_URL + '/RemineMecare-icon.png'} alt="RemindMeCare" style={{ display: 'inline', width: '10em', height: 'auto', verticalAlign: 'middle', marginRight: '0.4em', cursor: 'pointer' }} />
+          </a>
           <span>is the app at the heart of the ReMeLife ecosystem, that enhances person-centred care for those with cognitive difficulties.</span>
         </div>
         <div style={{ marginBottom: '1.2rem' }}>
@@ -143,7 +147,7 @@ function DataSection() {
         </div>
         {/* Center column: links */}
         <div className="data-section-col center">
-          <div className="data-section-row"><a href="#" className="data-section-link">Lite Paper</a></div>
+          <div className="data-section-row"><a href={process.env.PUBLIC_URL + '/RemeLife-Lite-Paper.pdf'} className="data-section-link" target="_blank" rel="noopener noreferrer">Lite Paper</a></div>
           <div className="data-section-row"><a href="#" className="data-section-link">AI Report</a></div>
           <div className="data-section-row"><a href="#" className="data-section-link">ReMeLife Data</a></div>
           <div className="data-section-row"><a href="#" className="data-section-link">GitHub</a></div>
@@ -355,7 +359,7 @@ function ComingSoonSection() {
           <div className="coming-soon-text">
             <div className="coming-soon-item-title" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 700, fontSize: '1.55rem', color: '#fff', textAlign: 'center', width: '100%' }}>REMELIFE</div>
             <div className="coming-soon-item-desc" style={{ fontFamily: 'Inter, sans-serif' }}>
-              Sign up, get your wallet and start collecting REME tokens. Build your community, earn referral REMEs and support those engaged in care by bringing crypto to those that need it most.
+              Sign up <a href="https://remelife.com/join-now/" target="_blank" rel="noopener noreferrer" style={{ color: '#3fdcff', textDecoration: 'underline' }}>here</a>, get your wallet and start collecting REME tokens. Build your community, earn referral REMEs and support those engaged in care by bringing crypto to those that need it most.
             </div>
           </div>
         </div>
