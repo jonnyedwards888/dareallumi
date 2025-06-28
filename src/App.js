@@ -148,6 +148,7 @@ function FounderWordsSection() {
             src={process.env.PUBLIC_URL + '/Lumi-founder-video.mp4'}
             controls
             className="founder-words-video-mobile"
+            poster={process.env.PUBLIC_URL + '/about-page-images/simon-hooper-about-page.jpg'}
             style={{ width: '100%', borderRadius: '1.5rem', boxShadow: '0 4px 32px #0008', background: 'red', maxWidth: 420, margin: '0 auto', marginTop: '2rem' }}
           />
         </div>
@@ -161,45 +162,72 @@ function FounderWordsSection() {
 }
 
 function DataSection() {
+  // Responsive: detect mobile
+  const [isMobile, setIsMobile] = React.useState(false);
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 700);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <section className="data-section" id="data-section">
       <h2 className="data-section-heading" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.5rem', letterSpacing: '0.04em', color: '#fff', textAlign: 'center', marginTop: '3.5rem', marginBottom: '1.5rem' }}>DATA</h2>
       <div className="data-section-card">
         {/* Left column: larger image only */}
-        <div className="data-section-col left">
-          <img
-            src={process.env.PUBLIC_URL + '/lumiai-project-analysis.jpg'}
-            alt="Lumi AI Project Analysis"
-            className="data-section-img" style={{ width: '360px', height: '360px', cursor:
-            'pointer' }}
-            onClick={() => window.open(process.env.PUBLIC_URL + '/AI-Viability-Analysis.pdf', '_blank', 'noopener,noreferrer')}
-            onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') window.open(process.env.PUBLIC_URL + '/AI-Viability-Analysis.pdf', '_blank', 'noopener,noreferrer'); }}
-            tabIndex={0}
-            role="button"
-          />
-        </div>
+        {!isMobile && (
+          <div className="data-section-col left">
+            <img
+              src={process.env.PUBLIC_URL + '/lumiai-project-analysis.jpg'}
+              alt="Lumi AI Project Analysis"
+              className="data-section-img" style={{ width: '360px', height: '360px', cursor: 'pointer' }}
+              onClick={() => window.open(process.env.PUBLIC_URL + '/AI-Viability-Analysis.pdf', '_blank', 'noopener,noreferrer')}
+              onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') window.open(process.env.PUBLIC_URL + '/AI-Viability-Analysis.pdf', '_blank', 'noopener,noreferrer'); }}
+              tabIndex={0}
+              role="button"
+            />
+          </div>
+        )}
         {/* Center column: links */}
-        <div className="data-section-col center">
+        <div className="data-section-col center" style={isMobile ? { alignItems: 'center', textAlign: 'center', width: '100%' } : {}}>
           <div className="data-section-row"><a href={process.env.PUBLIC_URL + '/RemeLife-Lite-Paper.pdf'} className="data-section-link" target="_blank" rel="noopener noreferrer">Lite Paper</a></div>
           <div className="data-section-row"><a href="#" className="data-section-link">AI Report</a></div>
           <div className="data-section-row"><a href="https://remelife.io/project_data/" className="data-section-link" target="_blank" rel="noopener noreferrer">ReMeLife Data</a></div>
           <div className="data-section-row"><a href="https://github.com/ReMe-life" className="data-section-link" target="_blank" rel="noopener noreferrer">GitHub</a></div>
         </div>
         {/* Right column: icons and app links, all vertically aligned */}
-        <div className="data-section-col right">
-          <div className="data-section-row">
-            <img src={process.env.PUBLIC_URL + '/remelife-icon.png'} alt="ReMeLife" className="data-section-icon" />
-            <a href="https://remelife.com/" className="data-section-link" target="_blank" rel="noopener noreferrer">REMELIFE</a>
+        {!isMobile ? (
+          <div className="data-section-col right">
+            <div className="data-section-row">
+              <img src={process.env.PUBLIC_URL + '/remelife-icon.png'} alt="ReMeLife" className="data-section-icon" />
+              <a href="https://remelife.com/" className="data-section-link" target="_blank" rel="noopener noreferrer">REMELIFE</a>
+            </div>
+            <div className="data-section-row">
+              <img src={process.env.PUBLIC_URL + '/remindmecare-icon.png'} alt="RemindMeCare" className="data-section-icon" />
+              <a href="https://remindmecare.com/" className="data-section-link" target="_blank" rel="noopener noreferrer">REMINDMECARE</a>
+            </div>
+            <div className="data-section-row">
+              <img src={process.env.PUBLIC_URL + '/better-google-icon.png'} alt="Google Play" className="data-section-icon" />
+              <a href="https://play.google.com/store/apps/developer?id=ReMeLife" className="data-section-link" target="_blank" rel="noopener noreferrer">APPS</a>
+            </div>
           </div>
-          <div className="data-section-row">
-            <img src={process.env.PUBLIC_URL + '/remindmecare-icon.png'} alt="RemindMeCare" className="data-section-icon" />
-            <a href="https://remindmecare.com/" className="data-section-link" target="_blank" rel="noopener noreferrer">REMINDMECARE</a>
+        ) : (
+          <div className="data-section-col right" style={{ width: '100%', alignItems: 'center', marginTop: '0.7rem', gap: '0.7rem' }}>
+            <div className="data-section-row" style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '0.7rem', width: '100%' }}>
+              <img src={process.env.PUBLIC_URL + '/remelife-icon.png'} alt="ReMeLife" className="data-section-icon" style={{ width: 38, height: 38 }} />
+              <a href="https://remelife.com/" className="data-section-link" target="_blank" rel="noopener noreferrer" style={{ margin: 0 }}>REMELIFE</a>
+            </div>
+            <div className="data-section-row" style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '0.7rem', width: '100%' }}>
+              <img src={process.env.PUBLIC_URL + '/remindmecare-icon.png'} alt="RemindMeCare" className="data-section-icon" style={{ width: 38, height: 38 }} />
+              <a href="https://remindmecare.com/" className="data-section-link" target="_blank" rel="noopener noreferrer" style={{ margin: 0 }}>REMINDMECARE</a>
+            </div>
+            <div className="data-section-row" style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '0.7rem', width: '100%' }}>
+              <img src={process.env.PUBLIC_URL + '/better-google-icon.png'} alt="Google Play" className="data-section-icon" style={{ width: 38, height: 38 }} />
+              <a href="https://play.google.com/store/apps/developer?id=ReMeLife" className="data-section-link" target="_blank" rel="noopener noreferrer" style={{ margin: 0 }}>APPS</a>
+            </div>
           </div>
-          <div className="data-section-row">
-            <img src={process.env.PUBLIC_URL + '/better-google-icon.png'} alt="Google Play" className="data-section-icon" />
-            <a href="https://play.google.com/store/apps/developer?id=ReMeLife" className="data-section-link" target="_blank" rel="noopener noreferrer">APPS</a>
-          </div>
-        </div>
+        )}
       </div>
       {/* Animated Lumi Spaceship */}
       <div className="lumi-spaceship-fly-wrapper">
