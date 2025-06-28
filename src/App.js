@@ -568,7 +568,7 @@ function SolutionsPage() {
        
         {/* Callout Box */}
         <div className="solutions-callout-box w-full max-w-3xl mx-auto mt-8 mb-8 p-6 rounded-2xl text-white text-center" style={{ background: 'linear-gradient(135deg, #23234a 60%, #5ee7df 120%)', border: '1.5px solid #b16fc9', boxShadow: '0 4px 32px #0006' }}>
-          Register as a ReMeLife member <a href="#" className="text-sky-200 underline hover:text-sky-400">here</a>, and get your ReMeLife wallet.<br />
+          Register as a ReMeLife member <a href="https://remelife.com/join-now/" className="text-sky-200 underline hover:text-sky-400" target="_blank" rel="noopener noreferrer">here</a>, and get your ReMeLife wallet.<br />
           Then collect free REMEs as you build your community, using the ReMeLife Community Builder Referral Program.
         </div>
 
@@ -582,8 +582,8 @@ function SolutionsPage() {
             <p className="mb-4">
               At the heart of the ReMeLife ecosystem is the RemindMecare app (aka Reme). Used by those cared for at home and by formal care providers, such as care home, ReMe provides a suite of person-centred care functions that improves care, communication and connectivity.
             </p>
-            <a href="#" className="text-sky-400 hover:underline block mb-1">Visit RemindMecare b2c</a>
-            <a href="#" className="text-sky-400 hover:underline block">Visit RemindMecare b2b</a>
+            <a href="https://reme.care/users/login" className="text-sky-400 hover:underline block mb-1" target="_blank" rel="noopener noreferrer">Visit RemindMecare b2c</a>
+            <a href="https://remindmecare.com/" className="text-sky-400 hover:underline block" target="_blank" rel="noopener noreferrer">Visit RemindMecare b2b</a>
           </div>
           <div className="flex-1 flex flex-col items-center">
             <video
@@ -638,8 +638,8 @@ function SolutionsPage() {
               <li>Enhanced Data Security</li>
               <li>Data Management & Monetisation</li>
             </ul>
-            <a href="#" className="text-sky-400 hover:underline block mb-1">AI Viability Analysis</a>
-            <a href="#" className="text-sky-400 hover:underline block">AI Implementation strategy</a>
+            <a href={process.env.PUBLIC_URL + '/AI-Viability-Analysis.pdf'} className="text-sky-400 hover:underline block mb-1" target="_blank" rel="noopener noreferrer">AI Viability Analysis</a>
+            <a href={process.env.PUBLIC_URL + '/Lumi-Ai-Report.pdf'} className="text-sky-400 hover:underline block" target="_blank" rel="noopener noreferrer">AI Implementation strategy</a>
           </div>
           <div className="flex-1 flex flex-col items-center">
             <img
