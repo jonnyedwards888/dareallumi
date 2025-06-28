@@ -197,4 +197,56 @@
 /* Remove previous arrow styles */
 .data-section-arrow {
   display: none !important;
+}
+
+.lumi-spaceship-fly-wrapper {
+  width: 100vw;
+  max-width: 100%;
+  overflow: visible;
+  position: relative;
+  height: 120px;
+  margin: 2.5rem 0 0 0;
+  pointer-events: none;
+  z-index: 2;
+}
+.lumi-spaceship-fly {
+  position: absolute;
+  left: -180px;
+  top: 30px;
+  width: 160px;
+  height: auto;
+  pointer-events: none;
+  animation: lumi-fly-across 7s linear infinite;
+}
+@keyframes lumi-fly-across {
+  0% {
+    left: -180px;
+    top: 30px;
+    transform: rotate(-8deg) scale(1.05);
+  }
+  10% {
+    top: 18px;
+    transform: rotate(-4deg) scale(1.08);
+  }
+  25% {
+    top: 10px;
+    transform: rotate(0deg) scale(1.12);
+  }
+  50% {
+    top: 30px;
+    transform: rotate(2deg) scale(1.13);
+  }
+  75% {
+    top: 50px;
+    transform: rotate(-2deg) scale(1.09);
+  }
+  90% {
+    top: 38px;
+    transform: rotate(-6deg) scale(1.06);
+  }
+  100% {
+    left: 100vw;
+    top: 30px;
+    transform: rotate(-8deg) scale(1.05);
+  }
 } 
