@@ -4,6 +4,7 @@ import "./index.css";
 import './App.css';
 import './LotsGoingOn.css';
 import './NavbarMobile.css';
+import './DataSection.css';
 
 import './Responsive.css';
 
@@ -30,6 +31,14 @@ function Navbar() {
       }
     });
   }, []);
+
+  const scrollToDataSection = (e) => {
+    e.preventDefault();
+    const el = document.getElementById('data-section');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <div style={{ fontFamily: 'Michroma, sans-serif' }}>
@@ -125,10 +134,39 @@ function LumiTokenSection() {
 
 function DataSection() {
   return (
-    <section className="data-section">
-      <h2 className="data-heading">DATA</h2>
-      <div className="data-content">
-        {/* Add your data section content here step by step */}
+    <section className="data-section" id="data-section">
+      <h2 className="data-section-heading" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.5rem', letterSpacing: '0.04em', color: '#fff', textAlign: 'center', marginTop: '3.5rem', marginBottom: '1.5rem' }}>DATA</h2>
+      <div className="data-section-card">
+        {/* Left column: larger image only */}
+        <div className="data-section-col left">
+          <img src={process.env.PUBLIC_URL + '/lumiai-project-analysis.jpg'} alt="Lumi AI Project Analysis" className="data-section-img" style={{ width: '260px', height: '260px' }} />
+        </div>
+        {/* Center column: links */}
+        <div className="data-section-col center">
+          <div className="data-section-row"><a href="#" className="data-section-link">Lite Paper</a></div>
+          <div className="data-section-row"><a href="#" className="data-section-link">AI Report</a></div>
+          <div className="data-section-row"><a href="#" className="data-section-link">ReMeLife Data</a></div>
+          <div className="data-section-row"><a href="#" className="data-section-link">GitHub</a></div>
+        </div>
+        {/* Right column: icons and app links, all vertically aligned */}
+        <div className="data-section-col right">
+          <div className="data-section-row">
+            <img src={process.env.PUBLIC_URL + '/remelife-icon.png'} alt="ReMeLife" className="data-section-icon" />
+            <a href="#" className="data-section-link">REMELIFE</a>
+          </div>
+          <div className="data-section-row">
+            <img src={process.env.PUBLIC_URL + '/remindmecare-icon.png'} alt="RemindMeCare" className="data-section-icon" />
+            <a href="#" className="data-section-link">REMINDMECARE</a>
+          </div>
+          <div className="data-section-row">
+            <img src={process.env.PUBLIC_URL + '/google-play.png'} alt="Google Play" className="data-section-icon" />
+            <a href="#" className="data-section-link">APPS</a>
+          </div>
+        </div>
+      </div>
+      {/* Flaticon attribution */}
+      <div style={{ textAlign: 'right', fontSize: '0.85rem', color: '#9CA3AF', marginTop: '0.5rem' }}>
+        <a href="https://www.flaticon.com/free-icons/brands-and-logotypes" title="brands and logotypes icons" style={{ color: '#9CA3AF', textDecoration: 'underline' }}>Brands and logotypes icons created by Freepik - Flaticon</a>
       </div>
     </section>
   );
