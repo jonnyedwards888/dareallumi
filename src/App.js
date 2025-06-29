@@ -12,6 +12,7 @@ import './Responsive.css';
 function Navbar() {
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     const select = document.getElementById("custom-google-translate");
@@ -32,24 +33,29 @@ function Navbar() {
     });
   }, []);
 
-  const scrollToDataSection = (e) => {
+  // Scroll to Data section, navigating home if needed
+  const handleDataClick = (e) => {
     e.preventDefault();
-    const el = document.getElementById('data-section');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (isHome) {
+      const el = document.getElementById('data-section');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      navigate('/', { state: { scrollToData: true } });
     }
   };
 
   return (
     <div style={{ fontFamily: 'Michroma, sans-serif' }}>
-      <div className="hero-topbar">
-        <Link to="/" className="hero-button">
-          <img src={process.env.PUBLIC_URL + "/Lumi-main-logo.png"} alt="LUMI Icon" className="lumi-navbar-icon" />
+      <div className="hero-topbar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Link to="/" className="hero-button" style={{ display: 'flex', alignItems: 'center' }}>
+          <img src={process.env.PUBLIC_URL + "/Lumi-main-logo.png"} alt="LUMI Icon" className="lumi-navbar-icon" style={{ height: '28px', width: 'auto', display: 'inline-block', verticalAlign: 'middle', marginRight: '0.5rem' }} />
           LUMI
         </Link>
-        <div className="hero-nav-right">
+        <div className="hero-nav-right" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
           <Link to="/solutions" className="hero-button">Solutions</Link>
-          <Link to="/faqs" className="hero-button">FAQs</Link>
+          <Link to="#data-section" className="hero-button" onClick={handleDataClick}>Data</Link>
           <Link to="/about" className="hero-button">About</Link>
           <a href="https://x.com/mylumi_ai" className="hero-button" target="_blank" rel="noopener noreferrer">
             <img src={process.env.PUBLIC_URL + "/X-logo-navbar.jpg"} alt="X (Twitter)" style={{ height: '1.6em', width: 'auto', verticalAlign: 'middle', marginRight: '0.2em', display: 'inline-block' }} />
@@ -98,27 +104,27 @@ function LumiTokenSection() {
   return (
     <section className="lumi-token-section" style={{ background: '#18153a', width: '100vw', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '4rem 0 2rem 0' }}>
       <h2 className="lumi-token-heading" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.5rem', color: '#fff', marginBottom: '2.5rem', letterSpacing: '0.01em', textAlign: 'center' }}>What is the $LUMI token?</h2>
-      <div className="max-w-3xl w-full px-4" style={{ color: '#fff', fontSize: '1.2rem' }}>
-        <div style={{ marginBottom: '1.2rem' }}>
+      <div className="max-w-3xl w-full px-4" style={{ color: '#fff', fontSize: '1.2rem', fontFamily: 'Inter, sans-serif' }}>
+        <div style={{ marginBottom: '1.2rem', fontFamily: 'Inter, sans-serif' }}>
           <a href="https://remelife.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block' }}>
             <img src={process.env.PUBLIC_URL + '/ReMeLife-top-icon.png'} alt="ReMeLife" style={{ display: 'inline', width: '5.2em', height: 'auto', verticalAlign: 'middle', marginRight: '0.4em', cursor: 'pointer' }} />
           </a>
-          <span>is a tokenised Care2Earn care platform that rewards its users for their digital care actions using our proprietary apps.</span>
+          <span style={{ fontFamily: 'Inter, sans-serif' }}>is a tokenised Care2Earn care platform that rewards its users for their digital care actions using our proprietary apps.</span>
         </div>
-        <div style={{ marginBottom: '1.2rem' }}>
+        <div style={{ marginBottom: '1.2rem', fontFamily: 'Inter, sans-serif' }}>
           <a href="https://remindmecare.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block' }}>
             <img src={process.env.PUBLIC_URL + '/RemineMecare-icon.png'} alt="RemindMeCare" style={{ display: 'inline', width: '10em', height: 'auto', verticalAlign: 'middle', marginRight: '0.4em', cursor: 'pointer' }} />
           </a>
-          <span>is the app at the heart of the ReMeLife ecosystem, that enhances person-centred care for those with cognitive difficulties.</span>
+          <span style={{ fontFamily: 'Inter, sans-serif' }}>is the app at the heart of the ReMeLife ecosystem, that enhances person-centred care for those with cognitive difficulties.</span>
         </div>
         <div style={{ marginBottom: '1.2rem' }}>
-          <span className="lumi-token-lumiai" style={{ background: 'linear-gradient(90deg, #ff7ee7 0%, #b16fc9 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 700, fontSize: '1.1em', letterSpacing: '0.04em' }}>LUMI </span>
-          <span> is the AI avatar in ReMeLife's health care ecosystem that manages the apps and data, and supports and guides users. LUMI is a utility token.</span>
+          <span className="lumi-token-lumiai" style={{ background: 'linear-gradient(90deg, #ff7ee7 0%, #b16fc9 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 700, fontSize: '1.1em', letterSpacing: '0.04em', fontFamily: 'Michroma, sans-serif' }}>LUMI </span>
+          <span style={{ fontFamily: 'Inter, sans-serif' }}> is the AI avatar in ReMeLife's health care ecosystem that manages the apps and data, and supports and guides users. LUMI is a utility token.</span>
         </div>
-        <div style={{ marginBottom: '2.2rem' }}>
+        <div style={{ marginBottom: '2.2rem', fontFamily: 'Inter, sans-serif' }}>
           We're building an agentic LLM based AI suite, that's layered into the existing ReMeLife platform and apps, and using our proprietary Electronic Life Records (ELR) dataset, so as to optimise the process of personal profile creation for those being cared for with cognitive conditions, enhance supportive care interactivity, fully bespoke entertainment, and tailor community engagement, whilst managing security and monetising personal data for the ReMeLife community.
         </div>
-        <div>
+        <div style={{ fontFamily: 'Inter, sans-serif' }}>
           Decentralisation is the key driver for social change, AI and blockchain are the engines of progress, and tokenization is the fuel that empowers us. Whether 80 and learning to use a tablet, or 18 and harvesting the native token through community building and app usage, Lumi is there to help.
         </div>
       </div>
@@ -132,8 +138,6 @@ function LumiTokenSection() {
           style={{ width: '820px', maxWidth: '99vw', borderRadius: '2rem', boxShadow: '0 4px 32px #0008', background: '#222' }}
         />
       </div>
-
-      
     </section>
   );
 }
@@ -962,93 +966,45 @@ function AboutPage() {
   );
 }
 
-function FaqsPage() {
-  const faqs = [
-    {
-      question: "I HAVE NEVER BOUGHT A CRYPTO TOKEN BEFORE. WHY SHOULD I DO SO NOW?",
-      answer: `<p>The world is changing and crypto, CBDC's, digital currency, the metaverse, etc., are coming, so you will need to learn the ropes anyway, when it comes to digital wallets, payment transfers, digital money interfaces, etc. So, it makes sense to be ahead of the game.</p><p>And there are opportunities to be had along the way that others are profiting from, not to mention some fun and means to support those social impact projects that you support, which in our case is carers and those being cared for.</p>`
-    },
-    {
-      question: "IS BUYING CRYPTO AND LUMI RISKY?",
-      answer: `<p>Yes, absolutely. Just as betting on the horses, or the stock market, carry their own level of risk, so does buying a token, meme or otherwise on an exchange.</p><p>Indeed, meme tokens are highly volatile and should be considered risky, even true utility, actual project based tokens such as $LUMI.</p>`
-    },
-    {
-      question: "DESCRIBE REMELIFE IN ONE PARAGRAPH",
-      answer: `<p>We get asked this a lot, for ReMeLife, which is the world's first Web3 healthcare platform, has a lot to offer and can seem complicated at first inspection.</p><p>But just like a car, that has a lot going on under the bonnet, however it's simple on the outside. And when you've learnt to use it, it becomes easy and fun. It's the same with ReMeLife.</p><p>For 65% of the world is caring for someone, and they use apps to support their care needs. But they get no financial benefit from the care work they perform with these apps, from the purchases they make online or from the data they generate daily. By using ReMeLife's apps, Members gain REME tokens for their care actions, for posting in the forum, purchasing products, sharing content with their care circle and for sharing their data.</p><p>ReMeLife is the world's first rewards-based healthcare platform. Simple.</p>`
-    },
-  ];
-  const [openIndex, setOpenIndex] = React.useState(null);
-  React.useEffect(() => { window.scrollTo(0, 0); }, []);
-  return (
-    <div className="faqs-page-bg min-h-screen flex flex-col text-white">
-      <Navbar />
-      <div className="flex-1 flex flex-col items-center justify-start py-16 px-4">
-        <h2 className="text-white text-center mb-2" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.5rem', letterSpacing: '0.04em' }}>FAQ's</h2>
-        <div className="text-center mb-10 text-gray-200" style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem' }}>
-          Frequently asked questions. We will add to these as we get asked for answers on new questions.
-        </div>
-        <div className="w-full max-w-2xl mx-auto flex flex-col gap-2" style={{ fontFamily: 'Inter, sans-serif' }}>
-          {faqs.map((faq, idx) => (
-            <div key={idx} className="bg-transparent border-b border-gray-600">
-              <button
-                className="w-full text-left flex justify-between items-center py-6 px-4 focus:outline-none"
-                style={{ color: '#b16fc9', fontWeight: 700, fontSize: '1.1rem', fontFamily: 'Inter, sans-serif' }}
-                onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-              >
-                <span>{faq.question}</span>
-                <span style={{ color: '#ffe44d', fontWeight: 700, fontSize: '1.5rem', marginLeft: '1rem' }}>{openIndex === idx ? '-' : '+'}</span>
-              </button>
-              {openIndex === idx && (
-                <div className="px-8 pb-8 text-white text-left" style={{ fontFamily: 'Inter, sans-serif', fontSize: '1.08rem', lineHeight: 1.7 }}>
-                  <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-      <FooterSection />
-    </div>
-  );
-}
+// Add a wrapper for routes and scroll logic
+function AppRoutes() {
+  const location = useLocation();
+  React.useEffect(() => {
+    if (location && location.state && location.state.scrollToData) {
+      setTimeout(() => {
+        const el = document.getElementById('data-section');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [location]);
 
-function MerchPage() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-start bg-[#18153a] text-white py-16 px-4">
-      <Navbar />
-      <h2 className="text-4xl font-bold mb-8 text-center" style={{ fontSize: '2.5rem', letterSpacing: '0.04em' }}>LUMI MERCH</h2>
-      <div className="flex flex-row gap-12 justify-center items-center w-full max-w-4xl">
-        <div style={{ width: 220, height: 220, background: '#23234a', borderRadius: '1.5rem', border: '2px solid #b16fc9', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#b16fc9', fontSize: '1.2rem' }}>Image 1</div>
-        <div style={{ width: 220, height: 220, background: '#23234a', borderRadius: '1.5rem', border: '2px solid #b16fc9', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#b16fc9', fontSize: '1.2rem' }}>Image 2</div>
-        <div style={{ width: 220, height: 220, background: '#23234a', borderRadius: '1.5rem', border: '2px solid #b16fc9', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#b16fc9', fontSize: '1.2rem' }}>Image 3</div>
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={
+        <>
+          <HeroSection />
+          <LumiTokenSection />
+          <FounderWordsSection />
+          <DataSection />
+          <PhasesSection />
+          <ComingSoonSection />
+          <FooterSection />
+        </>
+      } />
+      <Route path="/solutions" element={<SolutionsPage />} />
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/news/:id" element={<NewsDetailPage />} />
+    </Routes>
   );
 }
 
 function App() {
   return (
-    <>
-      <Router>
-        <Routes>
-          <Route path="/" element={
-            <>
-              <HeroSection />
-              <LumiTokenSection />
-              <FounderWordsSection />
-              <DataSection />
-              <PhasesSection />
-              <ComingSoonSection />
-              <FooterSection />
-            </>
-          } />
-          <Route path="/solutions" element={<SolutionsPage />} />
-          <Route path="/faqs" element={<FaqsPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/news/:id" element={<NewsDetailPage />} />
-        </Routes>
-      </Router>
-    </>
+    <Router>
+      <AppRoutes />
+    </Router>
   );
 }
 
