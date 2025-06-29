@@ -404,7 +404,7 @@ function ComingSoonSection() {
           <div className="coming-soon-text">
             <div className="coming-soon-item-title" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 700, fontSize: '1.55rem', color: '#fff', textAlign: 'center', width: '100%' }}>LUMI VIP CLUB</div>
             <div className="coming-soon-item-desc" style={{ fontFamily: 'Inter, sans-serif' }}>
-              LUMI token holders get VIP Club Membership and privileged access to many benefits, from airdrops to pre-launch discounts, merch to special events.
+              LUMI token holders will get VIP Club Membership and privileged access to many benefits, from airdrops to pre-launch discounts, merch to special events.
             </div>
           </div>
         </div>
