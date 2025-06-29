@@ -192,7 +192,7 @@ function DataSection() {
         {/* Center column: links */}
         <div className="data-section-col center" style={isMobile ? { alignItems: 'center', textAlign: 'center', width: '100%' } : {}}>
           <div className="data-section-row"><a href={process.env.PUBLIC_URL + '/RemeLife-Lite-Paper.pdf'} className="data-section-link" target="_blank" rel="noopener noreferrer">Lite Paper</a></div>
-          <div className="data-section-row"><a href="#" className="data-section-link">AI Report</a></div>
+          <div className="data-section-row"><a href={process.env.PUBLIC_URL + '/AI-Viability-Analysis.pdf'} className="data-section-link" target="_blank" rel="noopener noreferrer">AI Report</a></div>
           <div className="data-section-row"><a href="https://remelife.io/project_data/" className="data-section-link" target="_blank" rel="noopener noreferrer">ReMeLife Data</a></div>
           <div className="data-section-row"><a href="https://github.com/ReMe-life" className="data-section-link" target="_blank" rel="noopener noreferrer">GitHub</a></div>
         </div>
