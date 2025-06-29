@@ -213,18 +213,18 @@ function DataSection() {
             </div>
           </div>
         ) : (
-          <div className="data-section-col right" style={{ width: '100%', alignItems: 'center', marginTop: '0.7rem', gap: '0.7rem' }}>
-            <div className="data-section-row" style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '0.7rem', width: '100%' }}>
-              <img src={process.env.PUBLIC_URL + '/remelife-icon.png'} alt="ReMeLife" className="data-section-icon" style={{ width: 38, height: 38 }} />
-              <a href="https://remelife.com/" className="data-section-link" target="_blank" rel="noopener noreferrer" style={{ margin: 0 }}>REMELIFE</a>
+          <div className="data-section-col right" style={{ width: '100%', alignItems: 'center', marginTop: '0.7rem', gap: '0.7rem', display: 'flex', flexDirection: 'column' }}>
+            <div className="data-section-row" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '1rem', width: '90%', paddingLeft: '0.7rem' }}>
+              <img src={process.env.PUBLIC_URL + '/remelife-icon.png'} alt="ReMeLife" className="data-section-icon" style={{ width: 38, height: 38, flexShrink: 0 }} />
+              <a href="https://remelife.com/" className="data-section-link" target="_blank" rel="noopener noreferrer" style={{ margin: 0, flex: 1, textAlign: 'left', fontSize: '1.1rem' }}>REMELIFE</a>
             </div>
-            <div className="data-section-row" style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '0.7rem', width: '100%' }}>
-              <img src={process.env.PUBLIC_URL + '/remindmecare-icon.png'} alt="RemindMeCare" className="data-section-icon" style={{ width: 38, height: 38 }} />
-              <a href="https://remindmecare.com/" className="data-section-link" target="_blank" rel="noopener noreferrer" style={{ margin: 0 }}>REMINDMECARE</a>
+            <div className="data-section-row" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '1rem', width: '90%', paddingLeft: '0.7rem' }}>
+              <img src={process.env.PUBLIC_URL + '/remindmecare-icon.png'} alt="RemindMeCare" className="data-section-icon" style={{ width: 38, height: 38, flexShrink: 0 }} />
+              <a href="https://remindmecare.com/" className="data-section-link" target="_blank" rel="noopener noreferrer" style={{ margin: 0, flex: 1, textAlign: 'left', fontSize: '1.1rem' }}>REMINDMECARE</a>
             </div>
-            <div className="data-section-row" style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '0.7rem', width: '100%' }}>
-              <img src={process.env.PUBLIC_URL + '/better-google-icon.png'} alt="Google Play" className="data-section-icon" style={{ width: 38, height: 38 }} />
-              <a href="https://play.google.com/store/apps/developer?id=ReMeLife" className="data-section-link" target="_blank" rel="noopener noreferrer" style={{ margin: 0 }}>APPS</a>
+            <div className="data-section-row" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '1rem', width: '90%', paddingLeft: '0.7rem' }}>
+              <img src={process.env.PUBLIC_URL + '/better-google-icon.png'} alt="Google Play" className="data-section-icon" style={{ width: 38, height: 38, flexShrink: 0 }} />
+              <a href="https://play.google.com/store/apps/developer?id=ReMeLife" className="data-section-link" target="_blank" rel="noopener noreferrer" style={{ margin: 0, flex: 1, textAlign: 'left', fontSize: '1.1rem' }}>APPS</a>
             </div>
           </div>
         )}
