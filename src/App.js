@@ -513,8 +513,8 @@ function SolutionsPage() {
             />
             <div style={{ color: '#b16fc9', fontWeight: 700, fontSize: '2rem', marginTop: '1.1rem', textAlign: 'center', letterSpacing: '0.01em', fontFamily: 'Michroma, sans-serif' }}>
               Care 2 Earn
-            </div>
           </div>
+        </div>
         </div>
         {/* Modal for all images */}
         {modalOpen && (
@@ -786,7 +786,7 @@ function NewsDetailPage() {
           {news.id === 'coin-bureau' ? (
             <p>{news.detail.replace(/<br\/?><br\/?/g, ' ').replace(/<[^>]+>/g, '')}</p>
           ) : (
-            <div dangerouslySetInnerHTML={{ __html: news.detail }} />
+          <div dangerouslySetInnerHTML={{ __html: news.detail }} />
           )}
         </div>
       </div>
