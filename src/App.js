@@ -804,7 +804,6 @@ function NewsDetailPage() {
 function AboutPage() {
   const [carouselIndex, setCarouselIndex] = React.useState(0);
   const partners = [
-    'about-page-images/singularities.png',
     'about-page-images/ucl.png',
     'about-page-images/athena.png',
     'about-page-images/antier.png',
@@ -815,8 +814,14 @@ function AboutPage() {
   // Show 4 at a time
   const visible = 4;
   const maxIndex = partners.length - visible;
-  const handlePrev = () => setCarouselIndex(i => (i - 1 + partners.length) % partners.length);
-  const handleNext = () => setCarouselIndex(i => (i + 1) % partners.length);
+
+  // Restore previous auto-slide effect (no fade)
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCarouselIndex(i => (i + 1) % partners.length);
+    }, 2500); // Change slide every 2.5 seconds
+    return () => clearInterval(interval);
+  }, [partners.length]);
 
   // Calculate the actual visible items for seamless looping
   const getVisiblePartners = () => {
@@ -860,34 +865,6 @@ function AboutPage() {
             Over the years of the development of ReMeLife and more recently with Lumi, we have worked with many illustrious partners, advisory board members and consultants. Here's a few of them.
           </p>
           <div className="carousel-wrapper" style={{ position: 'relative', width: '100%', maxWidth: '1200px', minHeight: '130px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '4rem' }}>
-            <button
-              onClick={handlePrev}
-              className="carousel-arrow carousel-arrow-left"
-              style={{
-                position: 'absolute',
-                left: '-48px',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                zIndex: 2,
-                fontSize: '2.5rem',
-                color: '#fff',
-                background: 'rgba(24,21,58,0.9)',
-                border: 'none',
-                borderRadius: '50%',
-                width: '44px',
-                height: '44px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                boxShadow: '0 2px 12px #0006',
-                cursor: 'pointer',
-                outline: 'none',
-                transition: 'background 0.2s, color 0.2s',
-              }}
-              aria-label="Previous partners"
-            >
-              &lt;
-            </button>
             <div className="carousel-items" style={{
               display: 'flex',
               flexDirection: 'row',
@@ -898,45 +875,18 @@ function AboutPage() {
               maxWidth: '1000px',
               margin: '0 auto',
               minHeight: '110px',
-              transition: 'width 0.3s',
+              transition: 'transform 0.7s cubic-bezier(0.4,0.2,0.2,1)',
+              transform: `translateX(0)`
             }}>
               {getVisiblePartners().map((img, idx) => (
                 <img
                   key={img + idx}
                   src={process.env.PUBLIC_URL + '/' + img}
                   alt={img.replace('.png', '')}
-                  style={{ height: '90px', width: 'auto', background: '#fff', borderRadius: '8px', objectFit: 'contain', padding: '8px', boxShadow: '0 2px 12px #0004' }}
+                  style={{ height: '90px', width: 'auto', background: '#fff', borderRadius: '8px', objectFit: 'contain', padding: '8px', boxShadow: '0 2px 12px #0004', transition: 'box-shadow 0.3s' }}
                 />
               ))}
             </div>
-            <button
-              onClick={handleNext}
-              className="carousel-arrow carousel-arrow-right"
-              style={{
-                position: 'absolute',
-                right: '-48px',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                zIndex: 2,
-                fontSize: '2.5rem',
-                color: '#fff',
-                background: 'rgba(24,21,58,0.9)',
-                border: 'none',
-                borderRadius: '50%',
-                width: '44px',
-                height: '44px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                boxShadow: '0 2px 12px #0006',
-                cursor: 'pointer',
-                outline: 'none',
-                transition: 'background 0.2s, color 0.2s',
-              }}
-              aria-label="Next partners"
-            >
-              &gt;
-            </button>
           </div>
         </div>
 
