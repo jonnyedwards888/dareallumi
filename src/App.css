@@ -1409,5 +1409,14 @@ html {
     box-sizing: border-box;
     line-height: 1.1 !important;
   }
+  .founder-words-video-mobile {
+    margin-bottom: 1.1rem !important;
+    border: 2.5px solid #40e0d0 !important;
+    box-shadow: 0 4px 24px 0 rgba(64,224,208,0.13), 0 1.5px 8px 0 rgba(177,111,201,0.10) !important;
+    background: linear-gradient(135deg, #23234a 60%, #18153a 100%) !important;
+    border-radius: 1.2rem !important;
+    overflow: hidden !important;
+    transition: box-shadow 0.2s, border 0.2s;
+  }
 }
 
