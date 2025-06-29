@@ -369,8 +369,19 @@
     padding-right: 0.7rem !important;
   }
   .about-section h2 {
-    margin-top: 1.2rem !important;
-    margin-bottom: 1.2rem !important;
+    font-size: 1.35rem !important;
+    text-align: center !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+    line-height: 1.15 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 98vw !important;
+    letter-spacing: 0.02em !important;
+    padding: 0 0.2em !important;
+    box-sizing: border-box !important;
+    display: block !important;
   }
   .about-section .max-w-2xl > .mb-4,
   .about-section .max-w-2xl > .mb-6,
@@ -405,6 +416,27 @@
   }
   .about-section .carousel-items {
     gap: 0.5rem !important;
+  }
+
+  /* Solutions page font fixes for mobile */
+  .solutions-section,
+  .solutions-section p,
+  .solutions-section li,
+  .solutions-feature-text,
+  .solutions-box-desc {
+    font-family: 'Inter', sans-serif !important;
+    font-style: normal !important;
+  }
+  .solutions-section h1,
+  .solutions-section h2,
+  .solutions-section h3,
+  .solutions-section h4,
+  .solutions-section h5,
+  .solutions-section h6,
+  .solutions-feature-title,
+  .solutions-main-heading {
+    font-family: 'Michroma', sans-serif !important;
+    font-style: normal !important;
   }
 }
 
