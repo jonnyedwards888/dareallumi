@@ -603,16 +603,19 @@ function SolutionsPage() {
 
         
         {/* What's RemindMecare Section */}
-        <div className="solutions-feature-row ">
-          <div className="flex-1 solutions-feature-text">
-            <h3 className="solutions-feature-title" style={{ fontFamily: 'Michroma, sans-serif' }}>
+        <div className={`solutions-feature-row ${window.innerWidth <= 700 ? 'remindmecare-mobile' : ''}`}>
+          <div className="flex-1 solutions-feature-text" style={window.innerWidth <= 700 ? { marginTop: '1.5rem' } : {}}>
+            <h3 className="solutions-feature-title" style={{ fontFamily: 'Michroma, sans-serif', marginBottom: window.innerWidth <= 700 ? '1rem' : undefined }}>
               WHAT'S REMINDMECARE?
             </h3>
-            <p className="mb-4">
-              At the heart of the ReMeLife ecosystem is the RemindMecare app (aka Reme). Used by those cared for at home and by formal care providers, such as care home, ReMe provides a suite of person-centred care functions that improves care, communication and connectivity.
-            </p>
-            <a href="https://reme.care/users/login" className="text-sky-400 hover:underline block mb-1" target="_blank" rel="noopener noreferrer">Visit RemindMecare b2c</a>
-            <a href="https://remindmecare.com/" className="text-sky-400 hover:underline block" target="_blank" rel="noopener noreferrer">Visit RemindMecare b2b</a>
+            <div style={window.innerWidth <= 700 ? { margin: '0 auto', maxWidth: '95vw', textAlign: 'center', fontSize: '1.08rem', lineHeight: 1.5, marginBottom: '0.7rem' } : {}}>
+              At the heart of the ReMeLife ecosystem is the RemindMecare app (aka Reme).<br />
+              Used by those cared for at home and by formal care providers, such as care home, ReMe provides a suite of person-centred care functions that improves care, communication and connectivity.
+            </div>
+            <div style={window.innerWidth <= 700 ? { margin: '0.3rem auto 0 auto', textAlign: 'center' } : {}}>
+              <a href="https://reme.care/users/login" className="text-sky-400 hover:underline block mb-1" target="_blank" rel="noopener noreferrer">Visit RemindMecare b2c</a>
+              <a href="https://remindmecare.com/" className="text-sky-400 hover:underline block" target="_blank" rel="noopener noreferrer">Visit RemindMecare b2b</a>
+            </div>
           </div>
           <div className="flex-1 flex flex-col items-center">
             <video
@@ -626,11 +629,11 @@ function SolutionsPage() {
           </div>
         </div>
         {/* AI Section Heading */}
-        <h2 className="solutions-main-heading" style={{ fontWeight: 700, fontSize: '2rem' }}>
+        <h2 className={`solutions-main-heading ${window.innerWidth <= 700 ? 'remindmecare-mobile' : ''}`} style={{ fontWeight: 700, fontSize: '2rem' }}>
           Integrating AI for the benefit of the care sector
         </h2>
         {/* AI Implementation Section */}
-        <div className="solutions-feature-row ai-implementation-section flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16">
+        <div className={`solutions-feature-row ai-implementation-section ${window.innerWidth <= 700 ? 'remindmecare-mobile' : ''} flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16`}>
           <div className="flex-1 solutions-feature-text">
             <h3 className="solutions-feature-title" style={{ fontFamily: 'Michroma, sans-serif' }}>
               AI IMPLEMENTATION
