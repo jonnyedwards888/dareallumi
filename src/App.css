@@ -285,8 +285,24 @@ html {
   outline-offset: 2px;
 }
 
-.solutions-section, .solutions-section p, .solutions-section li {
-  font-size: 1.08rem;
+.solutions-section,
+.solutions-section p,
+.solutions-section li,
+.solutions-feature-text,
+.solutions-box-desc {
+  font-family: 'Inter', sans-serif !important;
+  font-style: normal !important;
+}
+.solutions-section h1,
+.solutions-section h2,
+.solutions-section h3,
+.solutions-section h4,
+.solutions-section h5,
+.solutions-section h6,
+.solutions-feature-title,
+.solutions-main-heading {
+  font-family: 'Michroma', sans-serif !important;
+  font-style: normal !important;
 }
 
 .solutions-section {
