@@ -606,6 +606,29 @@ function SolutionsPage() {
         </div>
 
         
+        {/* Reme Wallet Section */}
+        <div className={`solutions-feature-row reme-wallet-row flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16`}>
+          <div className="flex-1 flex flex-col items-center">
+            <video
+              className="solutions-phone-video"
+              controls
+              style={{ width: '350px', borderRadius: '1.2rem', boxShadow: '0 4px 32px #0008', background: '#222' }}
+            >
+              <source src={process.env.PUBLIC_URL + "/Wallet-Video.mp4"} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div className="flex-1 solutions-feature-text" style={window.innerWidth <= 700 ? { marginTop: '1.7rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' } : {}}>
+            <h3 className="solutions-feature-title" style={window.innerWidth <= 700 ? { fontFamily: 'Michroma, sans-serif', marginBottom: '1.1rem', marginTop: '0.2rem', fontSize: '1.18rem', letterSpacing: '0.01em', textAlign: 'center' } : { fontFamily: 'Michroma, sans-serif', marginBottom: undefined }}>
+              THE REME WALLET
+            </h3>
+            <div style={window.innerWidth <= 700 ? { maxWidth: '95vw', textAlign: 'center', fontSize: '1.13rem', lineHeight: 1.7, marginBottom: 0, color: '#fff', padding: '0 0.2rem', marginTop: '0.2rem' } : { margin: '0 auto', maxWidth: '95vw', textAlign: 'left', fontSize: '1.08rem', lineHeight: 1.5, marginBottom: '0.7rem' }}>
+              An easy-to-use Member interface for managing Care2Earn rewards, building a community of value and accessing ReMeLife's CareFi services, including purchasing and swapping tokens.
+            </div>
+          </div>
+        </div>
+
+        
         {/* What's RemindMecare Section */}
         <div className={`solutions-feature-row ${window.innerWidth <= 700 ? 'remindmecare-mobile' : ''}`}>
           <div className="flex-1 solutions-feature-text" style={window.innerWidth <= 700 ? { marginTop: '1.5rem' } : {}}>
