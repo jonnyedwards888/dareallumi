@@ -619,11 +619,25 @@ function SolutionsPage() {
             </video>
           </div>
           <div className="flex-1 solutions-feature-text" style={window.innerWidth <= 700 ? { marginTop: '1.7rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' } : {}}>
-            <h3 className="solutions-feature-title" style={window.innerWidth <= 700 ? { fontFamily: 'Michroma, sans-serif', marginBottom: '1.1rem', marginTop: '0.2rem', fontSize: '1.18rem', letterSpacing: '0.01em', textAlign: 'center' } : { fontFamily: 'Michroma, sans-serif', marginBottom: undefined }}>
+            <h3
+              className="solutions-feature-title"
+              style={window.innerWidth <= 700
+                ? {
+                    fontFamily: 'Michroma, sans-serif',
+                    marginBottom: '1.1rem',
+                    marginTop: '0.2rem',
+                    fontSize: '1.18rem',
+                    letterSpacing: '0.01em',
+                    textAlign: 'center',
+                  }
+                : undefined}
+            >
               THE REME WALLET
             </h3>
-            <div style={window.innerWidth <= 700 ? { maxWidth: '95vw', textAlign: 'center', fontSize: '1.13rem', lineHeight: 1.7, marginBottom: 0, color: '#fff', padding: '0 0.2rem', marginTop: '0.2rem' } : { margin: '0 auto', maxWidth: '95vw', textAlign: 'left', fontSize: '1.08rem', lineHeight: 1.5, marginBottom: '0.7rem' }}>
-              An easy-to-use Member interface for managing Care2Earn rewards, building a community of value and accessing ReMeLife's CareFi services, including purchasing and swapping tokens.
+            <div style={window.innerWidth <= 700 ? { maxWidth: '95vw', textAlign: 'center', fontSize: '1.13rem', lineHeight: 1.7, marginBottom: 0, color: '#e0e0e0', padding: '0 0.2rem', marginTop: '0.2rem', fontWeight: 400 } : { margin: '0 auto', maxWidth: '95vw', textAlign: 'left', fontSize: '1.08rem', lineHeight: 1.5, marginBottom: '0.7rem' }}>
+              An easy-to-use Member interface for managing Care2Earn rewards,<br />
+              building a community of value and accessing ReMeLife's CareFi services,<br />
+              including purchasing and swapping tokens.
             </div>
           </div>
         </div>
