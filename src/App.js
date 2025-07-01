@@ -169,7 +169,22 @@ function LumiWordsSection() {
       <h2 className="founder-words-heading founder-words-heading-mobile" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.4rem', letterSpacing: '0.04em', marginBottom: '2.2rem', color: '#fff', textShadow: '2px 2px 0 #23234a', textAlign: 'center', width: '100%' }}>A few words from Lumi</h2>
       <div className="founder-words-row" style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'center', gap: '3.5rem', width: '100%' }}>
         <div className="founder-words-left" style={{ flex: '0 0 420px', maxWidth: '420px', minWidth: '260px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', width: '100%' }}>
-          <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', marginTop: '2rem', borderRadius: '1.5rem', overflow: 'hidden', boxShadow: '0 4px 32px #0008', background: 'red', maxWidth: 420, margin: '0 auto', marginTop: '2rem' }}>
+          <div
+            className="lumi-yt-embed-wrapper"
+            style={{
+              position: 'relative',
+              width: '100%',
+              paddingBottom: '56.25%',
+              marginTop: '2rem',
+              borderRadius: '1.5rem',
+              overflow: 'hidden',
+              boxShadow: '0 4px 32px #0008',
+              maxWidth: 420,
+              margin: '0 auto',
+              marginTop: '2rem',
+              marginBottom: window.innerWidth <= 700 ? '1.1rem' : 0
+            }}
+          >
             <iframe
               src="https://www.youtube.com/embed/jt6vmzWGQAY?si=af7zwzmHAIw8DA-t"
               title="YouTube video player"
@@ -183,7 +198,7 @@ function LumiWordsSection() {
         </div>
         <div className="founder-words-text founder-words-text-mobile" style={{ flex: '1 1 0', color: '#fff', fontFamily: 'Inter, sans-serif', maxWidth: '800px', minWidth: '260px', fontSize: '1.35rem', lineHeight: 1.5, marginTop: '1.5rem', textAlign: 'left' }}>
           LUMI is an AI utility token with a social impact mission. My main mission is to bring AI into person-centred care, into the ReMeLife ecosystem, and to you and your family. Along the way, we're going to build a decentralised community, have some fun and reclaim the value of our digital care.<br /><br />
-          But I'm also 'memesh' cos I've got a lot to say about todays unfair world. So you'll see a lot of me in 2025!
+          But I'm also 'memeish' cos I've got a lot to say about todays unfair world. So you'll see a lot of me in 2025!
         </div>
       </div>
     </section>
@@ -193,7 +208,7 @@ function LumiWordsSection() {
 function FounderWordsSection() {
   return (
     <section className="founder-words-section" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'none', padding: '3.5rem 0 1.5rem 0', maxWidth: '1500px', margin: '0 auto' }}>
-      <h2 className="founder-words-heading founder-words-heading-mobile" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.4rem', letterSpacing: '0.04em', marginBottom: '2.2rem', color: '#fff', textShadow: '2px 2px 0 #23234a', textAlign: 'center', width: '100%' }}>A few words from the Founder</h2>
+      <h2 className="founder-words-heading founder-words-heading-mobile" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.4rem', letterSpacing: '0.04em', marginBottom: window.innerWidth <= 700 ? '1.1rem' : '2.2rem', color: '#fff', textShadow: '2px 2px 0 #23234a', textAlign: 'center', width: '100%' }}>A few words from the Founder</h2>
       <div className="founder-words-row" style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'center', gap: '3.5rem', width: '100%' }}>
         <div className="founder-words-left" style={{ flex: '0 0 420px', maxWidth: '420px', minWidth: '260px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', width: '100%' }}>
           <video
@@ -201,7 +216,7 @@ function FounderWordsSection() {
             controls
             className="founder-words-video-mobile"
             poster={process.env.PUBLIC_URL + '/about-page-images/simon-hooper-about-page.jpg'}
-            style={{ width: '100%', borderRadius: '1.5rem', boxShadow: '0 4px 32px #0008', background: 'red', maxWidth: 420, margin: '0 auto', marginTop: '2rem' }}
+            style={{ width: '100%', borderRadius: '1.5rem', boxShadow: '0 4px 32px #0008', maxWidth: 420, margin: '0 auto', marginTop: window.innerWidth <= 700 ? 0 : '2rem', marginBottom: window.innerWidth <= 700 ? '1.1rem' : 0 }}
           />
         </div>
         <div className="founder-words-text founder-words-text-mobile" style={{ flex: '1 1 0', color: '#fff', fontFamily: 'Inter, sans-serif', maxWidth: '800px', minWidth: '260px', fontSize: '1.35rem', lineHeight: 1.5, marginTop: '1.5rem', textAlign: 'left' }}>
