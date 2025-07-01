@@ -57,8 +57,29 @@ function Navbar() {
           <Link to="/solutions" className="hero-button">Solutions</Link>
           <Link to="#data-section" className="hero-button" onClick={handleDataClick}>Data</Link>
           <Link to="/about" className="hero-button">About</Link>
-          <a href="https://x.com/mylumi_ai" className="hero-button" target="_blank" rel="noopener noreferrer">
-            <img src={process.env.PUBLIC_URL + "/X-logo-navbar.jpg"} alt="X (Twitter)" style={{ height: '1.6em', width: 'auto', verticalAlign: 'middle', marginRight: '0.2em', display: 'inline-block' }} />
+          <a href="https://x.com/mylumi_ai" className="hero-button" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginLeft: '0.5rem' }}>
+            <img
+              src={process.env.PUBLIC_URL + "/X-logo-navbar.jpg"}
+              alt="X (Twitter)"
+              style={{
+                width: 36,
+                height: 36,
+                borderRadius: '50%',
+                boxShadow: '0 2px 8px #0004',
+                border: '2px solid #fff',
+                objectFit: 'cover',
+                cursor: 'pointer',
+                transition: 'box-shadow 0.2s'
+              }}
+            />
+          </a>
+          {/* Linktree logo in navbar */}
+          <a href="https://linktr.ee/lumiai" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginLeft: '0.5rem' }}>
+            <img
+              src={process.env.PUBLIC_URL + '/Linktree-logo.png'}
+              alt="Linktree"
+              style={{ width: 36, height: 36, borderRadius: '50%', boxShadow: '0 2px 8px #0004', border: '2px solid #fff', objectFit: 'cover', cursor: 'pointer', transition: 'box-shadow 0.2s' }}
+            />
           </a>
         </div>
       </div>
@@ -87,9 +108,9 @@ function HeroSection() {
             />
           </div>
           <div className="lumi-hero-buttons">
-            <a href={process.env.PUBLIC_URL + "/Lumi-Lite-Paper.pdf"} className="lumi-hero-btn" target="_blank" rel="noopener noreferrer">Lite Paper</a>
-            <a href="#" className="lumi-hero-btn">Register</a>
-            <a href="#" className="lumi-hero-btn">Buy $LUMI</a>
+            <a href={process.env.PUBLIC_URL + "/Lumi-Lite-Paper.pdf"} className="lumi-hero-btn" target="_blank" rel="noopener noreferrer" style={window.innerWidth <= 700 ? { fontSize: '0.88rem' } : {}}>Lite Paper</a>
+            <a href="#" className="lumi-hero-btn" style={window.innerWidth <= 700 ? { fontSize: '0.88rem' } : {}}>Register</a>
+            <a href="#" className="lumi-hero-btn" style={window.innerWidth <= 700 ? { fontSize: '0.88rem' } : {}}>Buy $LUMI</a>
           </div>
           <div className="lumi-subtitle" style={{ fontFamily: 'Michroma, sans-serif', marginTop: '0.5rem' }}>
             The first AI person-centred care agent on chain.
@@ -137,6 +158,33 @@ function LumiTokenSection() {
           playsInline
           style={{ width: '820px', maxWidth: '99vw', borderRadius: '2rem', boxShadow: '0 4px 32px #0008', background: '#222' }}
         />
+      </div>
+    </section>
+  );
+}
+
+function LumiWordsSection() {
+  return (
+    <section className="founder-words-section" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'none', padding: '3.5rem 0 1.5rem 0', maxWidth: '1500px', margin: '0 auto' }}>
+      <h2 className="founder-words-heading founder-words-heading-mobile" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.4rem', letterSpacing: '0.04em', marginBottom: '2.2rem', color: '#fff', textShadow: '2px 2px 0 #23234a', textAlign: 'center', width: '100%' }}>A few words from Lumi</h2>
+      <div className="founder-words-row" style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'center', gap: '3.5rem', width: '100%' }}>
+        <div className="founder-words-left" style={{ flex: '0 0 420px', maxWidth: '420px', minWidth: '260px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', width: '100%' }}>
+          <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', marginTop: '2rem', borderRadius: '1.5rem', overflow: 'hidden', boxShadow: '0 4px 32px #0008', background: 'red', maxWidth: 420, margin: '0 auto', marginTop: '2rem' }}>
+            <iframe
+              src="https://www.youtube.com/embed/jt6vmzWGQAY?si=af7zwzmHAIw8DA-t"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+            />
+          </div>
+        </div>
+        <div className="founder-words-text founder-words-text-mobile" style={{ flex: '1 1 0', color: '#fff', fontFamily: 'Inter, sans-serif', maxWidth: '800px', minWidth: '260px', fontSize: '1.35rem', lineHeight: 1.5, marginTop: '1.5rem', textAlign: 'left' }}>
+          LUMI is an AI utility token with a social impact mission. My main mission is to bring AI into person-centred care, into the ReMeLife ecosystem, and to you and your family. Along the way, we're going to build a decentralised community, have some fun and reclaim the value of our digital care.<br /><br />
+          But I'm also 'memesh' cos I've got a lot to say about todays unfair world. So you'll see a lot of me in 2025!
+        </div>
       </div>
     </section>
   );
@@ -455,7 +503,7 @@ function FooterSection() {
         <div className="footer-right">
           <div className="footer-resources">
             <span className="footer-resources-title">RESOURCES</span>
-            <a href="#" style={{ color: '#fff', fontSize: '1rem', textDecoration: 'none' }}>Contact Us</a>
+            <span style={{ color: '#fff', fontSize: '1rem', display: 'block', marginBottom: '0.3rem' }}>Contact Us at: simon@remelife.com</span>
             <a href="https://x.com/mylumi_ai" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', fontSize: '1rem', textDecoration: 'none', display: 'block', marginTop: '0.3rem' }}>Twitter</a>
           </div>
           <div className="footer-socials">
@@ -699,20 +747,78 @@ function SolutionsPage() {
         {/* AI Enhancements Section */}
         <div className="solutions-feature-row ai-enhancements-section flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16">
           <div className="flex-1 solutions-feature-text">
-            <div className="mb-4" style={{ fontWeight: 500 }}>
+            <div className="mb-4" style={{ fontWeight: 500, textAlign: 'center' }}>
               The AI enhancements currently being developed are as follows.
             </div>
-            <ul className="solutions-list mb-4">
-              <li>AI System for ELR® personal health data management</li>
-              <li>Activity Creation & Cognitive Stimulation</li>
-              <li>ReMeComm Community Engagement</li>
-              <li>Personal AI Agents/Virtual Companions (AI4U)</li>
-              <li>Automated Reporting</li>
-              <li>Enhanced Data Security</li>
-              <li>Data Management & Monetisation</li>
+            <ul
+              className="solutions-list mb-4"
+              style={window.innerWidth <= 700 ? {
+                paddingLeft: 0,
+                margin: 0,
+                display: 'block',
+              } : {}}
+            >
+              <li style={window.innerWidth <= 700 ? { display: 'flex', alignItems: 'center', fontSize: '0.85rem', marginBottom: '0.2em', whiteSpace: 'nowrap' } : {}}>
+                <span style={window.innerWidth <= 700 ? { display: 'inline-block', width: '1.2em', textAlign: 'center', fontSize: '1.2em', color: '#fff' } : {}}>&#8226;</span>
+                <span style={window.innerWidth <= 700 ? { display: 'inline-block', textAlign: 'left', flex: 1 } : {}}>
+                  AI System for ELR® personal health data management
+                </span>
+              </li>
+              <li style={window.innerWidth <= 700 ? { display: 'flex', alignItems: 'center', fontSize: '0.85rem', marginBottom: '0.2em', whiteSpace: 'nowrap' } : {}}>
+                <span style={window.innerWidth <= 700 ? { display: 'inline-block', width: '1.2em', textAlign: 'center', fontSize: '1.2em', color: '#fff' } : {}}>&#8226;</span>
+                <span style={window.innerWidth <= 700 ? { display: 'inline-block', textAlign: 'left', flex: 1 } : {}}>
+                  Activity Creation & Cognitive Stimulation
+                </span>
+              </li>
+              <li style={window.innerWidth <= 700 ? { display: 'flex', alignItems: 'center', fontSize: '0.85rem', marginBottom: '0.2em', whiteSpace: 'nowrap' } : {}}>
+                <span style={window.innerWidth <= 700 ? { display: 'inline-block', width: '1.2em', textAlign: 'center', fontSize: '1.2em', color: '#fff' } : {}}>&#8226;</span>
+                <span style={window.innerWidth <= 700 ? { display: 'inline-block', textAlign: 'left', flex: 1 } : {}}>
+                  ReMeComm Community Engagement
+                </span>
+              </li>
+              <li style={window.innerWidth <= 700 ? { display: 'flex', alignItems: 'center', fontSize: '0.85rem', marginBottom: '0.2em', whiteSpace: 'nowrap' } : {}}>
+                <span style={window.innerWidth <= 700 ? { display: 'inline-block', width: '1.2em', textAlign: 'center', fontSize: '1.2em', color: '#fff' } : {}}>&#8226;</span>
+                <span style={window.innerWidth <= 700 ? { display: 'inline-block', textAlign: 'left', flex: 1 } : {}}>
+                  Personal AI Agents/Virtual Companions (AI4U)
+                </span>
+              </li>
+              <li style={window.innerWidth <= 700 ? { display: 'flex', alignItems: 'center', fontSize: '0.85rem', marginBottom: '0.2em', whiteSpace: 'nowrap' } : {}}>
+                <span style={window.innerWidth <= 700 ? { display: 'inline-block', width: '1.2em', textAlign: 'center', fontSize: '1.2em', color: '#fff' } : {}}>&#8226;</span>
+                <span style={window.innerWidth <= 700 ? { display: 'inline-block', textAlign: 'left', flex: 1 } : {}}>
+                  Automated Reporting
+                </span>
+              </li>
+              <li style={window.innerWidth <= 700 ? { display: 'flex', alignItems: 'center', fontSize: '0.85rem', marginBottom: '0.2em', whiteSpace: 'nowrap' } : {}}>
+                <span style={window.innerWidth <= 700 ? { display: 'inline-block', width: '1.2em', textAlign: 'center', fontSize: '1.2em', color: '#fff' } : {}}>&#8226;</span>
+                <span style={window.innerWidth <= 700 ? { display: 'inline-block', textAlign: 'left', flex: 1 } : {}}>
+                  Enhanced Data Security
+                </span>
+              </li>
+              <li style={window.innerWidth <= 700 ? { display: 'flex', alignItems: 'center', fontSize: '0.85rem', marginBottom: '0.2em', whiteSpace: 'nowrap' } : {}}>
+                <span style={window.innerWidth <= 700 ? { display: 'inline-block', width: '1.2em', textAlign: 'center', fontSize: '1.2em', color: '#fff' } : {}}>&#8226;</span>
+                <span style={window.innerWidth <= 700 ? { display: 'inline-block', textAlign: 'left', flex: 1 } : {}}>
+                  Data Management & Monetisation
+                </span>
+              </li>
             </ul>
-            <a href={process.env.PUBLIC_URL + '/AI-Viability-Analysis.pdf'} className="text-sky-400 hover:underline block mb-1" target="_blank" rel="noopener noreferrer">AI Viability Analysis</a>
-            <a href={process.env.PUBLIC_URL + '/Lumi-Ai-Report.pdf'} className="text-sky-400 hover:underline block" target="_blank" rel="noopener noreferrer">AI Implementation strategy</a>
+            <a
+              href={process.env.PUBLIC_URL + '/AI-Viability-Analysis.pdf'}
+              className="text-sky-400 hover:underline block mb-1"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={window.innerWidth <= 700 ? { textAlign: 'left', display: 'block', marginLeft: 0, marginBottom: '0.2rem' } : {}}
+            >
+              AI Viability Analysis
+            </a>
+            <a
+              href={process.env.PUBLIC_URL + '/Lumi-Ai-Report.pdf'}
+              className="text-sky-400 hover:underline block"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={window.innerWidth <= 700 ? { textAlign: 'left', display: 'block', marginLeft: 0, marginBottom: '0.7rem' } : {}}
+            >
+              AI Implementation strategy
+            </a>
           </div>
           <div className="flex-1 flex flex-col items-center">
             <img
@@ -761,7 +867,7 @@ function NewsCardsSection() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 w-full max-w-7xl px-4">
         {newsData.map((card, idx) => (
           <div key={card.id} className="news-card rounded-xl overflow-hidden flex flex-col" style={{ minHeight: '320px' }}>
-            {(card.id === 'convex-remegrid' || card.id === 'project-update-1') ? (
+            {card.id === 'convex-remegrid' || card.id === 'project-update-1' ? (
               <img 
                 src={`https://img.youtube.com/vi/${card.id === 'convex-remegrid' ? 'O9P1Fr_v4JQ' : 'IB89b-N-TgA'}/hqdefault.jpg`}
                 alt={card.title} 
@@ -815,7 +921,7 @@ function NewsDetailPage() {
           <div className="video-container mb-8 w-full" style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', maxWidth: '100%' }}>
             <iframe 
               style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-              src={`https://www.youtube.com/embed/${videoId}`}
+              src={`https://www.youtube.com/embed/${videoId}?start=${news.id === 'simon-hooper-convex' ? '1047' : ''}`}
               title={news.title}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -842,7 +948,6 @@ function AboutPage() {
   const [carouselIndex, setCarouselIndex] = React.useState(0);
   const partners = [
     'about-page-images/ucl.png',
-    'about-page-images/athena.png',
     'about-page-images/antier.png',
     'about-page-images/limechain.png',
     'about-page-images/mongoDB.png',
@@ -968,22 +1073,23 @@ function AppRoutes() {
   }, [location]);
 
   return (
-    <Routes>
-      <Route path="/" element={
-        <>
-          <HeroSection />
-          <LumiTokenSection />
-          <FounderWordsSection />
-          <DataSection />
-          <PhasesSection />
-          <ComingSoonSection />
-          <FooterSection />
-        </>
-      } />
-      <Route path="/solutions" element={<SolutionsPage />} />
-      <Route path="/about" element={<AboutPage />} />
-      <Route path="/news/:id" element={<NewsDetailPage />} />
-    </Routes>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <HeroSection />
+              <LumiTokenSection />
+          <LumiWordsSection />
+              <FounderWordsSection />
+              <DataSection />
+              <PhasesSection />
+              <ComingSoonSection />
+              <FooterSection />
+            </>
+          } />
+          <Route path="/solutions" element={<SolutionsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/news/:id" element={<NewsDetailPage />} />
+        </Routes>
   );
 }
 
@@ -991,7 +1097,7 @@ function App() {
   return (
     <Router>
       <AppRoutes />
-    </Router>
+      </Router>
   );
 }
 
