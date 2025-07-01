@@ -186,7 +186,7 @@ function LumiWordsSection() {
             }}
           >
             <iframe
-              src="https://www.youtube.com/embed/jt6vmzWGQAY?si=af7zwzmHAIw8DA-t"
+              src="https://www.youtube.com/embed/jt6vmzWGQAY?si=af7zwzmHAIw8DA-t&rel=0"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -674,14 +674,11 @@ function SolutionsPage() {
         {/* Reme Wallet Section */}
         <div className={`solutions-feature-row reme-wallet-row flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16`}>
           <div className="flex-1 flex flex-col items-center">
-            <video
-              className="solutions-phone-video"
-              controls
-              style={{ width: '350px', borderRadius: '1.2rem', boxShadow: '0 4px 32px #0008', background: '#222' }}
-            >
-              <source src={process.env.PUBLIC_URL + "/Wallet-Video.mp4"} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <img
+              src={process.env.PUBLIC_URL + '/Reme-Wallet.gif'}
+              alt="Reme Wallet Animation"
+              style={{ width: '350px', borderRadius: '1.2rem', boxShadow: '0 4px 32px #0008', background: '#222', display: 'block' }}
+            />
           </div>
           <div className="flex-1 solutions-feature-text" style={window.innerWidth <= 700 ? { marginTop: '1.7rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' } : {}}>
             <h3
@@ -727,9 +724,9 @@ function SolutionsPage() {
             <video
               className="solutions-phone-video"
               controls
-              style={{ width: '350px' }}
+              style={{ width: '350px', borderRadius: '1.2rem', boxShadow: '0 4px 32px #0008', background: '#222' }}
             >
-              <source src={process.env.PUBLIC_URL + "/data-images/remecare-video.mp4"} type="video/mp4" />
+              <source src={process.env.PUBLIC_URL + "/Wallet-Video.mp4"} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
