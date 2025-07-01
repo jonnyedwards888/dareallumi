@@ -519,7 +519,7 @@ function FooterSection() {
           <div className="footer-resources">
             <span className="footer-resources-title">RESOURCES</span>
             <span style={{ color: '#fff', fontSize: '1rem', display: 'block', marginBottom: '0.3rem' }}>
-              Contact us <a href="mailto:simon@remelife.com" style={{ color: '#b16fc9', textDecoration: 'underline' }}>here</a>
+              Contact <a href="mailto:simon@remelife.com?subject=Hi%20Lumi%2C%20can%20you%20help%20me%3F" style={{ color: '#b16fc9', textDecoration: 'underline' }}>simon@remelife.com</a>
             </span>
             <a href="https://x.com/mylumi_ai" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', fontSize: '1rem', textDecoration: 'none', display: 'block', marginTop: '0.3rem' }}>Twitter</a>
           </div>
