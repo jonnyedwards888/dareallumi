@@ -674,11 +674,14 @@ function SolutionsPage() {
         {/* Reme Wallet Section */}
         <div className={`solutions-feature-row reme-wallet-row flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16`}>
           <div className="flex-1 flex flex-col items-center">
-            <img
-              src={process.env.PUBLIC_URL + '/Reme-Wallet.gif'}
-              alt="Reme Wallet Animation"
-              style={{ width: '350px', borderRadius: '1.2rem', boxShadow: '0 4px 32px #0008', background: '#222', display: 'block' }}
-            />
+            <video
+              className="solutions-phone-video"
+              controls
+              style={{ width: '350px', borderRadius: '1.2rem', boxShadow: '0 4px 32px #0008', background: '#222' }}
+            >
+              <source src={process.env.PUBLIC_URL + "/Wallet-Video.mp4"} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
           <div className="flex-1 solutions-feature-text" style={window.innerWidth <= 700 ? { marginTop: '1.7rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' } : {}}>
             <h3
@@ -706,7 +709,7 @@ function SolutionsPage() {
 
         
         {/* What's RemindMecare Section */}
-        <div className={`solutions-feature-row ${window.innerWidth <= 700 ? 'remindmecare-mobile' : ''}`}>
+        <div className={`solutions-feature-row ${window.innerWidth <= 700 ? 'remindmecare-mobile' : ''}`}> 
           <div className="flex-1 solutions-feature-text" style={window.innerWidth <= 700 ? { marginTop: '1.5rem' } : {}}>
             <h3 className="solutions-feature-title" style={{ fontFamily: 'Michroma, sans-serif', marginBottom: window.innerWidth <= 700 ? '1rem' : undefined }}>
               WHAT'S REMINDMECARE?
@@ -725,8 +728,9 @@ function SolutionsPage() {
               className="solutions-phone-video"
               controls
               style={{ width: '350px', borderRadius: '1.2rem', boxShadow: '0 4px 32px #0008', background: '#222' }}
+              poster={process.env.PUBLIC_URL + "/What's-Remindmecare-Thumbnail.png"}
             >
-              <source src={process.env.PUBLIC_URL + "/Wallet-Video.mp4"} type="video/mp4" />
+              <source src={process.env.PUBLIC_URL + "/data-images/remecare-video.mp4"} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -966,6 +970,8 @@ function AboutPage() {
     'about-page-images/limechain.png',
     'about-page-images/mongoDB.png',
     'about-page-images/worcester.png',
+    'Convex-Logo-Better.svg',
+    'Tesseract-Logo.png',
   ];
   // Show 4 at a time
   const visible = 4;
