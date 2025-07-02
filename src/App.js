@@ -102,15 +102,15 @@ function HeroSection() {
           <h1 className="lumi-heading" style={{ fontFamily: 'Michroma, sans-serif' }}>LUMI</h1>
           <div className="lumi-avatar-wrapper">
             <img
-              src={process.env.PUBLIC_URL + "/Lumi-Line-Main.png"}
+              src={process.env.PUBLIC_URL + "/The-Blink-Lumi.gif"}
               alt="Lumi Full Body"
               className="lumi-fullbody-img"
             />
           </div>
           <div className="lumi-hero-buttons">
-            <a href={process.env.PUBLIC_URL + "/Lumi-Lite-Paper.pdf"} className="lumi-hero-btn" target="_blank" rel="noopener noreferrer" style={window.innerWidth <= 700 ? { fontSize: '0.88rem' } : {}}>Lite Paper</a>
-            <a href="#" className="lumi-hero-btn" style={window.innerWidth <= 700 ? { fontSize: '0.88rem' } : {}}>Register</a>
-            <a href="#" className="lumi-hero-btn" style={window.innerWidth <= 700 ? { fontSize: '0.88rem' } : {}}>Buy $LUMI</a>
+            <a href={process.env.PUBLIC_URL + "/Lumi-Lite-Paper.pdf"} className="lumi-hero-btn" target="_blank" rel="noopener noreferrer">Lite Paper</a>
+            <a href="#" className="lumi-hero-btn">Register</a>
+            <a href="#" className="lumi-hero-btn">Buy $LUMI</a>
           </div>
           <div className="lumi-subtitle" style={{ fontFamily: 'Michroma, sans-serif', marginTop: '0.5rem' }}>
             The first AI person-centred care agent on chain.
