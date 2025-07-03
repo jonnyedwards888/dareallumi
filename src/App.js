@@ -102,7 +102,7 @@ function HeroSection() {
           <h1 className="lumi-heading" style={{ fontFamily: 'Michroma, sans-serif' }}>LUMI</h1>
           <div className="lumi-avatar-wrapper">
             <img
-              src={process.env.PUBLIC_URL + "/The-Blink-Lumi.gif"}
+              src={process.env.PUBLIC_URL + "/Lumi-Line-Main.png"}
               alt="Lumi Full Body"
               className="lumi-fullbody-img"
             />
@@ -186,7 +186,7 @@ function LumiWordsSection() {
             }}
           >
             <iframe
-              src="https://www.youtube.com/embed/jt6vmzWGQAY?si=af7zwzmHAIw8DA-t&rel=0"
+              src="https://www.youtube.com/embed/jt6vmzWGQAY"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
