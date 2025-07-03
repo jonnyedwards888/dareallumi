@@ -113,7 +113,7 @@ function HeroSection() {
             <a href="#" className="lumi-hero-btn">Buy $LUMI</a>
           </div>
           <div className="lumi-subtitle" style={{ fontFamily: 'Michroma, sans-serif', marginTop: '0.5rem' }}>
-            The first AI person-centred care agent on chain.
+            The first AI healthcare agent on chain.
           </div>
         </div>
       </div>
