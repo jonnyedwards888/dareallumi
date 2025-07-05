@@ -5,9 +5,27 @@ import './App.css';
 import './LotsGoingOn.css';
 import './NavbarMobile.css';
 import './DataSection.css';
+import './AboutPage.css';
 
 import './Responsive.css';
 
+// Add TeamCardAnimated component at the top level
+function TeamCardAnimated({ image, name, title, details }) {
+  return (
+    <div className="team-card-animated" tabIndex={0}>
+      <div className="team-card-image-wrapper" style={{ position: 'relative', width: '100%', height: '260px' }}>
+        <img src={image} alt={name} className="team-card-image" />
+        <div className="team-card-details">
+          {details}
+        </div>
+      </div>
+      <div className="team-card-info">
+        <h3 className="team-card-name">{name}</h3>
+        <p className="team-card-title">{title}</p>
+      </div>
+    </div>
+  );
+}
 
 function Navbar() {
   const location = useLocation();
@@ -109,8 +127,8 @@ function HeroSection() {
           </div>
           <div className="lumi-hero-buttons">
             <a href={process.env.PUBLIC_URL + "/Lumi-Lite-Paper.pdf"} className="lumi-hero-btn" target="_blank" rel="noopener noreferrer">Lite Paper</a>
-            <a href="#" className="lumi-hero-btn">Register</a>
-            <a href="#" className="lumi-hero-btn">Buy $LUMI</a>
+            <button className="lumi-hero-btn" type="button">Register</button>
+            <button className="lumi-hero-btn" type="button">Buy $LUMI</button>
           </div>
           <div className="lumi-subtitle" style={{ fontFamily: 'Michroma, sans-serif', marginTop: '0.5rem' }}>
             The first AI healthcare agent on chain.
@@ -963,33 +981,31 @@ function NewsDetailPage() {
 }
 
 function AboutPage() {
-  const [carouselIndex, setCarouselIndex] = React.useState(0);
-  const partners = [
-    'about-page-images/ucl.png',
-    'about-page-images/antier.png',
-    'about-page-images/limechain.png',
-    'about-page-images/mongoDB.png',
-    'about-page-images/worcester.png',
-    'Convex-Logo-Better.svg',
+  const navigate = useNavigate();
+
+  // Partner carousel logic
+  const partnerImages = [
+    'ucl.png',
+    'antier.png',
+    'limechain.png',
+    'mongoDB.png',
     'Tesseract-Logo.png',
+    'Convex-Logo-Better.svg',
   ];
-  // Show 4 at a time
-  const visible = 4;
-  const maxIndex = partners.length - visible;
+  const visibleCount = 4;
+  const [carouselIndex, setCarouselIndex] = useState(0);
 
-  // Restore previous auto-slide effect (no fade)
-  React.useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
-      setCarouselIndex(i => (i + 1) % partners.length);
-    }, 2500); // Change slide every 2.5 seconds
+      setCarouselIndex((prev) => (prev + 1) % partnerImages.length);
+    }, 2500);
     return () => clearInterval(interval);
-  }, [partners.length]);
+  }, [partnerImages.length]);
 
-  // Calculate the actual visible items for seamless looping
   const getVisiblePartners = () => {
     let items = [];
-    for (let j = 0; j < visible; j++) {
-      items.push(partners[(carouselIndex + j) % partners.length]);
+    for (let j = 0; j < visibleCount; j++) {
+      items.push(partnerImages[(carouselIndex + j) % partnerImages.length]);
     }
     return items;
   };
@@ -997,83 +1013,270 @@ function AboutPage() {
   return (
     <>
       <Navbar />
-      <div className="about-section min-h-screen flex flex-col items-center justify-start bg-[#18153a] text-white py-16 px-4">
-        <h2 className="text-4xl font-bold mb-8 text-center" style={{ fontFamily: 'Michroma, sans-serif', fontSize: '2.5rem', letterSpacing: '0.04em' }}>THE TEAM & COMMUNITY</h2>
-        <div className="max-w-2xl w-full mx-auto flex flex-col items-center">
-          <p className="mb-4 text-lg text-center" style={{ fontFamily: 'Inter, sans-serif' }}>
-            As the founder of ReMeLife, I'm privileged and fortunate to work with a core team of creative long-term diehards, a community of talented individuals that have been focused on bringing Lumi and ReMeLife to its launchpad.
-          </p>
-          <p className="mb-6 text-lg text-center" style={{ fontFamily: 'Inter, sans-serif' }}>
-            Working from locations globally, predominantly rewarded in vested tokens, and with a social impact soul, the team and an associated Advisory Board, are committed to complete the build of this self-supporting AI and rewards-based community.<br /><br />
-            Unfunded by traditional formal investment and ultimately being DAO managed, Lumi and ReMeLife are being built 'for the people, by the people'. And, after many years, Lumi is now on the launchpad and ReMeLife is close behind".
-          </p>
-          <img src={process.env.PUBLIC_URL + '/about-page-images/simon-hooper-about-page.jpg'} alt="Simon Hooper About" className="my-8 rounded-lg shadow-lg mx-auto" style={{ maxWidth: '600px', width: '100%' }} />
-          <p className="mt-2 text-lg text-center" style={{ fontFamily: 'Inter, sans-serif' }}>
-            "I conceived ReMeLife as a response to my own family experiences, of my time spent developing apps in the care sector, and of the obvious potential of AI, blockchain and crypto to be able to support the financial needs of those that are simply not benefitting from the fiat value inherent in their own digital daily care. Lumi is the all critical element that is integrating the power of AI into the ecosystem, and that will manage scale and data, and drive consumer engagement through his meme character.
-          </p>
-          <p className="mt-8 text-lg text-center" style={{ fontFamily: 'Inter, sans-serif' }}>
-            As a decentralised, tech-based community ecosystem, Lumi assists combat today's unfair harvesting of our daily care actions. As the rich get richer and the rest of us lose our rights and opportunities, Lumi is very much needed, as we enter a new era. We hope you will join us in this mission".
-          </p>
-          <img src={process.env.PUBLIC_URL + '/about-page-images/pepe-banner.jpg'} alt="Pepe Banner" className="my-10 rounded-lg shadow-lg mx-auto" style={{ maxWidth: '800px', width: '100%' }} />
-          <p className="mt-2 text-lg text-center" style={{ fontFamily: 'Inter, sans-serif' }}>
-            We love design, creativity, social interactivity, and bringing financial opportunity to our community. So naturally, we've been in crypto for years. And of course we <span style={{ fontStyle: 'italic' }}>LOVE</span> memes. That's why Lumi chose us, he says, as his platform to change the world!
-          </p>
+      <div className="about-section">
+        <h2 className="about-header">THE TEAM & COMMUNITY</h2>
+        <div className="about-intro">
+          As the founder of ReMeLife, I'm privileged and fortunate to work with a core team of creative long-term diehards, a community of talented individuals that have been focused on bringing Lumi and ReMeLife to its launchpad.<br /><br />
+          Working from locations globally, predominantly rewarded in vested tokens, and with a social impact soul, the team and an associated Advisory Board, are committed to complete the build of this self-supporting AI and rewards-based community.<br /><br />
+          Unfunded by traditional formal investment and ultimately being DAO managed, Lumi and ReMeLife are being built 'for the people, by the people'. And, after many years, Lumi is now on the launchpad and ReMeLife is close behind".
         </div>
-
+        <img src={process.env.PUBLIC_URL + '/about-page-images/simon-hooper-about-page.jpg'} alt="Simon Hooper About" className="about-img" />
+        <div className="about-intro">
+          I conceived ReMeLife as a response to my own family experiences, of my time spent developing apps in the care sector, and of the obvious potential of AI, blockchain and crypto to be able to support the financial needs of those that are simply not benefitting from the fiat value inherent in their own digital daily care. Lumi is the all critical element that is integrating the power of AI into the ecosystem, and that will manage scale and data, and drive consumer engagement through his meme character.<br /><br />
+          As a decentralised, tech-based community ecosystem, Lumi assists combat today's unfair harvesting of our daily care actions. As the rich get richer and the rest of us lose our rights and opportunities, Lumi is very much needed, as we enter a new era. We hope you will join us in this mission".
+        </div>
+        <img src={process.env.PUBLIC_URL + '/about-page-images/pepe-banner.jpg'} alt="Pepe Banner" className="about-img" />
+        <div className="about-intro">
+          We love design, creativity, social interactivity, and bringing financial opportunity to our community. So naturally, we've been in crypto for years. And of course we <span style={{ fontStyle: 'italic' }}>LOVE</span> memes. That's why Lumi chose us, he says, as his platform to change the world!
+        </div>
+        {/* MEET THE TEAM SECTION */}
+        <h2 className="about-header" style={{ marginTop: '3rem' }}>Meet the Team</h2>
+        <div className="team-section" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '2.5rem', marginBottom: '5.5rem' }}>
+          {/* Simon Hooper Card (Animated) */}
+          <TeamCardAnimated
+            image={process.env.PUBLIC_URL + '/team-images/Simon-Hooper.JPG'}
+            name="Simon Hooper"
+            title="FOUNDER AND CEO"
+            details={
+              <>
+                Simon is a petroleum geologist turned care-tech entrepreneur, leading ReMeLife with years of experience in sales, marketing, and digital transformation for care facilities.<br />
+                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1.5rem' }}>
+                  <a href="https://www.linkedin.com/in/simonghooper/" target="_blank" rel="noopener noreferrer">
+                    <img src={process.env.PUBLIC_URL + '/linkedin.png'} alt="LinkedIn" style={{ width: '36px', height: '36px' }} />
+                  </a>
+                </div>
+              </>
+            }
+          />
+          {/* Asif Card (Animated) */}
+          <TeamCardAnimated
+            image={process.env.PUBLIC_URL + '/team-images/Asif-Team.jpg'}
+            name="Asif"
+            title="BACKEND ENGINEER"
+            details={
+              <>
+                Asif is a full-stack developer passionate about building secure, high-performance web applications and long-term client partnerships.<br />
+                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1.5rem' }}>
+                  <a href="https://www.linkedin.com/in/raoasifraza/" target="_blank" rel="noopener noreferrer">
+                    <img src={process.env.PUBLIC_URL + '/linkedin.png'} alt="LinkedIn" style={{ width: '36px', height: '36px' }} />
+                  </a>
+                </div>
+              </>
+            }
+          />
+          {/* Orbit Card (Animated) */}
+          <TeamCardAnimated
+            image={process.env.PUBLIC_URL + '/team-images/L-Team-Icon.jpg'}
+            name="Orbit"
+            title="SOFTWARE ENGINEER"
+            details={
+              <>
+                Orbit is a self-taught software engineer, building Remindmecare, Lumi, and Remelife for over 2 years.<br />
+                {/* No LinkedIn provided */}
+              </>
+            }
+          />
+          {/* Oliver Card (Animated) */}
+          <TeamCardAnimated
+            image={process.env.PUBLIC_URL + '/team-images/Orbit.jpg'}
+            name="Oliver"
+            title="SEO & Community Lead"
+            details={
+              <>
+                Oliver is an expert in SEO and community growth, elevating Lumi and Remindmecare's digital presence and discoverability.<br />
+                {/* No LinkedIn provided */}
+              </>
+            }
+          />
+        </div>
         {/* PARTNERS & ASSOCIATES SECTION */}
-        <div className="w-full flex flex-col items-center mt-24">
-          <h2 className="text-white text-center mb-6" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.2rem', letterSpacing: '0.04em' }}>PARTNERS & ASSOCIATES</h2>
-          <p className="text-lg text-center mb-10 max-w-3xl" style={{ fontFamily: 'Inter, sans-serif' }}>
-            Over the years of the development of ReMeLife and more recently with Lumi, we have worked with many illustrious partners, advisory board members and consultants. Here's a few of them.
-          </p>
-          <div className="carousel-wrapper" style={{ position: 'relative', width: '100%', maxWidth: '1200px', minHeight: '130px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '4rem' }}>
-            <div className="carousel-items" style={{
+        <h2 className="about-header" style={{ marginTop: '3rem' }}>PARTNERS & ASSOCIATES</h2>
+        <div className="about-intro" style={{ marginBottom: '2.5rem' }}>
+          Over the years of the development of ReMeLife and more recently with Lumi, we have worked with many illustrious partners, advisory board members and consultants. Here's a few of them.
+        </div>
+        <div className="partners-carousel" style={{ overflow: 'hidden', position: 'relative', maxWidth: '1100px', margin: '0 auto' }}>
+          <div
+            className="partners-carousel-inner"
+            style={{
               display: 'flex',
               flexDirection: 'row',
-              gap: '1.5rem',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '100%',
-              maxWidth: '1000px',
-              margin: '0 auto',
-              minHeight: '110px',
+              gap: '2rem',
               transition: 'transform 0.7s cubic-bezier(0.4,0.2,0.2,1)',
               transform: `translateX(0)`
-            }}>
-              {getVisiblePartners().map((img, idx) => (
+            }}
+          >
+            {getVisiblePartners().map((img, idx) => (
+              <div className="partner-logo-box" key={img + idx}>
                 <img
-                  key={img + idx}
-                  src={process.env.PUBLIC_URL + '/' + img}
+                  src={process.env.PUBLIC_URL + '/about-page-images/' + img}
                   alt={img.replace('.png', '')}
-                  style={{ height: '90px', width: 'auto', background: '#fff', borderRadius: '8px', objectFit: 'contain', padding: '8px', boxShadow: '0 2px 12px #0004', transition: 'box-shadow 0.3s' }}
+                  className="partner-logo-img"
                 />
-              ))}
+              </div>
+            ))}
+          </div>
+        </div>
+        <h2 className="about-header" style={{ marginTop: '8rem' }}>NEWS & UPDATES</h2>
+        <div className="about-intro" style={{ marginBottom: '2.5rem' }}>
+          Lumi, ReMeLife and RemindMecare have been a long time in the making. Here are some highlights and those we've worked with in previous years.<br /><br />
+          We will keep you updated here with our progress and on key industry developments.
+        </div>
+        <div className="news-cards-row">
+          {/* Card 1 */}
+          <div className="news-card" onClick={() => navigate('/news/community-update')} style={{ cursor: 'pointer' }}>
+            <img src={`https://img.youtube.com/vi/O9P1Fr_v4JQ/maxresdefault.jpg`} alt="Community Update" className="news-card-img" />
+            <div className="news-card-content">
+              <div className="news-card-title">Community Update – The Convex ReMeGrid</div>
+              <span className="news-card-link">READ MORE &raquo;</span>
+            </div>
+          </div>
+          {/* Card 2 */}
+          <div className="news-card" onClick={() => navigate('/news/project-update')} style={{ cursor: 'pointer' }}>
+            <img src={`https://img.youtube.com/vi/IB89b-N-TgA/maxresdefault.jpg`} alt="Project Update" className="news-card-img" />
+            <div className="news-card-content">
+              <div className="news-card-title">Project Update #1 Community Q&amp;A</div>
+              <span className="news-card-link">READ MORE &raquo;</span>
+            </div>
+          </div>
+          {/* Card 3 */}
+          <div className="news-card" onClick={() => navigate('/news/human-error')} style={{ cursor: 'pointer' }}>
+            <img src={process.env.PUBLIC_URL + '/news-images/human-error.png'} alt="Human Error" className="news-card-img" />
+            <div className="news-card-content">
+              <div className="news-card-title">ReMeLife joins the Human Error project</div>
+              <span className="news-card-link">READ MORE &raquo;</span>
+            </div>
+          </div>
+          {/* Card 4 */}
+          <div className="news-card" onClick={() => navigate('/news/coin-bureau')} style={{ cursor: 'pointer' }}>
+            <img src={process.env.PUBLIC_URL + '/news-images/coin-bureau.jpg'} alt="Coin Bureau" className="news-card-img" />
+            <div className="news-card-content">
+              <div className="news-card-title">ReMeLife at the Coin Bureau Crypto Conference, London</div>
+              <a href="#" className="news-card-link" onClick={e => e.preventDefault()}>READ MORE &raquo;</a>
             </div>
           </div>
         </div>
-
-        {/* NEWS & UPDATES SECTION */}
-        <div className="w-full flex flex-col items-center mt-12">
-          <h2 className="text-white text-center mb-6" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.2rem', letterSpacing: '0.04em' }}>NEWS & UPDATES</h2>
-          <div className="max-w-2xl text-lg text-center" style={{ fontFamily: 'Inter, sans-serif' }}>
-            <p className="mb-4">Lumi, ReMeLife and RemindMecare have been a long time in the making. Here are some highlights  and those we've worked with in previous years.</p>
-            <p>We will keep you updated here with our progress and on key industry developments.</p>
-          </div>
-        </div>
-        <NewsCardsSection />
-        <div className="w-full flex justify-center mt-8 mb-16">
-          <a 
-            href="https://remelife.io/news/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="text-sky-400 hover:text-sky-300 text-lg"
-            style={{ fontFamily: 'Inter, sans-serif' }}
+        {/* See more news link and extra margin */}
+        <div style={{ marginTop: '2.5rem', marginBottom: '3.5rem', textAlign: 'center' }}>
+          <a
+            href="https://remelife.io/news/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: '#b16fc9',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '1.18rem',
+              textDecoration: 'underline',
+              letterSpacing: '0.01em',
+              display: 'inline-block',
+              marginTop: '0.5rem',
+              marginBottom: '0.5rem',
+            }}
           >
             See more news here
           </a>
         </div>
       </div>
       <FooterSection />
+    </>
+  );
+}
+
+function CoinBureauNewsPage() {
+  return (
+    <>
+      <Navbar />
+      <div className="about-section" style={{ paddingTop: '2rem' }}>
+        <img
+          src={process.env.PUBLIC_URL + '/news-images/coin-bureau.jpg'}
+          alt="Coin Bureau Conference"
+          style={{ display: 'block', margin: '0 auto 2.5rem auto', maxWidth: '700px', width: '100%', borderRadius: '1rem' }}
+        />
+        <h1 style={{ fontFamily: 'Michroma, sans-serif', fontSize: '2.7rem', color: '#fff', textAlign: 'left', maxWidth: '900px', margin: '0 auto 2rem auto' }}>
+          ReMeLife at the Coin Bureau Crypto Conference, London
+        </h1>
+        <div style={{ fontFamily: 'Inter, sans-serif', color: '#fff', fontSize: '1.15rem', maxWidth: '900px', margin: '0 auto', textAlign: 'left', lineHeight: 1.7 }}>
+          Although it was their first ever crypto conference, it felt like they'd been doing it for years. An excellent event (here). &gt;ReMeLife was invited backstage to share in their post event shenanigans. Who says the crypto sector is depressed? &gt;PS. If you don't know Coin Bureau then you don't know crypto. Find them here.
+        </div>
+      </div>
+    </>
+  );
+}
+
+function HumanErrorNewsPage() {
+  return (
+    <>
+      <Navbar />
+      <div className="about-section" style={{ paddingTop: '2rem' }}>
+        <img
+          src={process.env.PUBLIC_URL + '/news-images/human-error.png'}
+          alt="Human Error Project"
+          style={{ display: 'block', margin: '0 auto 2.5rem auto', maxWidth: '700px', width: '100%', borderRadius: '1rem' }}
+        />
+        <h1 style={{ fontFamily: 'Michroma, sans-serif', fontSize: '2.7rem', color: '#fff', textAlign: 'center', maxWidth: '900px', margin: '0 auto 2rem auto' }}>
+          ReMeLife joins the Human Error project
+        </h1>
+        <div style={{ fontFamily: 'Inter, sans-serif', color: '#fff', fontSize: '1.15rem', maxWidth: '900px', margin: '0 auto', textAlign: 'left', lineHeight: 1.7 }}>
+          We live in historical times, when every detail of our lives is a data point used by AI systems and algorithms to profile us, judge us and make decisions about us. This data that defines us is commercialised in a multiplicity of ways. Health and education practitioners 'track risk factors' or find 'personalized solutions'. Employers, banks and insurers judge clients or potential candidates. Governments, the police and immigration officials use this tech to decide issues about individual lives, from one's right to asylum to one's likelihood to commit a crime.<br /><br />
+          Courtesy of ReMeLife's focus on such data being used for positive social benefit and on establishing crypto based algorithms that share the value in digital care for the benefit of the community, we've been invited to collaborate in this important project.<br /><br />
+          More here.
+        </div>
+      </div>
+    </>
+  );
+}
+
+function CommunityUpdateNewsPage() {
+  return (
+    <>
+      <Navbar />
+      <div className="about-section" style={{ paddingTop: '2rem', marginBottom: '2.5rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '2.5rem 0' }}>
+          <iframe
+            width="900"
+            height="400"
+            src="https://www.youtube.com/embed/O9P1Fr_v4JQ"
+            title="Community Update – The Convex ReMeGrid"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            style={{ borderRadius: '1rem', maxWidth: '100%', margin: '0 auto' }}
+          />
+        </div>
+        <h1 style={{ fontFamily: 'Michroma, sans-serif', fontSize: '2.7rem', color: '#fff', textAlign: 'left', maxWidth: '900px', margin: '0 auto 2rem auto' }}>
+          Community Update - The Convex ReMeGrid
+        </h1>
+        <div style={{ fontFamily: 'Inter, sans-serif', color: '#fff', fontSize: '1.15rem', maxWidth: '900px', margin: '0 auto', textAlign: 'left', lineHeight: 1.7 }}>
+          ReMeLife is excited to announce our integration with Convex, a next-generation blockchain platform. This collaboration marks a significant step forward in our mission to revolutionize the care sector through blockchain technology.
+        </div>
+      </div>
+    </>
+  );
+}
+
+function ProjectUpdateNewsPage() {
+  return (
+    <>
+      <Navbar />
+      <div className="about-section" style={{ paddingTop: '2rem', marginBottom: '2.5rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '2.5rem 0' }}>
+          <iframe
+            width="900"
+            height="400"
+            src="https://www.youtube.com/embed/IB89b-N-TgA"
+            title="Project Update #1 Community Q&A"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            style={{ borderRadius: '1rem', maxWidth: '100%', margin: '0 auto' }}
+          />
+        </div>
+        <h1 style={{ fontFamily: 'Michroma, sans-serif', fontSize: '2.7rem', color: '#fff', textAlign: 'left', maxWidth: '900px', margin: '0 auto 2rem auto' }}>
+          Project Update #1 Community Q&amp;A
+        </h1>
+        <div style={{ fontFamily: 'Inter, sans-serif', color: '#fff', fontSize: '1.15rem', maxWidth: '900px', margin: '0 auto', textAlign: 'left', lineHeight: 1.7 }}>
+          Join us for our first community Q&amp;A session where we discuss the latest developments and answer questions from our community members about the ReMeLife ecosystem.
+        </div>
+      </div>
     </>
   );
 }
@@ -1109,6 +1312,10 @@ function AppRoutes() {
           <Route path="/solutions" element={<SolutionsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/news/:id" element={<NewsDetailPage />} />
+          <Route path="/news/coin-bureau" element={<CoinBureauNewsPage />} />
+          <Route path="/news/human-error" element={<HumanErrorNewsPage />} />
+          <Route path="/news/community-update" element={<CommunityUpdateNewsPage />} />
+          <Route path="/news/project-update" element={<ProjectUpdateNewsPage />} />
         </Routes>
   );
 }
