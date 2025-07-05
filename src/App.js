@@ -1077,8 +1077,7 @@ function AboutPage() {
             title="SOFTWARE ENGINEER"
             details={
               <>
-                Orbit is a self-taught software engineer, building Remindmecare, Lumi, and Remelife for over 2 years.<br />
-                {/* No LinkedIn provided */}
+                A dedicated, self-taught software engineer, Orbit has been instrumental in building the core infrastructure of Remindmecare, Lumi, and Remelife for over two years, turning complex concepts into functional reality.
               </>
             }
           />
@@ -1086,7 +1085,7 @@ function AboutPage() {
           <TeamCardAnimated
             image={process.env.PUBLIC_URL + '/team-images/Orbit.jpg'}
             name="Oliver"
-            title="SEO & Community Lead"
+            title="SEO & COMMUNITY LEAD"
             details={
               <>
                 Oliver is an expert in SEO and community growth, elevating Lumi and Remindmecare's digital presence and discoverability.<br />
