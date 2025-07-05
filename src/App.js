@@ -127,7 +127,13 @@ function HeroSection() {
           </div>
           <div className="lumi-hero-buttons">
             <a href={process.env.PUBLIC_URL + "/Lumi-Lite-Paper.pdf"} className="lumi-hero-btn" target="_blank" rel="noopener noreferrer">Lite Paper</a>
-            <button className="lumi-hero-btn" type="button">Register</button>
+            <button
+              className="lumi-hero-btn"
+              type="button"
+              onClick={() => window.open('https://healthconnected.agilecrm.com/forms/6144359311015936', '_blank', 'noopener,noreferrer')}
+            >
+              Register
+            </button>
             <button className="lumi-hero-btn" type="button">Buy $LUMI</button>
           </div>
           <div className="lumi-subtitle" style={{ fontFamily: 'Michroma, sans-serif', marginTop: '0.5rem' }}>
