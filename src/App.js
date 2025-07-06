@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useParams, useLocation } from "react-router-dom";
 import "./index.css";
 import './App.css';
@@ -1049,12 +1049,111 @@ function AboutPage() {
   const visibleCount = 4;
   const [carouselIndex, setCarouselIndex] = useState(0);
 
+  // Team carousel logic
+  const teamCards = [
+    <TeamCardAnimated
+      key="simon"
+      image={process.env.PUBLIC_URL + '/team-images/Simon-Hooper.JPG'}
+      name="Simon Hooper"
+      title="FOUNDER AND CEO"
+      details={
+        <>
+          Simon is a petroleum geologist turned care-tech entrepreneur, leading ReMeLife with years of experience in sales, marketing, and digital transformation for care facilities.<br />
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1.5rem' }}>
+            <a href="https://www.linkedin.com/in/simonghooper/" target="_blank" rel="noopener noreferrer">
+              <img src={process.env.PUBLIC_URL + '/linkedin.png'} alt="LinkedIn" style={{ width: '36px', height: '36px' }} />
+            </a>
+          </div>
+        </>
+      }
+    />,
+    <TeamCardAnimated
+      key="asif"
+      image={process.env.PUBLIC_URL + '/team-images/Asif-Team.jpg'}
+      name="Asif"
+      title="BACKEND ENGINEER"
+      details={
+        <>
+          Asif is a full-stack developer passionate about building secure, high-performance web applications and long-term client partnerships.<br />
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1.5rem' }}>
+            <a href="https://www.linkedin.com/in/raoasifraza/" target="_blank" rel="noopener noreferrer">
+              <img src={process.env.PUBLIC_URL + '/linkedin.png'} alt="LinkedIn" style={{ width: '36px', height: '36px' }} />
+            </a>
+          </div>
+        </>
+      }
+    />,
+    <TeamCardAnimated
+      key="orbit"
+      image={process.env.PUBLIC_URL + '/team-images/L-Team-Icon.jpg'}
+      name="Orbit"
+      title="SOFTWARE ENGINEER"
+      details={
+        <>
+          A dedicated software engineer, Orbit has been instrumental in building the core infrastructure of Remindmecare, Lumi, and Remelife for over two years, turning complex concepts into functional reality.
+        </>
+      }
+    />,
+    <TeamCardAnimated
+      key="oliver"
+      image={process.env.PUBLIC_URL + '/team-images/Orbit.jpg'}
+      name="Oliver"
+      title="SEO & COMMUNITY LEAD"
+      details={
+        <>
+          Oliver is an expert in SEO and community growth, elevating Lumi and Remindmecare's digital presence and discoverability.<br />
+        </>
+      }
+    />,
+    <TeamCardAnimated
+      key="johnny"
+      image={process.env.PUBLIC_URL + '/team-images/FLCL-PFP.jpg'}
+      name="Johnny"
+      title="MARKETING & CONTENT"
+      details={
+        <>
+          Johnny leads our content strategy and marketing initiatives, shaping the Lumi narrative with his expertise in digital media. He is dedicated to communicating our vision and growing our community through creative and engaging campaigns.
+        </>
+      }
+    />,
+  ];
+
+  // --- REACTIVE isMobile STATE ---
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCarouselIndex((prev) => (prev + 1) % partnerImages.length);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, [partnerImages.length]);
+    const handleResize = () => setIsMobile(window.innerWidth <= 600);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  // --- END REACTIVE isMobile STATE ---
+
+  const cardsPerPage = isMobile ? 1 : 3;
+  const [teamPage, setTeamPage] = useState(0);
+  const numPages = Math.ceil(teamCards.length / cardsPerPage);
+  const teamScrollRef = React.useRef(null);
+
+  // Scroll to page when arrow or dot is clicked
+  const scrollToPage = (page) => {
+    const el = teamScrollRef.current;
+    if (el) {
+      const cardWidth = isMobile ? el.offsetWidth : 320 + 40; // full width on mobile, card+gap on desktop
+      el.scrollTo({ left: page * cardWidth * cardsPerPage, behavior: 'smooth' });
+    }
+    setTeamPage(page);
+  };
+
+  // Update dot when user scrolls manually
+  React.useEffect(() => {
+    const el = teamScrollRef.current;
+    if (!el) return;
+    const handleScroll = () => {
+      const cardWidth = isMobile ? el.offsetWidth : 320 + 40;
+      const page = Math.round(el.scrollLeft / (cardWidth * cardsPerPage));
+      setTeamPage(page);
+    };
+    el.addEventListener('scroll', handleScroll);
+    return () => el.removeEventListener('scroll', handleScroll);
+  }, [isMobile, cardsPerPage]);
 
   const getVisiblePartners = () => {
     let items = [];
@@ -1063,6 +1162,14 @@ function AboutPage() {
     }
     return items;
   };
+
+  // Ensure scrollToPage(0) is called on mount and when isMobile changes
+  React.useEffect(() => {
+    if (teamScrollRef.current) {
+      scrollToPage(0);
+    }
+    // eslint-disable-next-line
+  }, [isMobile]);
 
   return (
     <>
@@ -1085,62 +1192,35 @@ function AboutPage() {
         </div>
         {/* MEET THE TEAM SECTION */}
         <h2 className="about-header" style={{ marginTop: '3rem' }}>Meet the Team</h2>
-        <div className="team-section" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '2.5rem', marginBottom: '5.5rem' }}>
-          {/* Simon Hooper Card (Animated) */}
-          <TeamCardAnimated
-            image={process.env.PUBLIC_URL + '/team-images/Simon-Hooper.JPG'}
-            name="Simon Hooper"
-            title="FOUNDER AND CEO"
-            details={
-              <>
-                Simon is a petroleum geologist turned care-tech entrepreneur, leading ReMeLife with years of experience in sales, marketing, and digital transformation for care facilities.<br />
-                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1.5rem' }}>
-                  <a href="https://www.linkedin.com/in/simonghooper/" target="_blank" rel="noopener noreferrer">
-                    <img src={process.env.PUBLIC_URL + '/linkedin.png'} alt="LinkedIn" style={{ width: '36px', height: '36px' }} />
-                  </a>
-                </div>
-              </>
-            }
-          />
-          {/* Asif Card (Animated) */}
-          <TeamCardAnimated
-            image={process.env.PUBLIC_URL + '/team-images/Asif-Team.jpg'}
-            name="Asif"
-            title="BACKEND ENGINEER"
-            details={
-              <>
-                Asif is a full-stack developer passionate about building secure, high-performance web applications and long-term client partnerships.<br />
-                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1.5rem' }}>
-                  <a href="https://www.linkedin.com/in/raoasifraza/" target="_blank" rel="noopener noreferrer">
-                    <img src={process.env.PUBLIC_URL + '/linkedin.png'} alt="LinkedIn" style={{ width: '36px', height: '36px' }} />
-                  </a>
-                </div>
-              </>
-            }
-          />
-          {/* Orbit Card (Animated) */}
-          <TeamCardAnimated
-            image={process.env.PUBLIC_URL + '/team-images/L-Team-Icon.jpg'}
-            name="Orbit"
-            title="SOFTWARE ENGINEER"
-            details={
-              <>
-                A dedicated, self-taught software engineer, Orbit has been instrumental in building the core infrastructure of Remindmecare, Lumi, and Remelife for over two years, turning complex concepts into functional reality.
-              </>
-            }
-          />
-          {/* Oliver Card (Animated) */}
-          <TeamCardAnimated
-            image={process.env.PUBLIC_URL + '/team-images/Orbit.jpg'}
-            name="Oliver"
-            title="SEO & COMMUNITY LEAD"
-            details={
-              <>
-                Oliver is an expert in SEO and community growth, elevating Lumi and Remindmecare's digital presence and discoverability.<br />
-                {/* No LinkedIn provided */}
-              </>
-            }
-          />
+        <div style={{ position: 'relative', width: '100%' }}>
+          <button className="team-scroll-arrow left" onClick={() => scrollToPage(Math.max(0, teamPage - 1))} aria-label="Scroll left">&#8592;</button>
+          <div id="team-scroll" className="team-scroll-container" ref={teamScrollRef}>
+            {teamCards}
+          </div>
+          <button className="team-scroll-arrow right" onClick={() => scrollToPage(Math.min(numPages - 1, teamPage + 1))} aria-label="Scroll right">&#8594;</button>
+          <div className="team-scroll-dots">
+            {Array.from({ length: isMobile ? teamCards.length : numPages }).map((_, idx) => (
+              <span
+                key={idx}
+                className={`team-scroll-dot${teamPage === idx ? ' active' : ''}`}
+                onClick={() => scrollToPage(idx)}
+                aria-label={`Go to team page ${idx + 1}`}
+                tabIndex={0}
+                role="button"
+                style={{ outline: 'none' }}
+              />
+            ))}
+          </div>
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '1.5rem', marginBottom: '3.5rem' }}>
+          <a
+            href="https://remelife.io/about-us/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ fontFamily: 'Inter, sans-serif', color: '#b16fc9', fontSize: '1.18rem', textDecoration: 'underline', letterSpacing: '0.01em', display: 'inline-block' }}
+          >
+            See all the people working on Remindmecare and Remelife
+          </a>
         </div>
         {/* PARTNERS & ASSOCIATES SECTION */}
         <h2 className="about-header" style={{ marginTop: '3rem' }}>PARTNERS & ASSOCIATES</h2>
