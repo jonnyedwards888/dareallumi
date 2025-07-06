@@ -127,6 +127,7 @@ function HeroSection() {
           </div>
           <div className="lumi-hero-buttons">
             <a href="https://remelife.gitbook.io/lumi-and-remelife" className="lumi-hero-btn" target="_blank" rel="noopener noreferrer">Docs</a>
+            <button className="lumi-hero-btn" type="button">Buy $LUMI</button>
             <button
               className="lumi-hero-btn"
               type="button"
@@ -134,7 +135,6 @@ function HeroSection() {
             >
               Register
             </button>
-            <button className="lumi-hero-btn" type="button">Buy $LUMI</button>
           </div>
           <div className="lumi-subtitle" style={{ fontFamily: 'Michroma, sans-serif', marginTop: '0.5rem' }}>
             The first AI healthcare agent on chain.
