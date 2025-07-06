@@ -324,6 +324,54 @@ function DataSection() {
       <div className="lumi-spaceship-fly-wrapper">
         <img src={process.env.PUBLIC_URL + '/Lumi-spaceship.png'} alt="Lumi Spaceship" className="lumi-spaceship-fly" />
       </div>
+      {/* Tokenomics Section */}
+      <div style={{ margin: '3rem auto 2rem auto', maxWidth: 1000, width: '100%' }}>
+        <h2 style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.2rem', color: '#fff', textAlign: 'center', marginBottom: '1.5rem', letterSpacing: '0.04em' }}>Tokenomics</h2>
+        <div style={{
+          background: 'linear-gradient(135deg, #18153a 80%, #23234a 100%)',
+          borderRadius: '24px',
+          boxShadow: '0 0 32px 0 #2e2b5f',
+          padding: '2.5rem 2rem 2rem 2rem',
+          color: '#fff',
+          border: '1.5px solid #b16fc9',
+          margin: '0 auto',
+        }}>
+          <div style={{ fontFamily: 'Inter, sans-serif', fontSize: '1.1rem', marginBottom: '1.2rem' }}>
+            <b>Total Supply:</b> 1,000,000,000 $LUMI<br />
+            <b>Dev Wallet:</b> 10% (5% locked & 5% for marketing, developer costs)
+          </div>
+          <table style={{ width: '100%', borderCollapse: 'collapse', color: '#fff', fontFamily: 'Inter, sans-serif', fontSize: '1.05rem', marginBottom: '0.7rem' }}>
+            <thead>
+              <tr style={{ borderBottom: '2px solid #b16fc9' }}>
+                <th style={{ padding: '0.5rem', fontWeight: 700, textAlign: 'left' }}>Status</th>
+                <th style={{ padding: '0.5rem', fontWeight: 700, textAlign: 'left' }}>Wallet %</th>
+                <th style={{ padding: '0.5rem', fontWeight: 700, textAlign: 'left' }}>Unlock</th>
+                <th style={{ padding: '0.5rem', fontWeight: 700, textAlign: 'left' }}>Explanation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style={{ borderBottom: '1px solid #b16fc9' }}>
+                <td style={{ padding: '0.5rem' }}>Unlocked</td>
+                <td style={{ padding: '0.5rem' }}>5%</td>
+                <td style={{ padding: '0.5rem' }}>Immediately</td>
+                <td style={{ padding: '0.5rem' }}>Marketing and developer costs</td>
+              </tr>
+              <tr style={{ borderBottom: '1px solid #b16fc9' }}>
+                <td style={{ padding: '0.5rem' }}>Unlocked</td>
+                <td style={{ padding: '0.5rem' }}>2%</td>
+                <td style={{ padding: '0.5rem' }}>Locked for 1 week</td>
+                <td style={{ padding: '0.5rem' }}>Exchange listings and marketing</td>
+              </tr>
+              <tr style={{ borderBottom: '1px solid #b16fc9' }}>
+                <td style={{ padding: '0.5rem' }}>Locked</td>
+                <td style={{ padding: '0.5rem' }}>3%</td>
+                <td style={{ padding: '0.5rem' }}>Linearly unlocked over 6 months</td>
+                <td style={{ padding: '0.5rem' }}>Project costs, development and DAO treasury</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </section>
   );
 }
