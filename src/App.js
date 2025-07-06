@@ -1109,7 +1109,7 @@ function AboutPage() {
     />,
     <TeamCardAnimated
       key="johnny"
-      image={process.env.PUBLIC_URL + '/team-images/FLCL-PFP.jpg'}
+      image={process.env.PUBLIC_URL + '/team-images/Johnny-PFP.png'}
       name="Johnny"
       title="MARKETING & CONTENT"
       details={
