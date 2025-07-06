@@ -126,7 +126,7 @@ function HeroSection() {
             />
           </div>
           <div className="lumi-hero-buttons">
-            <a href={process.env.PUBLIC_URL + "/Lumi-Lite-Paper.pdf"} className="lumi-hero-btn" target="_blank" rel="noopener noreferrer">Lite Paper</a>
+            <a href="https://remelife.gitbook.io/lumi-and-remelife" className="lumi-hero-btn" target="_blank" rel="noopener noreferrer">Docs</a>
             <button
               className="lumi-hero-btn"
               type="button"
@@ -340,7 +340,8 @@ function DataSection() {
             <b>Total Supply:</b> 1,000,000,000 $LUMI<br />
             <b>Dev Wallet:</b> 10% (5% locked & 5% for marketing, developer costs)
           </div>
-          <table style={{ width: '100%', borderCollapse: 'collapse', color: '#fff', fontFamily: 'Inter, sans-serif', fontSize: '1.05rem', marginBottom: '0.7rem' }}>
+          <div className="responsive-table" style={{ width: '100%', overflowX: 'auto' }}>
+            <table style={{ minWidth: '540px', width: '100%', borderCollapse: 'collapse', color: '#fff', fontFamily: 'Inter, sans-serif', fontSize: '1.05rem', marginBottom: '0.7rem' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #b16fc9' }}>
                 <th style={{ padding: '0.5rem', fontWeight: 700, textAlign: 'left' }}>Status</th>
@@ -362,14 +363,15 @@ function DataSection() {
                 <td style={{ padding: '0.5rem' }}>Locked for 1 week</td>
                 <td style={{ padding: '0.5rem' }}>Exchange listings and marketing</td>
               </tr>
-              <tr style={{ borderBottom: '1px solid #b16fc9' }}>
+              <tr>
                 <td style={{ padding: '0.5rem' }}>Locked</td>
                 <td style={{ padding: '0.5rem' }}>3%</td>
                 <td style={{ padding: '0.5rem' }}>Linearly unlocked over 6 months</td>
                 <td style={{ padding: '0.5rem' }}>Project costs, development and DAO treasury</td>
               </tr>
             </tbody>
-          </table>
+            </table>
+          </div>
         </div>
       </div>
     </section>
@@ -1131,37 +1133,47 @@ function AboutPage() {
   const [teamPage, setTeamPage] = useState(0);
   const numPages = Math.ceil(teamCards.length / cardsPerPage);
   const teamScrollRef = React.useRef(null);
+  const manualScrollRef = React.useRef(false);
 
   // Scroll to page when arrow or dot is clicked
   const scrollToPage = (page) => {
     const el = teamScrollRef.current;
+    let clampedPage = Math.max(0, Math.min(isMobile ? teamCards.length - 1 : numPages - 1, page));
     if (el) {
-      const cardWidth = isMobile ? el.offsetWidth : 320 + 40; // full width on mobile, card+gap on desktop
-      el.scrollTo({ left: page * cardWidth * cardsPerPage, behavior: 'smooth' });
+      const cardWidth = isMobile ? el.offsetWidth : 320 + 40;
+      el.scrollTo({ left: clampedPage * cardWidth * cardsPerPage, behavior: 'smooth' });
     }
-    setTeamPage(page);
+    manualScrollRef.current = true;
+    setTeamPage(clampedPage);
   };
 
-  // Update dot when user scrolls manually
+  // Programmatically scroll to the correct position on desktop when teamPage changes
+  React.useEffect(() => {
+    if (!isMobile && teamScrollRef.current) {
+      const el = teamScrollRef.current;
+      const cardWidth = 320 + 40;
+      el.scrollTo({ left: teamPage * cardWidth * cardsPerPage, behavior: 'smooth' });
+    }
+  }, [teamPage, isMobile, cardsPerPage]);
+
+  // Update dot when user scrolls manually (only for mobile)
   React.useEffect(() => {
     const el = teamScrollRef.current;
     if (!el) return;
     const handleScroll = () => {
-      const cardWidth = isMobile ? el.offsetWidth : 320 + 40;
-      const page = Math.round(el.scrollLeft / (cardWidth * cardsPerPage));
+      if (!isMobile) return; // Only allow scroll sync on mobile
+      if (manualScrollRef.current) {
+        manualScrollRef.current = false;
+        return;
+      }
+      const cardWidth = el.offsetWidth;
+      let page = Math.round(el.scrollLeft / cardWidth);
+      page = Math.max(0, Math.min(teamCards.length - 1, page));
       setTeamPage(page);
     };
     el.addEventListener('scroll', handleScroll);
     return () => el.removeEventListener('scroll', handleScroll);
-  }, [isMobile, cardsPerPage]);
-
-  const getVisiblePartners = () => {
-    let items = [];
-    for (let j = 0; j < visibleCount; j++) {
-      items.push(partnerImages[(carouselIndex + j) % partnerImages.length]);
-    }
-    return items;
-  };
+  }, [isMobile, cardsPerPage, numPages, teamCards.length]);
 
   // Ensure scrollToPage(0) is called on mount and when isMobile changes
   React.useEffect(() => {
@@ -1170,6 +1182,14 @@ function AboutPage() {
     }
     // eslint-disable-next-line
   }, [isMobile]);
+
+  const getVisiblePartners = () => {
+    let items = [];
+    for (let j = 0; j < visibleCount; j++) {
+      items.push(partnerImages[(carouselIndex + j) % partnerImages.length]);
+    }
+    return items;
+  };
 
   return (
     <>
@@ -1193,13 +1213,38 @@ function AboutPage() {
         {/* MEET THE TEAM SECTION */}
         <h2 className="about-header" style={{ marginTop: '3rem' }}>Meet the Team</h2>
         <div style={{ position: 'relative', width: '100%' }}>
-          <button className="team-scroll-arrow left" onClick={() => scrollToPage(Math.max(0, teamPage - 1))} aria-label="Scroll left">&#8592;</button>
+          <button
+            className="team-scroll-arrow left"
+            onClick={() => scrollToPage(Math.max(0, teamPage - 1))}
+            aria-label="Scroll left"
+            disabled={teamPage === 0}
+            style={{ opacity: teamPage === 0 ? 0.4 : 1, pointerEvents: teamPage === 0 ? 'none' : 'auto', border: 'none', background: 'none' }}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="12" fill="currentColor" fillOpacity="0.18" />
+              <path d="M14.5 17L10 12.5L14.5 8" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
           <div id="team-scroll" className="team-scroll-container" ref={teamScrollRef}>
             {teamCards}
           </div>
-          <button className="team-scroll-arrow right" onClick={() => scrollToPage(Math.min(numPages - 1, teamPage + 1))} aria-label="Scroll right">&#8594;</button>
+          <button
+            className="team-scroll-arrow right"
+            onClick={() => scrollToPage(Math.min(isMobile ? teamCards.length - 1 : numPages - 1, teamPage + 1))}
+            aria-label="Scroll right"
+            disabled={isMobile ? teamPage === teamCards.length - 1 : teamPage === numPages - 1}
+            style={{ opacity: (isMobile ? teamPage === teamCards.length - 1 : teamPage === numPages - 1) ? 0.4 : 1, pointerEvents: (isMobile ? teamPage === teamCards.length - 1 : teamPage === numPages - 1) ? 'none' : 'auto', border: 'none', background: 'none' }}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="12" fill="currentColor" fillOpacity="0.18" />
+              <path d="M10 17L14.5 12.5L10 8" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
           <div className="team-scroll-dots">
-            {Array.from({ length: isMobile ? teamCards.length : numPages }).map((_, idx) => (
+            {(isMobile
+              ? Array.from({ length: teamCards.length })
+              : Array.from({ length: numPages })
+            ).map((_, idx) => (
               <span
                 key={idx}
                 className={`team-scroll-dot${teamPage === idx ? ' active' : ''}`}
