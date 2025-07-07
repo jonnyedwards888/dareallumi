@@ -316,6 +316,8 @@
     text-align: center !important;
     margin: 0 auto !important;
     display: inline-block !important;
+    list-style-type: none !important;
+    padding-left: 0 !important;
   }
   .solutions-section {
     overflow-x: hidden !important;

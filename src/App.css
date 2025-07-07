@@ -1012,6 +1012,9 @@ html {
     padding-right: 1.1rem !important;
     box-sizing: border-box;
   }
+  .hide-on-mobile {
+    display: none !important;
+  }
 }
 
 .about-section {
