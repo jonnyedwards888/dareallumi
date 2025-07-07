@@ -295,10 +295,14 @@ html {
 .solutions-section,
 .solutions-section p,
 .solutions-section li,
+.solutions-section span,
 .solutions-feature-text,
 .solutions-box-desc {
   font-family: 'Inter', sans-serif !important;
-  font-style: normal !important;
+  font-size: 1.13rem !important;
+  color: #e0e0e0 !important;
+  line-height: 1.7 !important;
+  font-weight: 400 !important;
 }
 .solutions-section h1,
 .solutions-section h2,

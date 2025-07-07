@@ -877,14 +877,14 @@ function SolutionsPage() {
             <div style={{ textAlign: 'center', fontWeight: 500, marginBottom: '1.2rem' }}>
               The AI enhancements currently being developed are as follows.
             </div>
-            <ul style={window.innerWidth <= 700 ? { textAlign: 'left', marginBottom: 0, listStyleType: 'none', paddingLeft: 0 } : { textAlign: 'left', marginBottom: 0, listStyleType: 'disc', paddingLeft: '2rem' }}>
-              <li style={window.innerWidth > 700 ? { marginBottom: '0.7rem' } : {}}>AI System for ELR® personal health data management</li>
-              <li style={window.innerWidth > 700 ? { marginBottom: '0.7rem' } : {}}>Activity Creation & Cognitive Stimulation</li>
-              <li style={window.innerWidth > 700 ? { marginBottom: '0.7rem' } : {}}>ReMeComm Community Engagement</li>
-              <li style={window.innerWidth > 700 ? { marginBottom: '0.7rem' } : {}}>Personal AI Agents/Virtual Companions (AI4U)</li>
-              <li style={window.innerWidth > 700 ? { marginBottom: '0.7rem' } : {}}>Automated Reporting</li>
-              <li style={window.innerWidth > 700 ? { marginBottom: '0.7rem' } : {}}>Enhanced Data Security</li>
-              <li>Data Management & Monetisation</li>
+            <ul style={window.innerWidth <= 700 ? { textAlign: 'center', marginBottom: 0, listStyleType: 'none', paddingLeft: 0 } : { textAlign: 'left', marginBottom: 0, listStyleType: 'disc', paddingLeft: '2rem' }}>
+              <li style={window.innerWidth > 700 ? { marginBottom: '0.7rem' } : { textAlign: 'center' }}>AI System for ELR® personal health data management</li>
+              <li style={window.innerWidth > 700 ? { marginBottom: '0.7rem' } : { textAlign: 'center' }}>Activity Creation & Cognitive Stimulation</li>
+              <li style={window.innerWidth > 700 ? { marginBottom: '0.7rem' } : { textAlign: 'center' }}>ReMeComm Community Engagement</li>
+              <li style={window.innerWidth > 700 ? { marginBottom: '0.7rem' } : { textAlign: 'center' }}>Personal AI Agents/Virtual Companions (AI4U)</li>
+              <li style={window.innerWidth > 700 ? { marginBottom: '0.7rem' } : { textAlign: 'center' }}>Automated Reporting</li>
+              <li style={window.innerWidth > 700 ? { marginBottom: '0.7rem' } : { textAlign: 'center' }}>Enhanced Data Security</li>
+              <li style={window.innerWidth > 700 ? {} : { textAlign: 'center' }}>Data Management & Monetisation</li>
             </ul>
             <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.7rem' }}>
               <a href="/AI-Viability-Analysis.pdf" target="_blank" rel="noopener noreferrer" style={{ color: '#4ec3fa', textDecoration: 'underline' }}>
