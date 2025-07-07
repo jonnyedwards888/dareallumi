@@ -235,13 +235,19 @@ function FounderWordsSection() {
       <h2 className="founder-words-heading founder-words-heading-mobile" style={{ fontFamily: 'Michroma, sans-serif', fontWeight: 900, fontSize: '2.4rem', letterSpacing: '0.04em', marginBottom: window.innerWidth <= 700 ? '1.1rem' : '2.2rem', color: '#fff', textShadow: '2px 2px 0 #23234a', textAlign: 'center', width: '100%' }}>A few words from the Founder</h2>
       <div className="founder-words-row" style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'center', gap: '3.5rem', width: '100%' }}>
         <div className="founder-words-left" style={{ flex: '0 0 420px', maxWidth: '420px', minWidth: '260px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', width: '100%' }}>
-          <video
-            src={process.env.PUBLIC_URL + '/Lumi-founder-video.mp4'}
-            controls
-            className="founder-words-video-mobile"
-            poster={process.env.PUBLIC_URL + '/about-page-images/simon-hooper-about-page.jpg'}
-            style={{ width: '100%', borderRadius: '1.5rem', boxShadow: '0 4px 32px #0008', maxWidth: 420, margin: '0 auto', marginTop: window.innerWidth <= 700 ? 0 : '2rem', marginBottom: window.innerWidth <= 700 ? '1.1rem' : 0 }}
-          />
+          <div style={{ width: '100%', borderRadius: '1.5rem', boxShadow: '0 4px 32px #0008', maxWidth: 420, margin: '0 auto', marginTop: window.innerWidth <= 700 ? 0 : '2rem', marginBottom: window.innerWidth <= 700 ? '1.1rem' : 0, overflow: 'hidden', aspectRatio: '16/9', background: '#000' }}>
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/xqg-KaGKbo0?si=3-sUG63HaZjaskRF&rel=0"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              style={{ display: 'block', width: '100%', height: '100%' }}
+            />
+          </div>
         </div>
         <div className="founder-words-text founder-words-text-mobile" style={{ flex: '1 1 0', color: '#fff', fontFamily: 'Inter, sans-serif', maxWidth: '800px', minWidth: '260px', fontSize: '1.35rem', lineHeight: 1.5, marginTop: '1.5rem', textAlign: 'left' }}>
           Do you have a family member with dementia, living alone, with autism or learning difficulties? 62% of the world does, so you probably do. I did. And that's how I came from the music business into the world of care. It's been a long journey, from building my first app 11 years ago, to crypto, memes and to now, the launch of Lumi.<br /><br />
@@ -282,7 +288,7 @@ function DataSection() {
         )}
         {/* Center column: links */}
         <div className="data-section-col center" style={isMobile ? { alignItems: 'center', textAlign: 'center', width: '100%' } : {}}>
-          <div className="data-section-row"><a href={process.env.PUBLIC_URL + '/RemeLife-Lite-Paper.pdf'} className="data-section-link" target="_blank" rel="noopener noreferrer">Lite Paper</a></div>
+          <div className="data-section-row"><a href={process.env.PUBLIC_URL + '/Lumi-Lite-Paper.pdf'} className="data-section-link" target="_blank" rel="noopener noreferrer">Lite Paper</a></div>
           <div className="data-section-row"><a href={process.env.PUBLIC_URL + '/AI-Viability-Analysis.pdf'} className="data-section-link" target="_blank" rel="noopener noreferrer">AI Report</a></div>
           <div className="data-section-row"><a href="https://remelife.io/project_data/" className="data-section-link" target="_blank" rel="noopener noreferrer">ReMeLife Data</a></div>
           <div className="data-section-row"><a href="https://github.com/ReMe-life" className="data-section-link" target="_blank" rel="noopener noreferrer">GitHub</a></div>
