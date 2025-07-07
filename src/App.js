@@ -755,46 +755,11 @@ function SolutionsPage() {
           Then collect free REMEs as you build your community, using the ReMeLife Community Builder Referral Program.
         </div>
 
-        
-        {/* Reme Wallet Section */}
-        <div className={`solutions-feature-row reme-wallet-row flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16`}>
-          <div className="flex-1 flex flex-col items-center">
-            <video
-              className="solutions-phone-video"
-              controls
-              style={{ width: '350px', borderRadius: '1.2rem', boxShadow: '0 4px 32px #0008', background: '#222' }}
-            >
-              <source src={process.env.PUBLIC_URL + "/Wallet-Video.mp4"} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div className="flex-1 solutions-feature-text" style={window.innerWidth <= 700 ? { marginTop: '1.7rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' } : {}}>
-            <h3
-              className="solutions-feature-title"
-              style={window.innerWidth <= 700
-                ? {
-                    fontFamily: 'Michroma, sans-serif',
-                    marginBottom: '1.1rem',
-                    marginTop: '0.2rem',
-                    fontSize: '1.18rem',
-                    letterSpacing: '0.01em',
-                    textAlign: 'center',
-                  }
-                : undefined}
-            >
-              THE REME WALLET
-            </h3>
-            <div style={window.innerWidth <= 700 ? { maxWidth: '95vw', textAlign: 'center', fontSize: '1.13rem', lineHeight: 1.7, marginBottom: 0, color: '#e0e0e0', padding: '0 0.2rem', marginTop: '0.2rem', fontWeight: 400 } : { margin: '0 auto', maxWidth: '95vw', textAlign: 'left', fontSize: '1.08rem', lineHeight: 1.5, marginBottom: '0.7rem' }}>
-              An easy-to-use Member interface for managing Care2Earn rewards,<br />
-              building a community of value and accessing ReMeLife's CareFi services,<br />
-              including purchasing and swapping tokens.
-            </div>
-          </div>
-        </div>
+       
 
         
         {/* What's RemindMecare Section */}
-        <div className={`solutions-feature-row ${window.innerWidth <= 700 ? 'remindmecare-mobile' : ''}`}> 
+        <div className={`solutions-feature-row ${window.innerWidth <= 700 ? 'remindmecare-mobile' : ''}`} style={{ marginTop: '3rem', marginBottom: '3.5rem' }}> 
           <div className="flex-1 solutions-feature-text" style={window.innerWidth <= 700 ? { marginTop: '1.5rem' } : {}}>
             <h3 className="solutions-feature-title" style={{ fontFamily: 'Michroma, sans-serif', marginBottom: window.innerWidth <= 700 ? '1rem' : undefined }}>
               WHAT'S REMINDMECARE?
@@ -820,8 +785,11 @@ function SolutionsPage() {
             </video>
           </div>
         </div>
+
+         
+      
         {/* Convex Info Section */}
-        <div className="solutions-feature-row flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16 mt-8" style={{ alignItems: 'flex-start' }}>
+        <div className="solutions-feature-row flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16 mt-8" style={window.innerWidth <= 700 ? { alignItems: 'center', marginBottom: 0 } : { alignItems: 'center', marginBottom: '3.5rem' }}>
           <div className="flex-1 flex flex-col items-center justify-center" style={{ minWidth: 180, maxWidth: 320 }}>
             <img
               src={process.env.PUBLIC_URL + '/Convex-Solutions-Logo.png'}
@@ -831,7 +799,7 @@ function SolutionsPage() {
           </div>
           <div className="flex-1 solutions-feature-text">
             <h3 className="solutions-feature-title" style={{ fontFamily: 'Michroma, sans-serif', textTransform: 'uppercase', marginBottom: window.innerWidth <= 700 ? '1rem' : undefined }}>
-              WHAT'S THE REMEGRID
+              WHAT'S THE REMEGRID?
             </h3>
             <div style={window.innerWidth <= 700 ? { margin: '0 auto', maxWidth: '95vw', textAlign: 'center', lineHeight: 1.5, marginBottom: '0.7rem', fontFamily: 'Inter, sans-serif', fontWeight: 400 } : { fontFamily: 'Inter, sans-serif', fontWeight: 400, margin: '0 auto', maxWidth: '95vw', textAlign: 'left', lineHeight: 1.5, marginBottom: '0.7rem' }}>
               Convex's lattice technology is a next-generation infrastructure that enables data and transactions to be shared securely and instantly across a decentralized network. Unlike traditional blockchains, it updates in real time without delays or conflicts, making it ideal for fast, scalable systems.<br /><br />
@@ -840,6 +808,42 @@ function SolutionsPage() {
             </div>
           </div>
         </div>
+
+          {/* Reme Wallet Section */}
+          <div className={`solutions-feature-row reme-wallet-row flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16`} style={{ marginTop: '4rem', marginBottom: '3.5rem' }}>
+            <div className="flex-1 solutions-feature-text" style={window.innerWidth <= 700 ? { marginTop: 0, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' } : { marginTop: '2.5rem' }}>
+              <h3
+                className="solutions-feature-title"
+                style={window.innerWidth <= 700
+                  ? {
+                      fontFamily: 'Michroma, sans-serif',
+                      marginBottom: '1.1rem',
+                      marginTop: '0.2rem',
+                      fontSize: '1.18rem',
+                      letterSpacing: '0.01em',
+                      textAlign: 'center',
+                    }
+                  : undefined}
+              >
+                THE REME WALLET
+              </h3>
+              <div style={window.innerWidth <= 700 ? { maxWidth: '95vw', textAlign: 'center', fontSize: '1.13rem', lineHeight: 1.7, marginBottom: 0, color: '#e0e0e0', padding: '0 0.2rem', marginTop: '0.2rem', fontWeight: 400 } : { margin: '0 auto', maxWidth: '95vw', textAlign: 'left', fontSize: '1.08rem', lineHeight: 1.5, marginBottom: '0.7rem' }}>
+                An easy-to-use Member interface for managing Care2Earn rewards,<br />
+                building a community of value and accessing ReMeLife's CareFi services,<br />
+                including purchasing and swapping tokens.
+              </div>
+            </div>
+            <div className="flex-1 flex flex-col items-center">
+              <video
+                className="solutions-phone-video"
+                controls
+                style={{ width: '350px', borderRadius: '1.2rem', boxShadow: '0 4px 32px #0008', background: '#222' }}
+              >
+                <source src={process.env.PUBLIC_URL + "/Wallet-Video.mp4"} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
         {/* AI Section Heading */}
         <h2 className={`solutions-main-heading ${window.innerWidth <= 700 ? 'remindmecare-mobile' : ''}`} style={{ fontWeight: 700, fontSize: '2rem' }}>
           Integrating AI for the benefit of the care sector
@@ -868,52 +872,34 @@ function SolutionsPage() {
           </div>
         </div>
         {/* AI Enhancements Section */}
-        <div className="solutions-feature-row ai-enhancements-section flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16">
-          <div className="flex-1 solutions-feature-text">
-            <div className="mb-4" style={{ fontWeight: 500, textAlign: 'center' }}>
+        <div className={`solutions-feature-row ai-enhancements-section flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16`} style={{ margin: '0 auto', marginTop: '2.5rem', marginBottom: '2.5rem' }}>
+          <div className="flex-1" style={{ minWidth: 220 }}>
+            <div style={{ textAlign: 'center', fontWeight: 500, marginBottom: '1.2rem' }}>
               The AI enhancements currently being developed are as follows.
             </div>
-            <ul
-              className="solutions-list mb-4"
-              style={window.innerWidth <= 700 ? {
-                paddingLeft: 0,
-                margin: 0,
-                display: 'block',
-              } : {}}
-            >
-              <li>AI System for ELR® personal health data management</li>
-              <li>Activity Creation & Cognitive Stimulation</li>
-              <li>ReMeComm Community Engagement</li>
-              <li>Personal AI Agents/Virtual Companions (AI4U)</li>
-              <li>Automated Reporting</li>
-              <li>Enhanced Data Security</li>
+            <ul style={window.innerWidth <= 700 ? { textAlign: 'left', marginBottom: 0, listStyleType: 'none', paddingLeft: 0 } : { textAlign: 'left', marginBottom: 0, listStyleType: 'disc', paddingLeft: '2rem' }}>
+              <li style={window.innerWidth > 700 ? { marginBottom: '0.7rem' } : {}}>AI System for ELR® personal health data management</li>
+              <li style={window.innerWidth > 700 ? { marginBottom: '0.7rem' } : {}}>Activity Creation & Cognitive Stimulation</li>
+              <li style={window.innerWidth > 700 ? { marginBottom: '0.7rem' } : {}}>ReMeComm Community Engagement</li>
+              <li style={window.innerWidth > 700 ? { marginBottom: '0.7rem' } : {}}>Personal AI Agents/Virtual Companions (AI4U)</li>
+              <li style={window.innerWidth > 700 ? { marginBottom: '0.7rem' } : {}}>Automated Reporting</li>
+              <li style={window.innerWidth > 700 ? { marginBottom: '0.7rem' } : {}}>Enhanced Data Security</li>
               <li>Data Management & Monetisation</li>
             </ul>
-            <a
-              href={process.env.PUBLIC_URL + '/AI-Viability-Analysis.pdf'}
-              className="text-sky-400 hover:underline block mb-1"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={window.innerWidth <= 700 ? { textAlign: 'left', display: 'block', marginLeft: 0, marginBottom: '0.2rem' } : {}}
-            >
-              AI Viability Analysis
-            </a>
-            <a
-              href={process.env.PUBLIC_URL + '/Lumi-Ai-Report.pdf'}
-              className="text-sky-400 hover:underline block"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={window.innerWidth <= 700 ? { textAlign: 'left', display: 'block', marginLeft: 0, marginBottom: '0.7rem' } : {}}
-            >
-              AI Implementation strategy
-            </a>
+            <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.7rem' }}>
+              <a href="/AI-Viability-Analysis.pdf" target="_blank" rel="noopener noreferrer" style={{ color: '#4ec3fa', textDecoration: 'underline' }}>
+                AI Viability Analysis
+              </a>
+              <a href="/AI-Implementation-Strategy.pdf" target="_blank" rel="noopener noreferrer" style={{ color: '#4ec3fa', textDecoration: 'underline' }}>
+                AI Implementation strategy
+              </a>
+            </div>
           </div>
-          <div className="flex-1 flex flex-col items-center">
+          <div className="flex-1 flex flex-col items-center" style={window.innerWidth <= 700 ? { marginTop: '0.8rem' } : {}}>
             <img
               src={process.env.PUBLIC_URL + "/data-images/enhanced-care.png"}
               alt="Enhanced Care"
-              className="solutions-feature-img app-ecosystem-img-hover"
-              style={{ maxWidth: '100%', width: '420px', background: '#222', cursor: 'pointer' }}
+              style={{ width: '100%', maxWidth: 400, borderRadius: 24, boxShadow: '0 4px 32px 0 #0002', cursor: 'pointer' }}
               onClick={() => handleOpenModal(process.env.PUBLIC_URL + "/data-images/enhanced-care.png")}
             />
           </div>
