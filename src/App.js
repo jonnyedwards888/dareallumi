@@ -154,23 +154,32 @@ function LumiTokenSection() {
           <a href="https://remelife.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block' }}>
             <img src={process.env.PUBLIC_URL + '/ReMeLife-top-icon.png'} alt="ReMeLife" style={{ display: 'inline', width: '5.2em', height: 'auto', verticalAlign: 'middle', marginRight: '0.4em', cursor: 'pointer' }} />
           </a>
-          <span style={{ fontFamily: 'Inter, sans-serif' }}>is a tokenised Care2Earn care platform that rewards its users for their digital care actions using our proprietary apps.</span>
+          <span style={{ fontFamily: 'Inter, sans-serif' }}>
+            is a tokenised Care2Earn care platform that rewards its users for their digital daily care and support. Sharing content, monetising personal data, posting in the forum and many other digital care actions, earn redeemable tokens.
+          </span>
         </div>
         <div style={{ marginBottom: '1.2rem', fontFamily: 'Inter, sans-serif' }}>
           <a href="https://remindmecare.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block' }}>
             <img src={process.env.PUBLIC_URL + '/RemineMecare-icon.png'} alt="RemindMeCare" style={{ display: 'inline', width: '10em', height: 'auto', verticalAlign: 'middle', marginRight: '0.4em', cursor: 'pointer' }} />
           </a>
-          <span style={{ fontFamily: 'Inter, sans-serif' }}>is the app at the heart of the ReMeLife ecosystem, that enhances person-centred care for those with cognitive difficulties.</span>
+          <span style={{ fontFamily: 'Inter, sans-serif' }}>
+            is the care app at the heart of the ReMeLife ecosystem, enhances person-centred care for those with cognitive difficulties.
+          </span>
         </div>
         <div style={{ marginBottom: '1.2rem' }}>
           <span className="lumi-token-lumiai" style={{ background: 'linear-gradient(90deg, #ff7ee7 0%, #b16fc9 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 700, fontSize: '1.1em', letterSpacing: '0.04em', fontFamily: 'Michroma, sans-serif' }}>LUMI </span>
-          <span style={{ fontFamily: 'Inter, sans-serif' }}> is the AI avatar in ReMeLife's health care ecosystem that manages the apps and data, and supports and guides users. LUMI is a utility token.</span>
+          <span style={{ fontFamily: 'Inter, sans-serif' }}>
+            is an AI avatar that's layered into the ReMeLife's health care ecosystem, that manages apps and data and supports its users. Its utility token engages, rewards and provides governance.
+          </span>
         </div>
-        <div style={{ marginBottom: '2.2rem', fontFamily: 'Inter, sans-serif' }}>
-          We're building an agentic LLM based AI suite, that's layered into the existing ReMeLife platform and apps, and using our proprietary Electronic Life Records (ELR) dataset, so as to optimise the process of personal profile creation for those being cared for with cognitive conditions, enhance supportive care interactivity, fully bespoke entertainment, and tailor community engagement, whilst managing security and monetising personal data for the ReMeLife community.
+        <div style={{ marginBottom: '1.2rem', fontFamily: 'Inter, sans-serif' }}>
+          Most utility tokens today are b2b Web3 infrastructure projects. ReMeLife is the world's first Web3 care2earn AI powered b2c community ecosystem.
+        </div>
+        <div style={{ marginBottom: '1.2rem', fontFamily: 'Inter, sans-serif' }}>
+          ReMeLife and Lumi enable millions to share in the care potential of AI, the financial value of data and digital care, and the integrity of DAO based tokenomics.
         </div>
         <div style={{ fontFamily: 'Inter, sans-serif' }}>
-          Decentralisation is the key driver for social change, AI and blockchain are the engines of progress, and tokenization is the fuel that empowers us. Whether 80 and learning to use a tablet, or 18 and harvesting the native token through community building and app usage, Lumi is there to help.
+          Decentralisation is the driver for social change, AI and blockchain are the engines of progress, and tokenization is the fuel that empowers us. Whether 18 or 80, Lumi is here to help.
         </div>
       </div>
       <div style={{ display: 'flex', justifyContent: 'center', width: '100%', marginTop: '2.5rem' }}>
