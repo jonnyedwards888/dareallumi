@@ -356,6 +356,15 @@ function DataSection() {
                 <th style={{ padding: '0.5rem', fontWeight: 700, textAlign: 'left' }}>Explanation</th>
               </tr>
             </thead>
+            {window.innerWidth <= 700 && (
+              <tbody>
+                <tr>
+                  <td colSpan="4">
+                    <div style={{ borderBottom: '2px solid #b16fc9', width: '100%', margin: '0.1rem 0 0.5rem 0' }} />
+                  </td>
+                </tr>
+              </tbody>
+            )}
             <tbody>
               <tr style={{ borderBottom: '1px solid #b16fc9' }}>
                 <td style={{ padding: '0.5rem' }}>Unlocked</td>
