@@ -634,7 +634,7 @@ function SolutionsPage() {
         <h2 className="solutions-main-heading mb-12 text-[#b16fc9] text-center" style={{ fontWeight: 700, fontSize: '2rem' }}>
           Harnessing the value of digital care for those who need it most
         </h2>
-        {/* What's Remelife Section */}
+        {/* Wallet section above removed, next section is What's Remelife */}
         <div className="solutions-feature-row flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16">
           <div className="flex-1 solutions-feature-text">
             <h3 className="solutions-feature-title" style={{ fontFamily: 'Michroma, sans-serif' }}>
@@ -665,19 +665,6 @@ function SolutionsPage() {
           </div>
         </div>
         </div>
-        {/* Modal for all images */}
-        {modalOpen && (
-          <div className="modal-overlay" onClick={handleCloseModal}>
-            <div className="modal-content" onClick={e => e.stopPropagation()}>
-              <button className="modal-close-btn" onClick={handleCloseModal}>&times;</button>
-              <img
-                src={modalImg}
-                alt="Full View"
-                className="modal-img"
-              />
-            </div>
-          </div>
-        )}
         {/* Stats Headings */}
         <div className="solutions-stats-row w-full max-w-5xl flex flex-col md:flex-row justify-between items-center mb-8 gap-8 md:gap-0">
           <div className="solutions-stat text-center flex-1">
@@ -815,6 +802,26 @@ function SolutionsPage() {
             </video>
           </div>
         </div>
+        {/* Convex Info Section */}
+        <div className="solutions-feature-row flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16 mt-8" style={{ alignItems: 'flex-start' }}>
+          <div className="flex-1 flex flex-col items-center justify-center" style={{ minWidth: 180, maxWidth: 320 }}>
+            <img
+              src={process.env.PUBLIC_URL + '/Convex-Solutions-Logo.png'}
+              alt="Convex Solutions Logo"
+              style={{ width: '100%', maxWidth: 220, borderRadius: '1.2rem', background: '#23234a', boxShadow: '0 4px 32px #0008', marginBottom: '1.2rem' }}
+            />
+          </div>
+          <div className="flex-1 solutions-feature-text">
+            <h3 className="solutions-feature-title" style={{ fontFamily: 'Michroma, sans-serif', textTransform: 'uppercase', marginBottom: window.innerWidth <= 700 ? '1rem' : undefined }}>
+              WHAT'S THE REMEGRID
+            </h3>
+            <div style={window.innerWidth <= 700 ? { margin: '0 auto', maxWidth: '95vw', textAlign: 'center', lineHeight: 1.5, marginBottom: '0.7rem', fontFamily: 'Inter, sans-serif', fontWeight: 400 } : { fontFamily: 'Inter, sans-serif', fontWeight: 400, margin: '0 auto', maxWidth: '95vw', textAlign: 'left', lineHeight: 1.5, marginBottom: '0.7rem' }}>
+              Convex's lattice technology is a next-generation infrastructure that enables data and transactions to be shared securely and instantly across a decentralized network. Unlike traditional blockchains, it updates in real time without delays or conflicts, making it ideal for fast, scalable systems.<br /><br />
+              For platforms like ReMeLife and Lumi-AI, which reward users for engaging in health and social care, Convex ensures all activity, rewards, and personal data are securely recorded and instantly updated. It supports smooth collaboration between individuals, caregivers, and services. And, with 1 million+TPS it will enable POS payment transactions that are as fast as credit cards. Ideal for ReMeLife.<br /><br />
+              Convex delivers the speed, trust, and transparency needed to scale to manage all elements of the ReMeLife ecosystem, from care to DeFI and the DAO.
+            </div>
+          </div>
+        </div>
         {/* AI Section Heading */}
         <h2 className={`solutions-main-heading ${window.innerWidth <= 700 ? 'remindmecare-mobile' : ''}`} style={{ fontWeight: 700, fontSize: '2rem' }}>
           Integrating AI for the benefit of the care sector
@@ -856,48 +863,13 @@ function SolutionsPage() {
                 display: 'block',
               } : {}}
             >
-              <li style={window.innerWidth <= 700 ? { display: 'flex', alignItems: 'center', fontSize: '0.85rem', marginBottom: '0.2em', whiteSpace: 'nowrap' } : {}}>
-                <span style={window.innerWidth <= 700 ? { display: 'inline-block', width: '1.2em', textAlign: 'center', fontSize: '1.2em', color: '#fff' } : {}}>&#8226;</span>
-                <span style={window.innerWidth <= 700 ? { display: 'inline-block', textAlign: 'left', flex: 1 } : {}}>
-                  AI System for ELR® personal health data management
-                </span>
-              </li>
-              <li style={window.innerWidth <= 700 ? { display: 'flex', alignItems: 'center', fontSize: '0.85rem', marginBottom: '0.2em', whiteSpace: 'nowrap' } : {}}>
-                <span style={window.innerWidth <= 700 ? { display: 'inline-block', width: '1.2em', textAlign: 'center', fontSize: '1.2em', color: '#fff' } : {}}>&#8226;</span>
-                <span style={window.innerWidth <= 700 ? { display: 'inline-block', textAlign: 'left', flex: 1 } : {}}>
-                  Activity Creation & Cognitive Stimulation
-                </span>
-              </li>
-              <li style={window.innerWidth <= 700 ? { display: 'flex', alignItems: 'center', fontSize: '0.85rem', marginBottom: '0.2em', whiteSpace: 'nowrap' } : {}}>
-                <span style={window.innerWidth <= 700 ? { display: 'inline-block', width: '1.2em', textAlign: 'center', fontSize: '1.2em', color: '#fff' } : {}}>&#8226;</span>
-                <span style={window.innerWidth <= 700 ? { display: 'inline-block', textAlign: 'left', flex: 1 } : {}}>
-                  ReMeComm Community Engagement
-                </span>
-              </li>
-              <li style={window.innerWidth <= 700 ? { display: 'flex', alignItems: 'center', fontSize: '0.85rem', marginBottom: '0.2em', whiteSpace: 'nowrap' } : {}}>
-                <span style={window.innerWidth <= 700 ? { display: 'inline-block', width: '1.2em', textAlign: 'center', fontSize: '1.2em', color: '#fff' } : {}}>&#8226;</span>
-                <span style={window.innerWidth <= 700 ? { display: 'inline-block', textAlign: 'left', flex: 1 } : {}}>
-                  Personal AI Agents/Virtual Companions (AI4U)
-                </span>
-              </li>
-              <li style={window.innerWidth <= 700 ? { display: 'flex', alignItems: 'center', fontSize: '0.85rem', marginBottom: '0.2em', whiteSpace: 'nowrap' } : {}}>
-                <span style={window.innerWidth <= 700 ? { display: 'inline-block', width: '1.2em', textAlign: 'center', fontSize: '1.2em', color: '#fff' } : {}}>&#8226;</span>
-                <span style={window.innerWidth <= 700 ? { display: 'inline-block', textAlign: 'left', flex: 1 } : {}}>
-                  Automated Reporting
-                </span>
-              </li>
-              <li style={window.innerWidth <= 700 ? { display: 'flex', alignItems: 'center', fontSize: '0.85rem', marginBottom: '0.2em', whiteSpace: 'nowrap' } : {}}>
-                <span style={window.innerWidth <= 700 ? { display: 'inline-block', width: '1.2em', textAlign: 'center', fontSize: '1.2em', color: '#fff' } : {}}>&#8226;</span>
-                <span style={window.innerWidth <= 700 ? { display: 'inline-block', textAlign: 'left', flex: 1 } : {}}>
-                  Enhanced Data Security
-                </span>
-              </li>
-              <li style={window.innerWidth <= 700 ? { display: 'flex', alignItems: 'center', fontSize: '0.85rem', marginBottom: '0.2em', whiteSpace: 'nowrap' } : {}}>
-                <span style={window.innerWidth <= 700 ? { display: 'inline-block', width: '1.2em', textAlign: 'center', fontSize: '1.2em', color: '#fff' } : {}}>&#8226;</span>
-                <span style={window.innerWidth <= 700 ? { display: 'inline-block', textAlign: 'left', flex: 1 } : {}}>
-                  Data Management & Monetisation
-                </span>
-              </li>
+              <li>AI System for ELR® personal health data management</li>
+              <li>Activity Creation & Cognitive Stimulation</li>
+              <li>ReMeComm Community Engagement</li>
+              <li>Personal AI Agents/Virtual Companions (AI4U)</li>
+              <li>Automated Reporting</li>
+              <li>Enhanced Data Security</li>
+              <li>Data Management & Monetisation</li>
             </ul>
             <a
               href={process.env.PUBLIC_URL + '/AI-Viability-Analysis.pdf'}
@@ -1263,6 +1235,7 @@ function AboutPage() {
             ))}
           </div>
         </div>
+        {/* Link below removed */}
         <div style={{ textAlign: 'center', marginTop: '1.5rem', marginBottom: '3.5rem' }}>
           <a
             href="https://remelife.io/about-us/"
