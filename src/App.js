@@ -68,7 +68,7 @@ function Navbar() {
     <div style={{ fontFamily: 'Michroma, sans-serif' }}>
       <div className="hero-topbar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <Link to="/" className="hero-button" style={{ display: 'flex', alignItems: 'center' }} onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-          <img src={process.env.PUBLIC_URL + "/Lumi-main-logo.png"} alt="LUMI Icon" className="lumi-navbar-icon" style={{ height: '28px', width: 'auto', display: 'inline-block', verticalAlign: 'middle', marginRight: '0.5rem' }} />
+          <img src={process.env.PUBLIC_URL + "/THEONE.gif"} alt="LUMI Icon" className="lumi-navbar-icon" style={{ height: '28px', width: 'auto', display: 'inline-block', verticalAlign: 'middle', marginRight: '0.5rem' }} />
           LUMI
         </Link>
         <div className="hero-nav-right" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
@@ -120,7 +120,7 @@ function HeroSection() {
           <h1 className="lumi-heading" style={{ fontFamily: 'Michroma, sans-serif' }}>LUMI</h1>
           <div className="lumi-avatar-wrapper">
             <img
-              src={process.env.PUBLIC_URL + "/Lumi-Line-Main.png"}
+              src={process.env.PUBLIC_URL + "/THEONE.gif"}
               alt="Lumi Full Body"
               className="lumi-fullbody-img"
             />
@@ -828,9 +828,7 @@ function SolutionsPage() {
                 THE REME WALLET
               </h3>
               <div style={window.innerWidth <= 700 ? { maxWidth: '95vw', textAlign: 'center', fontSize: '1.13rem', lineHeight: 1.7, marginBottom: 0, color: '#e0e0e0', padding: '0 0.2rem', marginTop: '0.2rem', fontWeight: 400 } : { margin: '0 auto', maxWidth: '95vw', textAlign: 'left', fontSize: '1.08rem', lineHeight: 1.5, marginBottom: '0.7rem' }}>
-                An easy-to-use Member interface for managing Care2Earn rewards,<br />
-                building a community of value and accessing ReMeLife's CareFi services,<br />
-                including purchasing and swapping tokens.
+                An easy-to-use Member interface for managing Care2Earn rewards, building a community of value and accessing ReMeLife's CareFi services, including purchasing and swapping tokens.
               </div>
             </div>
             <div className="flex-1 flex flex-col items-center">
