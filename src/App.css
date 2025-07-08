@@ -451,20 +451,20 @@ html {
   background: linear-gradient(135deg, #23234a 60%, #5ee7df 120%);
   border: 1.5px solid #b16fc9;
   border-radius: 2rem;
-  padding: 2rem 1.5rem;
+  padding: 1.3rem 1rem !important;
   color: #fff;
   box-shadow: 0 4px 32px #0006;
-  min-height: 320px;
+  min-height: 0 !important;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
-.solutions-box-title {
-  font-weight: 700;
-  font-size: 1.1rem;
+.solutions-box .solutions-box-title {
+  color: #b16fc9 !important;
+  font-size: 1.13rem !important;
+  font-weight: 700 !important;
   margin-bottom: 0.5rem;
-  color: #fff;
   text-align: center;
   width: 100%;
   display: block;
@@ -479,9 +479,9 @@ html {
   display: block;
 }
 .solutions-box-desc {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #fff;
+  font-size: 0.98rem !important;
+  color: #fff !important;
+  font-weight: 400 !important;
   margin-top: 0.5rem;
 }
 

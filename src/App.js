@@ -67,7 +67,7 @@ function Navbar() {
   return (
     <div style={{ fontFamily: 'Michroma, sans-serif' }}>
       <div className="hero-topbar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Link to="/" className="hero-button" style={{ display: 'flex', alignItems: 'center' }}>
+        <Link to="/" className="hero-button" style={{ display: 'flex', alignItems: 'center' }} onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
           <img src={process.env.PUBLIC_URL + "/Lumi-main-logo.png"} alt="LUMI Icon" className="lumi-navbar-icon" style={{ height: '28px', width: 'auto', display: 'inline-block', verticalAlign: 'middle', marginRight: '0.5rem' }} />
           LUMI
         </Link>
@@ -874,8 +874,8 @@ function SolutionsPage() {
         {/* AI Enhancements Section */}
         <div className={`solutions-feature-row ai-enhancements-section flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 mb-16`} style={{ margin: '0 auto', marginTop: '2.5rem', marginBottom: '2.5rem' }}>
           <div className="flex-1" style={{ minWidth: 220 }}>
-            <div style={{ textAlign: 'center', fontWeight: 500, marginBottom: '1.2rem' }}>
-              The AI enhancements currently being developed are as follows.
+            <div style={{ textAlign: 'center', fontWeight: 500, marginBottom: '1.2rem', fontSize: '1.35rem' }}>
+              The AI enhancements currently being developed are as follows:
             </div>
             <ul style={window.innerWidth <= 700 ? { textAlign: 'center', marginBottom: 0, listStyleType: 'none', paddingLeft: 0 } : { textAlign: 'left', marginBottom: 0, listStyleType: 'disc', paddingLeft: '2rem' }}>
               <li style={window.innerWidth > 700 ? { marginBottom: '0.7rem' } : { textAlign: 'center' }}>AI System for ELR® personal health data management</li>
