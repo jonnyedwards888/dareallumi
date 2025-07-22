@@ -288,8 +288,8 @@ function DataSection() {
               src={process.env.PUBLIC_URL + '/lumiai-project-analysis.jpg'}
               alt="Lumi AI Project Analysis"
               className="data-section-img" style={{ width: '360px', height: '360px', cursor: 'pointer' }}
-              onClick={() => window.open(process.env.PUBLIC_URL + '/AI-Viability-Analysis.pdf', '_blank', 'noopener,noreferrer')}
-              onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') window.open(process.env.PUBLIC_URL + '/AI-Viability-Analysis.pdf', '_blank', 'noopener,noreferrer'); }}
+              onClick={() => window.open(process.env.PUBLIC_URL + '/Luki-Docs/Luki-Viability-Analysis.pdf', '_blank', 'noopener,noreferrer')}
+              onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') window.open(process.env.PUBLIC_URL + '/Luki-Docs/Luki-Viability-Analysis.pdf', '_blank', 'noopener,noreferrer'); }}
               tabIndex={0}
               role="button"
             />
@@ -297,8 +297,8 @@ function DataSection() {
         )}
         {/* Center column: links */}
         <div className="data-section-col center" style={isMobile ? { alignItems: 'center', textAlign: 'center', width: '100%' } : {}}>
-          <div className="data-section-row"><a href={process.env.PUBLIC_URL + '/Lumi-Lite-Paper.pdf'} className="data-section-link" target="_blank" rel="noopener noreferrer">Lite Paper</a></div>
-          <div className="data-section-row"><a href={process.env.PUBLIC_URL + '/AI-Viability-Analysis.pdf'} className="data-section-link" target="_blank" rel="noopener noreferrer">AI Report</a></div>
+          <div className="data-section-row"><a href={process.env.PUBLIC_URL + '/Luki-Docs/Luki-Lite-Paper.pdf'} className="data-section-link" target="_blank" rel="noopener noreferrer">Lite Paper</a></div>
+          <div className="data-section-row"><a href={process.env.PUBLIC_URL + '/Luki-Docs/Luki-Viability-Analysis.pdf'} className="data-section-link" target="_blank" rel="noopener noreferrer">AI Report</a></div>
           <div className="data-section-row"><a href="https://remelife.io/project_data/" className="data-section-link" target="_blank" rel="noopener noreferrer">ReMeLife Data</a></div>
           <div className="data-section-row"><a href="https://github.com/ReMe-life" className="data-section-link" target="_blank" rel="noopener noreferrer">GitHub</a></div>
         </div>
@@ -885,7 +885,7 @@ function SolutionsPage() {
               <li style={window.innerWidth > 700 ? {} : { textAlign: 'center' }}>Data Management & Monetisation</li>
             </ul>
             <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.7rem' }}>
-              <a href="/AI-Viability-Analysis.pdf" target="_blank" rel="noopener noreferrer" style={{ color: '#4ec3fa', textDecoration: 'underline' }}>
+              <a href="/Luki-Docs/Luki-Viability-Analysis.pdf" target="_blank" rel="noopener noreferrer" style={{ color: '#4ec3fa', textDecoration: 'underline' }}>
                 AI Viability Analysis
               </a>
               <a href="/AI-Implementation-Strategy.pdf" target="_blank" rel="noopener noreferrer" style={{ color: '#4ec3fa', textDecoration: 'underline' }}>
