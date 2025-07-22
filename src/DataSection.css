@@ -1,0 +1,250 @@
+/* DataSection.css - Styles for the new Data Section card */
+
+.data-section-card {
+  background: linear-gradient(135deg, #18153a 60%, #3a6e8c 120%);
+  border: 1.5px solid #b16fc9;
+  border-radius: 3rem;
+  box-shadow: 0 4px 32px #0006;
+  padding: 2.5rem 2.5rem;
+  margin: 2.5rem auto;
+  max-width: 1500px;
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  align-items: stretch;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.data-section-col {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.2rem;
+}
+
+.data-section-col.left {
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+.data-section-col.center {
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2.2rem;
+  margin-left: -5rem;
+}
+.data-section-col.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2.2rem;
+  min-width: 260px;
+}
+
+.data-section-img {
+  width: 420px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 2.2rem;
+  box-shadow: 0 4px 32px #0006;
+}
+
+.data-section-github {
+  width: 180px;
+  margin-top: 1.5rem;
+  background: #fff;
+  border-radius: 0.3rem;
+  box-shadow: 0 2px 12px #0003;
+  display: block;
+}
+
+.data-section-link {
+  color: #3fdcff;
+  font-family: 'Michroma', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 0.7rem;
+  transition: color 0.2s;
+  text-transform: capitalize;
+  position: relative;
+}
+.data-section-link::after {
+  content: '›';
+  display: inline-block;
+  margin-left: 8px;
+  color: #9CA3AF;
+  font-size: 1.1em;
+  transition: color 0.2s;
+}
+.data-section-link:hover::after,
+.data-section-link:focus::after {
+  color: #fff;
+}
+
+.data-section-label {
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.18rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.data-section-label a::after {
+  content: '\2197';
+  display: inline-block;
+  color: #9CA3AF;
+  font-size: 13px;
+  margin-left: 10px;
+  vertical-align: -1px;
+  transition: color 0.2s, transform 0.2s;
+  aria-hidden: true;
+}
+.data-section-label a:hover::after,
+.data-section-label a:focus::after {
+  color: #fff;
+  transform: translate(2px, -2px);
+}
+
+.data-section-apps {
+  width: 180px;
+  margin-top: 1.5rem;
+  display: block;
+}
+
+.data-section-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 1.2rem;
+  background: none;
+  box-shadow: none;
+}
+
+.data-section-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.1rem;
+  min-height: 48px;
+}
+
+.data-section-bullet {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #40e0d0 60%, #b16fc9 120%);
+  margin-right: 1.1rem;
+  box-shadow: 0 0 6px #40e0d088;
+  vertical-align: middle;
+}
+
+@media (max-width: 1100px) {
+  .data-section-card {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.5rem 0.7rem;
+    gap: 1.5rem;
+  }
+  .data-section-col {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .data-section-col.left,
+  .data-section-col.center,
+  .data-section-col.right {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: 0;
+  }
+  .data-section-row {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .data-section-card {
+    padding: 0.7rem 0.2rem;
+    border-radius: 1.2rem;
+    min-height: unset;
+  }
+  .data-section-img {
+    width: 120px;
+    height: 120px;
+  }
+  .data-section-github, .data-section-apps {
+    width: 120px;
+  }
+  .data-section-link {
+    font-size: 1.1rem;
+  }
+  .data-section-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Remove previous arrow styles */
+.data-section-arrow {
+  display: none !important;
+}
+
+.lumi-spaceship-fly-wrapper {
+  width: 100vw;
+  max-width: 100%;
+  overflow: visible;
+  position: relative;
+  height: 120px;
+  margin: 2.5rem 0 0 0;
+  pointer-events: none;
+  z-index: 2;
+}
+.lumi-spaceship-fly {
+  position: absolute;
+  left: -180px;
+  top: 30px;
+  width: 160px;
+  height: auto;
+  pointer-events: none;
+  animation: lumi-fly-across 7s linear infinite;
+}
+@keyframes lumi-fly-across {
+  0% {
+    left: -180px;
+    top: 30px;
+    transform: rotate(-8deg) scale(1.05);
+  }
+  10% {
+    top: 18px;
+    transform: rotate(-4deg) scale(1.08);
+  }
+  25% {
+    top: 10px;
+    transform: rotate(0deg) scale(1.12);
+  }
+  50% {
+    top: 30px;
+    transform: rotate(2deg) scale(1.13);
+  }
+  75% {
+    top: 50px;
+    transform: rotate(-2deg) scale(1.09);
+  }
+  90% {
+    top: 38px;
+    transform: rotate(-6deg) scale(1.06);
+  }
+  100% {
+    left: 100vw;
+    top: 30px;
+    transform: rotate(-8deg) scale(1.05);
+  }
+} 

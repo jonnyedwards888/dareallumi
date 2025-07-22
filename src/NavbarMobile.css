@@ -1,0 +1,56 @@
+/* NavbarMobile.css - Mobile-specific styles for the top navbar */
+
+@media (max-width: 600px) {
+  /* Add mobile-specific navbar styles here */
+  .hero-button {
+    font-size: 0.7rem !important;
+    padding: 0.2rem 0.3rem !important;
+    margin: 0 0.1rem !important;
+    min-width: 0 !important;
+    white-space: nowrap !important;
+    letter-spacing: 0.01em !important;
+  }
+
+  .hero-button:first-child {
+    margin-left: 0 !important;
+  }
+
+  .lumi-navbar-icon {
+    height: 22px;
+    margin-right: 0.3rem;
+  }
+
+  .hero-topbar {
+    padding: 0 0.5rem;
+    height: 48px;
+  }
+
+  .lumi-hero-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.3rem !important; /* adjust as needed */
+    width: 100% !important;
+  }
+
+  .lumi-hero-btn {
+    background: linear-gradient(135deg, rgba(20, 20, 40, 0.6), rgba(10, 10, 30, 0.8)) !important;
+    min-width: 110px !important;
+    padding: 0.5rem 0.7rem !important;
+    font-size: 0.95rem !important;
+    white-space: nowrap !important;
+    margin: 0 0.1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-nav-right {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 0.2rem !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    width: auto !important;
+  }
+}
