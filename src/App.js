@@ -106,11 +106,27 @@ function Navbar() {
 }
 
 function HeroSection() {
+  const [backgroundLoaded, setBackgroundLoaded] = React.useState(false);
+
+  React.useEffect(() => {
+    const img = new Image();
+    img.onload = () => {
+      setBackgroundLoaded(true);
+    };
+    img.onerror = () => {
+      // If the main image fails to load, keep the placeholder
+      console.warn('Failed to load background image');
+    };
+    img.src = process.env.PUBLIC_URL + "/Lum-universe-img.png";
+  }, []);
+
   return (
     <div
       className="hero-section"
       style={{
-        backgroundImage: `url(${process.env.PUBLIC_URL + "/lumi-darker-background.png"})`,
+        backgroundImage: backgroundLoaded 
+          ? `url(${process.env.PUBLIC_URL + "/Lum-universe-img.png"})`
+          : `url(${process.env.PUBLIC_URL + "/placeholder-bg.svg"})`,
         backgroundPosition: '40% center',
       }}
     >
